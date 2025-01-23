@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsyea3lxe4yr4"]
 
-[ext_resource type="PackedScene" uid="uid://bb5k50b312irl" path="res://Game/Main_Map/tile_map.tscn" id="1_at2vi"]
+[ext_resource type="PackedScene" uid="uid://btpx8bcd8yk1p" path="res://Game/Main_Map/tile_map_layer.tscn" id="1_seqlg"]
 [ext_resource type="PackedScene" uid="uid://b0iakpexacuyu" path="res://Game/Characters/Player/Old_man.tscn" id="2_pe1pu"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TileMap" parent="." instance=ExtResource("1_at2vi")]
+[node name="TileMapLayer" parent="." instance=ExtResource("1_seqlg")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_pe1pu")]
 
