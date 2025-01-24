@@ -265,8 +265,8 @@ shape = SubResource("CapsuleShape2D_64avb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aoqnn")
 animation = &"Smoke"
-frame = 8
-frame_progress = 0.257277
+frame = 6
+frame_progress = 0.773262
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 
