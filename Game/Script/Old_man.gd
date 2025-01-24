@@ -1,14 +1,24 @@
 extends CharacterBody2D
-const SPEED = 300.0
+var walk_speed = 150
+func _ready():
+	pass
+	
+func _process(delta):
+	var movement = movement_vector()
+	var direction = movement.normalized()
+	velocity = walk_speed * direction
 
-func _physics_process(delta: float)-> void:
-	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	#if direction:
-	velocity = direction * SPEED
+	if movement == Vector2.ZERO:
+		$AnimatedSprite2D.play("Idle")
+	if movement == Vector2(1,0):
+		$AnimatedSprite2D.play("walk_right")
+	if movement == Vector2(-1,0):
+		$AnimatedSprite2D.play("walk_left")
 	
-	var animation := "Idle"
-	if velocity:
-		animation = "walk"
-	
-	$AnimatedSprite2D.play(animation)
+	print_debug(direction)
 	move_and_slide()
+
+func movement_vector():
+	var movement_x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
+	var movement_y = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
+	return Vector2(movement_x, movement_y)

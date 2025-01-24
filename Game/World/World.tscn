@@ -8,5 +8,3 @@
 [node name="TileMapLayer" parent="." instance=ExtResource("1_seqlg")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_pe1pu")]
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
