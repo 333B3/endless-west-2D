@@ -14,8 +14,10 @@ func _process(delta):
 		$AnimatedSprite2D.play("walk_right")
 	if movement == Vector2(-1,0):
 		$AnimatedSprite2D.play("walk_left")
+	if Input.get_action_strength("Smoke"):
+		$AnimatedSprite2D.play("Smoke")
 	
-	print_debug(direction)
+
 	move_and_slide()
 
 func movement_vector():
