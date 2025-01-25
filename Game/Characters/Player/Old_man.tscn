@@ -1,10 +1,10 @@
 [gd_scene load_steps=40 format=3 uid="uid://b0iakpexacuyu"]
 
 [ext_resource type="Script" path="res://Game/Script/old_man.gd" id="1_av3v6"]
-[ext_resource type="Texture2D" uid="uid://uhcgvkwcdv0o" path="res://Res/Characters/Old_man/CowBoyIdle.png" id="1_l2pnj"]
-[ext_resource type="Texture2D" uid="uid://iwr2u8x52a35" path="res://Res/Characters/Old_man/CowBoyWalking_left.png" id="3_6y8ph"]
-[ext_resource type="Texture2D" uid="uid://ct03x7lo5dnu3" path="res://Res/Characters/Old_man/CowBoySmokingIdle.png" id="3_iqp2i"]
-[ext_resource type="Texture2D" uid="uid://bnhcggtep563f" path="res://Res/Characters/Old_man/CowBoyWalking.png" id="3_k5fdw"]
+[ext_resource type="Texture2D" uid="uid://djydpeyo7mcbw" path="res://Res/Characters/Old_man/CowBoyIdle.png" id="1_l2pnj"]
+[ext_resource type="Texture2D" uid="uid://73wm0v6no40l" path="res://Res/Characters/Old_man/CowBoyWalking_left.png" id="3_6y8ph"]
+[ext_resource type="Texture2D" uid="uid://b1hwdk2r1k82s" path="res://Res/Characters/Old_man/CowBoySmokingIdle.png" id="3_iqp2i"]
+[ext_resource type="Texture2D" uid="uid://dbnkfh2drtsfa" path="res://Res/Characters/Old_man/CowBoyWalking.png" id="3_k5fdw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_64avb"]
 height = 38.0
