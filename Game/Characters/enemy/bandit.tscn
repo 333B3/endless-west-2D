@@ -1,10 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://dtd0op3wthp5l"]
+[gd_scene load_steps=34 format=3 uid="uid://dtd0op3wthp5l"]
 
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="1_to7gm"]
+[ext_resource type="Script" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhk72"]
-radius = 33.0
-height = 70.0
+height = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjpus"]
 atlas = ExtResource("1_to7gm")
@@ -234,14 +234,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+light_mask = 0
+script = ExtResource("1_u1xqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_fhk72")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(1.48438, 1.67187)
 sprite_frames = SubResource("SpriteFrames_exk01")
-animation = &"run"
+animation = &"idle"
+frame = 3
+frame_progress = 0.214858

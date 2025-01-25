@@ -870,6 +870,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_ag20o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -7,7 +7,7 @@ var last_direction: String = "down"
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	var movement = movement_vector()
 	var direction = movement.normalized()
 	var current_speed = walk_speed
@@ -47,7 +47,6 @@ func _process(delta):
 	else:
 	# Idle анимация соответствует последнему положению игрока
 		$AnimatedSprite2D.play("idle_" + last_direction)
-
 	move_and_slide()
 
 func movement_vector():
