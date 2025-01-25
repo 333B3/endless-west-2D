@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var walk_speed = 150
-var run_speed = 300
+var walk_speed = 75
+var run_speed = 150
 var last_direction: String = "down" 
 
 func _ready():

@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://c7nnsc4qekrdi" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_up_slash_spritesheet.png" id="22_2cfc8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
-radius = 12.0
-height = 36.0
+radius = 5.0
+height = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ab83c"]
 atlas = ExtResource("2_ggj1k")
@@ -870,18 +870,20 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-collision_layer = 0
 script = ExtResource("1_ag20o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1dx12")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 2.86102e-06)
-scale = Vector2(1.78125, 2.03125)
+position = Vector2(-9.53674e-07, 9.53674e-07)
+scale = Vector2(0.827, 1)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
 animation = &"slash_left"
 frame = 2
 frame_progress = 0.68081
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0

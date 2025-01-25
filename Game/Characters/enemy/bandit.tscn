@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhk72"]
-height = 28.0
+radius = 6.0
+height = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjpus"]
 atlas = ExtResource("1_to7gm")
@@ -239,15 +240,16 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 light_mask = 0
+collision_layer = 0
 script = ExtResource("1_u1xqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_fhk72")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4.76837e-07, 0)
-scale = Vector2(1.48438, 1.67187)
+scale = Vector2(0.887, 1)
 sprite_frames = SubResource("SpriteFrames_exk01")
 animation = &"idle"
 frame = 3
