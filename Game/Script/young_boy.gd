@@ -1,6 +1,8 @@
 extends CharacterBody2D
+
 var walk_speed = 150
 var run_speed = 300
+var last_direction: String = "down" 
 
 func _ready():
 	pass
@@ -9,32 +11,42 @@ func _process(delta):
 	var movement = movement_vector()
 	var direction = movement.normalized()
 	var current_speed = walk_speed
+
+	# ПРОВЕРКА КНОПКИ ШИФТ
 	if Input.is_action_pressed("run"):
 		current_speed = run_speed
 
 	velocity = current_speed * direction
 
-	if movement == Vector2.ZERO:
-		$AnimatedSprite2D.play("idle")
-	elif current_speed == run_speed:  
+	# Если есть движение значит проигрываем анимацию бега или шага
+	if movement != Vector2.ZERO:
 		if movement == Vector2(1, 0):
-			$AnimatedSprite2D.play("run_right")
+			last_direction = "right"
+			if current_speed == run_speed:
+				$AnimatedSprite2D.play("run_right")
+			else:
+				$AnimatedSprite2D.play("walk_right")
 		elif movement == Vector2(-1, 0):
-			$AnimatedSprite2D.play("run_left")
+			last_direction = "left"
+			if current_speed == run_speed:
+				$AnimatedSprite2D.play("run_left")
+			else:
+				$AnimatedSprite2D.play("walk_left")
 		elif movement == Vector2(0, -1):
-			$AnimatedSprite2D.play("run_up")
+			last_direction = "up"
+			if current_speed == run_speed:
+				$AnimatedSprite2D.play("run_up")
+			else:
+				$AnimatedSprite2D.play("walk_up")
 		elif movement == Vector2(0, 1):
-			$AnimatedSprite2D.play("run_down")
-
-	if current_speed == walk_speed:  
-		if movement == Vector2(1, 0):
-			$AnimatedSprite2D.play("walk_right")
-		elif movement == Vector2(-1, 0):
-			$AnimatedSprite2D.play("walk_left")
-		elif movement == Vector2(0, -1):
-			$AnimatedSprite2D.play("walk_up")
-		elif movement == Vector2(0, 1):
-			$AnimatedSprite2D.play("walk_down")
+			last_direction = "down"
+			if current_speed == run_speed:
+				$AnimatedSprite2D.play("run_down")
+			else:
+				$AnimatedSprite2D.play("walk_down")
+	else:
+	# Idle анимация соответствует последнему положению игрока
+		$AnimatedSprite2D.play("idle_" + last_direction)
 
 	move_and_slide()
 

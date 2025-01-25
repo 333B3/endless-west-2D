@@ -1,10 +1,13 @@
-[gd_scene load_steps=45 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=60 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://dgilxewo0wyc1" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
+[ext_resource type="Texture2D" uid="uid://e54ueremlhcj" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_left_spritesheet.png" id="3_3gart"]
 [ext_resource type="Texture2D" uid="uid://3r0iphrduva2" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/walk/cowboy_walk_down_spritesheet.png" id="3_q8bpr"]
+[ext_resource type="Texture2D" uid="uid://13eb10ger8i2" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_right_spritesheet.png" id="4_bj3nb"]
 [ext_resource type="Texture2D" uid="uid://byb7epqpkfvnv" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/walk/cowboy_walk_left_sritesheet.png" id="4_fmc27"]
 [ext_resource type="Texture2D" uid="uid://coo1lrufgc7ft" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/walk/cowboy_walk_right-spritesheet.png" id="5_4y48g"]
+[ext_resource type="Texture2D" uid="uid://cqkp4sa7cn62m" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_up_spritesheet.png" id="5_s7x2f"]
 [ext_resource type="Texture2D" uid="uid://c57ui5077a5da" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/walk/cowboy_walk_up_spritesheet.png" id="6_twhaq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
@@ -25,6 +28,54 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3ebh"]
 atlas = ExtResource("1_cn6tq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay04o"]
+atlas = ExtResource("3_3gart")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqacb"]
+atlas = ExtResource("3_3gart")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc8ic"]
+atlas = ExtResource("3_3gart")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rhya"]
+atlas = ExtResource("3_3gart")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3tct"]
+atlas = ExtResource("4_bj3nb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhyya"]
+atlas = ExtResource("4_bj3nb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0fjx"]
+atlas = ExtResource("4_bj3nb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07u32"]
+atlas = ExtResource("4_bj3nb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa734"]
+atlas = ExtResource("5_s7x2f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjuiu"]
+atlas = ExtResource("5_s7x2f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grw4e"]
+atlas = ExtResource("5_s7x2f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tehbj"]
+atlas = ExtResource("5_s7x2f")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxh3a"]
@@ -171,7 +222,58 @@ animations = [{
 "texture": SubResource("AtlasTexture_m3ebh")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay04o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqacb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc8ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rhya")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3tct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhyya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0fjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07u32")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa734")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjuiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grw4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tehbj")
+}],
+"loop": true,
+"name": &"idle_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -321,6 +423,6 @@ shape = SubResource("CapsuleShape2D_1dx12")
 position = Vector2(0, 2.86102e-06)
 scale = Vector2(1.78125, 2.03125)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
-animation = &"idle"
+animation = &"idle_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
