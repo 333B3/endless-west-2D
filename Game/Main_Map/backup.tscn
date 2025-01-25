@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4fdv42s0savy" path="res://Res/Map/AnimatedTreeFree/AnimatedTreeFree/AnimatedAutum.png" id="2_mqle1"]
 [ext_resource type="Texture2D" uid="uid://c4c3eyoyhx0tx" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/DESERTV2++.png" id="3_7yy3n"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ph3c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rf0yo"]
 texture = ExtResource("1_c7dqi")
 9:0/size_in_atlas = Vector2i(2, 3)
 9:0/0 = 0
@@ -59,7 +59,7 @@ texture = ExtResource("1_c7dqi")
 1:3/0 = 0
 0:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7sib"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rd7t5"]
 texture = ExtResource("2_mqle1")
 1:0/0 = 0
 2:0/0 = 0
@@ -261,7 +261,7 @@ texture = ExtResource("2_mqle1")
 61:3/0 = 0
 62:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tlb2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_faop1"]
 texture = ExtResource("3_7yy3n")
 8:27/size_in_atlas = Vector2i(2, 2)
 8:27/0 = 0
@@ -283,9 +283,9 @@ texture = ExtResource("3_7yy3n")
 
 [sub_resource type="TileSet" id="TileSet_amu0g"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_1ph3c")
-sources/1 = SubResource("TileSetAtlasSource_p7sib")
-sources/2 = SubResource("TileSetAtlasSource_4tlb2")
+sources/0 = SubResource("TileSetAtlasSource_rf0yo")
+sources/1 = SubResource("TileSetAtlasSource_rd7t5")
+sources/2 = SubResource("TileSetAtlasSource_faop1")
 
 [node name="backup" type="TileMapLayer"]
 
