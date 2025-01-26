@@ -887,3 +887,5 @@ frame_progress = 0.68081
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
