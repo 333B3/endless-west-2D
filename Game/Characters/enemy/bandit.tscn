@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dtd0op3wthp5l"]
+[gd_scene load_steps=36 format=3 uid="uid://dtd0op3wthp5l"]
 
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="1_to7gm"]
 [ext_resource type="Script" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
@@ -238,7 +238,14 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fthft"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7l2gc"]
+radius = 41.0
+
+[node name="Bandit" type="CharacterBody2D"]
 light_mask = 0
 collision_layer = 0
 script = ExtResource("1_u1xqu")
@@ -252,5 +259,19 @@ position = Vector2(-4.76837e-07, 0)
 scale = Vector2(0.887, 1)
 sprite_frames = SubResource("SpriteFrames_exk01")
 animation = &"idle"
-frame = 3
-frame_progress = 0.214858
+frame_progress = 0.448682
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_fthft")
+
+[node name="detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detector"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_7l2gc")
+
+[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="detector" to="." method="_on_detector_body_exited"]
