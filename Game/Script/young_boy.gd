@@ -102,3 +102,6 @@ func movement_vector():
 	var movement_x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
 	var movement_y = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
 	return Vector2(movement_x, movement_y)
+
+func player():
+	pass

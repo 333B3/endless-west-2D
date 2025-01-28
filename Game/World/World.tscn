@@ -11,4 +11,4 @@
 [node name="Main_Character" parent="." instance=ExtResource("2_5q4vx")]
 
 [node name="Bandit" parent="." instance=ExtResource("3_lthya")]
-position = Vector2(83, 2)
+position = Vector2(88, 0)
