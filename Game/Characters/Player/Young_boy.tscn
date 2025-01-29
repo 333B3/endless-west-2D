@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=129 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -870,6 +870,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_74hxk"]
+radius = 8.0
+
 [node name="Young_boy" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_ag20o")
@@ -901,3 +904,8 @@ drag_bottom_margin = 0.1
 script = ExtResource("23_7yk5j")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_74hxk")
