@@ -243,9 +243,9 @@ radius = 5.0
 height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7l2gc"]
-radius = 50.01
+radius = 75.0267
 
-[node name="Bandit" type="CharacterBody2D"]
+[node name="Bandit" type="CharacterBody2D" groups=["player"]]
 light_mask = 0
 collision_layer = 0
 script = ExtResource("1_u1xqu")
@@ -273,5 +273,5 @@ shape = SubResource("CapsuleShape2D_fthft")
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_7l2gc")
 
-[connection signal="body_entered" from="detector" to="." method="_on_detector_body_entered"]
-[connection signal="body_exited" from="detector" to="." method="_on_detector_body_exited"]
+[connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_exited" from="detector" to="." method="_on_detector_area_exited"]

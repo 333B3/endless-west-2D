@@ -3,7 +3,7 @@ extends CharacterBody2D
 var walk_speed = 75
 var run_speed = 150
 var last_direction: String = "down" 
-var heath = 100 
+var health = 100 
 
 var bullet_equip = false
 var bullet_cooldown = true
@@ -11,7 +11,7 @@ var bullet = preload("res://Game/World/bullet.tscn")
 var mouse_lock = null
 
 func _ready():
-	pass
+	add_to_group("player")
 
 func _process(_delta):
 	mouse_lock = get_global_mouse_position() - self.position
@@ -26,7 +26,7 @@ func _process(_delta):
 
 	velocity = current_speed * direction
 
-	# Если есть движение значит проигрываем анимацию бега или шага
+	# Если есть движение, значит проигрываем анимацию бега или шага
 	if movement != Vector2.ZERO:
 		if movement == Vector2(1, 0):
 			last_direction = "right"
@@ -53,7 +53,7 @@ func _process(_delta):
 			else:
 				$AnimatedSprite2D.play("walk_down")
 	else:
-	# Idle анимация соответствует последнему положению игрока
+		# Idle анимация соответствует последнему положению игрока
 		$AnimatedSprite2D.play("idle_" + last_direction)
 
 	if Input.is_action_just_pressed("shoot"):
@@ -70,7 +70,7 @@ func _process(_delta):
 		bullet_instance.global_position = $Marker2D.global_position
 		add_child(bullet_instance)
 		await get_tree().create_timer(0.7).timeout
-		bullet_cooldown=true
+		bullet_cooldown = true
 		
 	if Input.is_action_just_pressed("shoot_mode"):
 		if bullet_equip:
