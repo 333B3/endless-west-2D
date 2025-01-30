@@ -135,7 +135,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ghqfi")
 }, {
-"duration": 1.0,
+"duration": 30.0,
 "texture": SubResource("AtlasTexture_4eo6d")
 }],
 "loop": true,
@@ -255,11 +255,10 @@ position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_fhk72")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(0.887, 1)
+scale = Vector2(0.871, 0.9)
 sprite_frames = SubResource("SpriteFrames_exk01")
-animation = &"idle"
-frame_progress = 0.448682
+animation = &"bandit_death"
+frame_progress = 0.512662
 
 [node name="HitBox" type="Area2D" parent="."]
 
@@ -273,5 +272,6 @@ shape = SubResource("CapsuleShape2D_fthft")
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_7l2gc")
 
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="detector" to="." method="_on_detector_area_exited"]
