@@ -258,7 +258,7 @@ shape = SubResource("CapsuleShape2D_fhk72")
 scale = Vector2(0.871, 0.9)
 sprite_frames = SubResource("SpriteFrames_exk01")
 animation = &"bandit_death"
-frame_progress = 0.512662
+frame_progress = 0.67608
 
 [node name="HitBox" type="Area2D" parent="."]
 
