@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bnf6f305f0o2o"
+path="res://.godot/imported/pepper_05.png-d64791a62a79c83476f29e2a5a3ff194.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Res/Map/pixelveg/250 pixel Veggie/320x320/pepper_05.png"
+dest_files=["res://.godot/imported/pepper_05.png-d64791a62a79c83476f29e2a5a3ff194.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
