@@ -905,7 +905,7 @@ script = ExtResource("23_7yk5j")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_74hxk")
