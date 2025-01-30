@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var speed = 50
-var direction = Vector2.ZERO
 var change_direction = 1.0
 var timer = 1.0
 var stop_timer = 2
@@ -11,6 +10,7 @@ var health = 100
 var damage = 10
 var dead = false
 var player_in_area = false
+
 var player: Node2D
 
 func _ready():
@@ -18,26 +18,24 @@ func _ready():
 	dead = false
 
 func _physics_process(delta):
-	timer -= delta
-	if timer <= 0:
-		if is_stopped:
-			direction = random_direction()
-			timer = change_direction
-			is_stopped = false
-		else:
-			direction = Vector2.ZERO
-			timer = stop_timer
-			is_stopped = true
-
-	if !dead:
-		if player_in_area:
-			# Враг движется к игроку
-			var direction_to_player = (player.global_position - global_position).normalized()
-			velocity = direction_to_player * speed
-		else:
-			velocity = direction * speed
+	if player_in_area:
+		print("GO GO GO")
+		var direction = player_direction()  
+		velocity = speed * direction  
 	else:
-		velocity = Vector2.ZERO
+		timer -= delta
+		if timer <= 0:
+			if is_stopped:
+				var direction = random_direction()  
+				velocity = direction * speed
+				timer = change_direction
+				is_stopped = false
+			else:
+				var direction = Vector2.ZERO  
+				velocity = direction * speed
+				timer = stop_timer
+				is_stopped = true
+
 
 	move_and_slide()
 	play_animation()
@@ -57,15 +55,18 @@ func play_animation():
 	else:
 		$AnimatedSprite2D.play("run")
 
-# Коллизия с зонами (если игрок - Area2D)
+func player_direction() -> Vector2:
+	var player = get_tree().get_first_node_in_group("player") as Node2D
+	if player:
+		return (player.global_position - global_position).normalized()
+	return Vector2.ZERO
+
+
 func _on_detector_area_entered(area):
-	print("Player entered area!")  # Отладочное сообщение
-	if area.is_in_group("player"):
-		player_in_area = true
-		player = area.get_parent()
-		print("Player object:", player)  # Отладочное сообщение
+	print("Player entered area!")  
+	player_in_area = true
+
 
 func _on_detector_area_exited(area):
-	print("Player left area!")  # Отладочное сообщение
-	if area.is_in_group("player"):
-		player_in_area = false
+	print("Player left area!")  
+	player_in_area = false

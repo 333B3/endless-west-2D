@@ -11,7 +11,7 @@ var bullet = preload("res://Game/World/bullet.tscn")
 var mouse_lock = null
 
 func _ready():
-	add_to_group("player")
+	pass
 
 func _process(_delta):
 	mouse_lock = get_global_mouse_position() - self.position

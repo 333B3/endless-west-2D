@@ -243,7 +243,7 @@ radius = 5.0
 height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7l2gc"]
-radius = 75.0267
+radius = 54.0093
 
 [node name="Bandit" type="CharacterBody2D" groups=["player"]]
 light_mask = 0
