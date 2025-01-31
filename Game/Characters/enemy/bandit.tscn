@@ -1,12 +1,34 @@
-[gd_scene load_steps=54 format=3 uid="uid://dtd0op3wthp5l"]
+[gd_scene load_steps=65 format=3 uid="uid://dtd0op3wthp5l"]
 
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="1_to7gm"]
 [ext_resource type="Script" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
+[ext_resource type="Texture2D" uid="uid://bgwgr4k3p5fcy" path="res://Res/Characters/bandit_attack.png" id="2_ve6q0"]
 [ext_resource type="Texture2D" uid="uid://btu7ws1lrwob5" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/banditDust_.png" id="3_fbnl6"]
+[ext_resource type="Texture2D" uid="uid://db2eorx8b6qhi" path="res://Res/Characters/bandit_bow.png" id="4_a2s6j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhk72"]
 radius = 6.0
 height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iajjc"]
+atlas = ExtResource("2_ve6q0")
+region = Rect2(0, 0, 51, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77yyj"]
+atlas = ExtResource("2_ve6q0")
+region = Rect2(51, 0, 51, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as4l8"]
+atlas = ExtResource("2_ve6q0")
+region = Rect2(102, 0, 51, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fucv"]
+atlas = ExtResource("2_ve6q0")
+region = Rect2(153, 0, 51, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8akq"]
+atlas = ExtResource("2_ve6q0")
+region = Rect2(204, 0, 51, 288)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjpus"]
 atlas = ExtResource("1_to7gm")
@@ -23,6 +45,22 @@ region = Rect2(64, 256, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4eo6d"]
 atlas = ExtResource("1_to7gm")
 region = Rect2(96, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyk6t"]
+atlas = ExtResource("4_a2s6j")
+region = Rect2(0, 0, 64, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyrir"]
+atlas = ExtResource("4_a2s6j")
+region = Rect2(64, 0, 64, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciht2"]
+atlas = ExtResource("4_a2s6j")
+region = Rect2(128, 0, 64, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sd8j"]
+atlas = ExtResource("4_a2s6j")
+region = Rect2(192, 0, 64, 288)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afa78"]
 atlas = ExtResource("1_to7gm")
@@ -128,6 +166,26 @@ region = Rect2(64, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_iajjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77yyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as4l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fucv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8akq")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sjpus")
 }, {
 "duration": 1.0,
@@ -141,6 +199,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"bandit_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyk6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyrir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciht2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sd8j")
+}],
+"loop": true,
+"name": &"bow",
 "speed": 5.0
 }, {
 "frames": [{
@@ -381,9 +456,9 @@ shape = SubResource("CapsuleShape2D_fhk72")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.871, 0.9)
 sprite_frames = SubResource("SpriteFrames_exk01")
-animation = &"run"
-frame = 6
-frame_progress = 0.918434
+animation = &"bow"
+frame = 3
+frame_progress = 0.42744
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, 8)
