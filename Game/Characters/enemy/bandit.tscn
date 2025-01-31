@@ -390,7 +390,7 @@ position = Vector2(-0.5, 8)
 scale = Vector2(0.183333, 0.337)
 sprite_frames = SubResource("SpriteFrames_020d2")
 animation = &"dust"
-frame_progress = 0.126393
+frame_progress = 0.467175
 
 [node name="HitBox" type="Area2D" parent="."]
 

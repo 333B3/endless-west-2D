@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://b67smtqvfqwa4"]
+
+[ext_resource type="Texture2D" uid="uid://deo3l8vhetse0" path="res://Res/Characters/Animal/Basic Asset Pack/Basic Animal Animations/Clucking Chicken/CluckingChicken.png" id="1_frm5m"]
+[ext_resource type="Script" path="res://Game/Script/chicken.gd" id="1_nf4mr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyo1i"]
+atlas = ExtResource("1_frm5m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgr43"]
+atlas = ExtResource("1_frm5m")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75mr5"]
+atlas = ExtResource("1_frm5m")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kv8u"]
+atlas = ExtResource("1_frm5m")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_neelb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyo1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgr43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75mr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kv8u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1bkb"]
+radius = 4.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_nf4mr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_neelb")
+frame_progress = 0.286508
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s1bkb")

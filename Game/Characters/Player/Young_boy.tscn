@@ -933,7 +933,7 @@ position = Vector2(-9.53674e-07, 9.53674e-07)
 scale = Vector2(0.827, 1)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
 animation = &"attack_right"
-frame_progress = 0.123015
+frame_progress = 0.680628
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
