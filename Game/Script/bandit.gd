@@ -56,13 +56,17 @@ func random_direction() -> Vector2:
 
 func play_animation():
 	if is_taking_damage:
-		$AnimatedSprite2D.play("damage")  
+		$AnimatedSprite2D.play("damage") 
+		$AnimatedSprite2D2.stop() 
 	elif dead:
 		$AnimatedSprite2D.play("bandit_death")
+		$AnimatedSprite2D2.stop()
 	elif velocity != Vector2.ZERO:
 		$AnimatedSprite2D.play("run")
+		$AnimatedSprite2D2.play("dust")
 	else:
 		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D2.stop()
 
 func player_direction() -> Vector2:
 	if player:

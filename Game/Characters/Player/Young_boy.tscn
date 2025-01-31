@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=133 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -372,6 +372,22 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("22_2cfc8")
 region = Rect2(64, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_aukxk"]
+atlas = ExtResource("2_ggj1k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ow1r"]
+atlas = ExtResource("3_7xf50")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1rc7"]
+atlas = ExtResource("4_rtyhm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btbk2"]
+atlas = ExtResource("5_arpoi")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_67mc3"]
 atlas = ExtResource("3_q8bpr")
 region = Rect2(0, 0, 32, 32)
@@ -496,7 +512,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -803,6 +819,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_aukxk")
+}],
+"loop": true,
+"name": &"wait_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ow1r")
+}],
+"loop": true,
+"name": &"wait_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1rc7")
+}],
+"loop": true,
+"name": &"wait_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btbk2")
+}],
+"loop": true,
+"name": &"wait_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_67mc3")
 }, {
 "duration": 1.0,
@@ -885,7 +933,7 @@ position = Vector2(-9.53674e-07, 9.53674e-07)
 scale = Vector2(0.827, 1)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
 animation = &"attack_right"
-frame_progress = 0.827202
+frame_progress = 0.123015
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

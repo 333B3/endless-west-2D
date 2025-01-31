@@ -11,8 +11,9 @@ height = 8.0
 script = ExtResource("1_go1wq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.673355, 0.485835, 1)
 position = Vector2(1, 1.19209e-07)
-scale = Vector2(0.643913, 0.266667)
+scale = Vector2(0.8, 0.331)
 texture = ExtResource("2_p1bfu")
 hframes = 3
 frame = 2

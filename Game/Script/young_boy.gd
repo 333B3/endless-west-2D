@@ -9,6 +9,7 @@ var bullet_equip = false
 var bullet_cooldown = true
 var bullet = preload("res://Game/World/bullet.tscn")
 var mouse_lock = null
+var attacking = false
 
 func _ready():
 	pass
@@ -19,6 +20,10 @@ func _process(_delta):
 	var movement = movement_vector()
 	var direction = movement.normalized()
 	var current_speed = walk_speed
+	
+	if bullet_equip == true and Input.is_action_just_pressed("shoot") and !attacking:
+		attack()
+
 
 	# ПРОВЕРКА КНОПКИ ШИФТ
 	if Input.is_action_pressed("run"):
@@ -27,7 +32,68 @@ func _process(_delta):
 	velocity = current_speed * direction
 
 	# Если есть движение, значит проигрываем анимацию бега или шага
-	if movement != Vector2.ZERO:
+	#if movement != Vector2.ZERO:
+		#if movement == Vector2(1, 0):
+			#last_direction = "right"
+			#if current_speed == run_speed:
+				#$AnimatedSprite2D.play("run_right")
+			#else:
+				#$AnimatedSprite2D.play("walk_right")
+		#elif movement == Vector2(-1, 0):
+			#last_direction = "left"
+			#if current_speed == run_speed:
+				#$AnimatedSprite2D.play("run_left")
+			#else:
+				#$AnimatedSprite2D.play("walk_left")
+		#elif movement == Vector2(0, -1):
+			#last_direction = "up"
+			#if current_speed == run_speed:
+				#$AnimatedSprite2D.play("run_up")
+			#else:
+				#$AnimatedSprite2D.play("walk_up")
+		#elif movement == Vector2(0, 1):
+			#last_direction = "down"
+			#if current_speed == run_speed:
+				#$AnimatedSprite2D.play("run_down")
+			#else:
+				#$AnimatedSprite2D.play("walk_down")
+	#else:
+		## Idle анимация соответствует последнему положению игрока
+		#$AnimatedSprite2D.play("idle_" + last_direction)
+	#if bullet_equip:
+		#if abs(mouse_lock.x) > abs(mouse_lock.y):
+			#if mouse_lock.x > 0:
+				#$AnimatedSprite2D.play("wait_right")  # Правая сторона
+			#else:
+				#$AnimatedSprite2D.play("wait_left")   # Левая сторона
+		#else:
+			#if mouse_lock.y > 0:
+				#$AnimatedSprite2D.play("wait_down")  # Нижняя сторона
+			#else:
+				#$AnimatedSprite2D.play("wait_up") 
+	if attacking == true:
+		if abs(mouse_lock.x) > abs(mouse_lock.y):
+			if mouse_lock.x > 0:
+				$AnimatedSprite2D.play("attack_right")  # Правая сторона
+			else:
+				$AnimatedSprite2D.play("attack_left")   # Левая сторона
+		else:
+			if mouse_lock.y > 0:
+				$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
+			else:
+				$AnimatedSprite2D.play("attack_up") 
+	elif bullet_equip and attacking != true:
+		if abs(mouse_lock.x) > abs(mouse_lock.y):
+			if mouse_lock.x > 0:
+				$AnimatedSprite2D.play("wait_right")  # Правая сторона
+			else:
+				$AnimatedSprite2D.play("wait_left")   # Левая сторона
+		else:
+			if mouse_lock.y > 0:
+				$AnimatedSprite2D.play("wait_down")  # Нижняя сторона
+			else:
+				$AnimatedSprite2D.play("wait_up") 
+	elif movement != Vector2.ZERO and bullet_equip == false:
 		if movement == Vector2(1, 0):
 			last_direction = "right"
 			if current_speed == run_speed:
@@ -56,8 +122,6 @@ func _process(_delta):
 		# Idle анимация соответствует последнему положению игрока
 		$AnimatedSprite2D.play("idle_" + last_direction)
 
-	if Input.is_action_just_pressed("shoot"):
-		$AnimatedSprite2D.play("attack_right")
 	move_and_slide()
 
 	var mouse_position = get_global_mouse_position()
@@ -69,7 +133,7 @@ func _process(_delta):
 		bullet_instance.rotation = $Marker2D.rotation
 		bullet_instance.global_position = $Marker2D.global_position
 		add_child(bullet_instance)
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(0.8).timeout
 		bullet_cooldown = true
 		
 	if Input.is_action_just_pressed("shoot_mode"):
@@ -87,21 +151,26 @@ func play_animation(dir):
 	if bullet_equip:
 		walk_speed = 0
 		run_speed = 0
-		if abs(mouse_lock.x) > abs(mouse_lock.y):
-			if mouse_lock.x > 0:
-				$AnimatedSprite2D.play("attack_right")  # Правая сторона
-			else:
-				$AnimatedSprite2D.play("attack_left")   # Левая сторона
-		else:
-			if mouse_lock.y > 0:
-				$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
-			else:
-				$AnimatedSprite2D.play("attack_up")    # Верхняя сторона
+		#if abs(mouse_lock.x) > abs(mouse_lock.y):
+			#if mouse_lock.x > 0:
+				#$AnimatedSprite2D.play("attack_right")  # Правая сторона
+			#else:
+				#$AnimatedSprite2D.play("attack_left")   # Левая сторона
+		#else:
+			#if mouse_lock.y > 0:
+				#$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
+			#else:
+				#$AnimatedSprite2D.play("attack_up")    # Верхняя сторона
 
 func movement_vector():
 	var movement_x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
 	var movement_y = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
 	return Vector2(movement_x, movement_y)
+	
+func attack():
+	attacking = true  # Блокируем повторные атаки
+	await get_tree().create_timer(0.8).timeout  # Ждём 1 секунду
+	attacking = false  # Снимаем блокировку атаки
 
 func player():
 	pass

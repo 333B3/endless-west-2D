@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://dtd0op3wthp5l"]
+[gd_scene load_steps=54 format=3 uid="uid://dtd0op3wthp5l"]
 
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="1_to7gm"]
 [ext_resource type="Script" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
+[ext_resource type="Texture2D" uid="uid://btu7ws1lrwob5" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/banditDust_.png" id="3_fbnl6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhk72"]
 radius = 6.0
@@ -149,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0p8y6")
 }, {
-"duration": 1.0,
+"duration": 2.5,
 "texture": SubResource("AtlasTexture_fk7v2")
 }, {
 "duration": 1.0,
@@ -157,7 +158,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"damage",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -238,6 +239,129 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_74gms"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(0, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wwm0"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(60, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8cke"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(120, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyko8"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(180, 0, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgpdk"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(0, 48, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t4c8"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(60, 48, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn7xi"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(120, 48, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhcyu"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(180, 48, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k6or"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(0, 96, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhnff"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(60, 96, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxd3o"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(120, 96, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvapx"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(180, 96, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tchub"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(0, 144, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crdui"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(60, 144, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df5lv"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(120, 144, 60, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7xkt"]
+atlas = ExtResource("3_fbnl6")
+region = Rect2(180, 144, 60, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_020d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74gms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wwm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8cke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyko8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgpdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t4c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sn7xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhcyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k6or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhnff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxd3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvapx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tchub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crdui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df5lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7xkt")
+}],
+"loop": true,
+"name": &"dust",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fthft"]
 radius = 5.0
 height = 16.0
@@ -257,8 +381,16 @@ shape = SubResource("CapsuleShape2D_fhk72")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.871, 0.9)
 sprite_frames = SubResource("SpriteFrames_exk01")
-animation = &"bandit_death"
-frame_progress = 0.67608
+animation = &"run"
+frame = 6
+frame_progress = 0.918434
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, 8)
+scale = Vector2(0.183333, 0.337)
+sprite_frames = SubResource("SpriteFrames_020d2")
+animation = &"dust"
+frame_progress = 0.126393
 
 [node name="HitBox" type="Area2D" parent="."]
 
