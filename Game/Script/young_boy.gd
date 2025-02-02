@@ -31,46 +31,7 @@ func _process(_delta):
 
 	velocity = current_speed * direction
 
-	# Если есть движение, значит проигрываем анимацию бега или шага
-	#if movement != Vector2.ZERO:
-		#if movement == Vector2(1, 0):
-			#last_direction = "right"
-			#if current_speed == run_speed:
-				#$AnimatedSprite2D.play("run_right")
-			#else:
-				#$AnimatedSprite2D.play("walk_right")
-		#elif movement == Vector2(-1, 0):
-			#last_direction = "left"
-			#if current_speed == run_speed:
-				#$AnimatedSprite2D.play("run_left")
-			#else:
-				#$AnimatedSprite2D.play("walk_left")
-		#elif movement == Vector2(0, -1):
-			#last_direction = "up"
-			#if current_speed == run_speed:
-				#$AnimatedSprite2D.play("run_up")
-			#else:
-				#$AnimatedSprite2D.play("walk_up")
-		#elif movement == Vector2(0, 1):
-			#last_direction = "down"
-			#if current_speed == run_speed:
-				#$AnimatedSprite2D.play("run_down")
-			#else:
-				#$AnimatedSprite2D.play("walk_down")
-	#else:
-		## Idle анимация соответствует последнему положению игрока
-		#$AnimatedSprite2D.play("idle_" + last_direction)
-	#if bullet_equip:
-		#if abs(mouse_lock.x) > abs(mouse_lock.y):
-			#if mouse_lock.x > 0:
-				#$AnimatedSprite2D.play("wait_right")  # Правая сторона
-			#else:
-				#$AnimatedSprite2D.play("wait_left")   # Левая сторона
-		#else:
-			#if mouse_lock.y > 0:
-				#$AnimatedSprite2D.play("wait_down")  # Нижняя сторона
-			#else:
-				#$AnimatedSprite2D.play("wait_up") 
+
 	if attacking == true:
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
@@ -151,16 +112,7 @@ func play_animation(dir):
 	if bullet_equip:
 		walk_speed = 0
 		run_speed = 0
-		#if abs(mouse_lock.x) > abs(mouse_lock.y):
-			#if mouse_lock.x > 0:
-				#$AnimatedSprite2D.play("attack_right")  # Правая сторона
-			#else:
-				#$AnimatedSprite2D.play("attack_left")   # Левая сторона
-		#else:
-			#if mouse_lock.y > 0:
-				#$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
-			#else:
-				#$AnimatedSprite2D.play("attack_up")    # Верхняя сторона
+
 
 func movement_vector():
 	var movement_x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
