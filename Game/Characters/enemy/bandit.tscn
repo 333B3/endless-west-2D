@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dtd0op3wthp5l"]
+[gd_scene load_steps=66 format=3 uid="uid://dtd0op3wthp5l"]
 
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="1_to7gm"]
 [ext_resource type="Script" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
@@ -7,28 +7,28 @@
 [ext_resource type="Texture2D" uid="uid://db2eorx8b6qhi" path="res://Res/Characters/bandit_bow.png" id="4_a2s6j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhk72"]
-radius = 6.0
-height = 16.0
+radius = 5.0
+height = 12.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iajjc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1g0v"]
 atlas = ExtResource("2_ve6q0")
-region = Rect2(0, 0, 51, 288)
+region = Rect2(0, 0, 30, 288)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_77yyj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccc37"]
 atlas = ExtResource("2_ve6q0")
-region = Rect2(51, 0, 51, 288)
+region = Rect2(30, 0, 30, 288)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_as4l8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_advc4"]
 atlas = ExtResource("2_ve6q0")
-region = Rect2(102, 0, 51, 288)
+region = Rect2(60, 0, 30, 288)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1fucv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm2ll"]
 atlas = ExtResource("2_ve6q0")
-region = Rect2(153, 0, 51, 288)
+region = Rect2(90, 0, 30, 288)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y8akq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvief"]
 atlas = ExtResource("2_ve6q0")
-region = Rect2(204, 0, 51, 288)
+region = Rect2(120, 0, 30, 288)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sjpus"]
 atlas = ExtResource("1_to7gm")
@@ -166,19 +166,19 @@ region = Rect2(64, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iajjc")
+"texture": SubResource("AtlasTexture_u1g0v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_77yyj")
+"texture": SubResource("AtlasTexture_ccc37")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_as4l8")
+"texture": SubResource("AtlasTexture_advc4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1fucv")
+"texture": SubResource("AtlasTexture_vm2ll")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y8akq")
+"texture": SubResource("AtlasTexture_pvief")
 }],
 "loop": true,
 "name": &"attack",
@@ -439,10 +439,14 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fthft"]
 radius = 5.0
-height = 16.0
+height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7l2gc"]
 radius = 54.0093
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_av5um"]
+radius = 9.0
+height = 18.0
 
 [node name="Bandit" type="CharacterBody2D" groups=["player"]]
 light_mask = 0
@@ -450,15 +454,15 @@ collision_layer = 0
 script = ExtResource("1_u1xqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+visible = false
+position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_fhk72")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.871, 0.9)
+scale = Vector2(0.871, 0.901)
 sprite_frames = SubResource("SpriteFrames_exk01")
-animation = &"bow"
-frame = 3
-frame_progress = 0.42744
+animation = &"attack"
+offset = Vector2(2.29621, -5.54939)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, 8)
@@ -470,7 +474,7 @@ frame_progress = 0.467175
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, 4)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_fthft")
 
 [node name="detector" type="Area2D" parent="."]
@@ -479,6 +483,13 @@ shape = SubResource("CapsuleShape2D_fthft")
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_7l2gc")
 
+[node name="hit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
+shape = SubResource("CapsuleShape2D_av5um")
+
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]
 [connection signal="area_exited" from="detector" to="." method="_on_detector_area_exited"]
+[connection signal="area_entered" from="hit" to="." method="_on_hit_area_entered"]
+[connection signal="area_exited" from="hit" to="." method="_on_hit_area_exited"]

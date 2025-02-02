@@ -14,6 +14,8 @@ var is_taking_damage = false
 var player: Node2D
 var min_distance = 15
 
+var hit_player = false
+
 func _ready():
 	randomize()
 	dead = false
@@ -55,7 +57,9 @@ func random_direction() -> Vector2:
 		return random_direction()
 
 func play_animation():
-	if is_taking_damage:
+	if hit_player:
+		$AnimatedSprite2D.play("attack")
+	elif is_taking_damage:
 		$AnimatedSprite2D.play("damage") 
 		$AnimatedSprite2D2.stop() 
 	elif dead:
@@ -105,3 +109,15 @@ func death():
 	play_animation()
 	await get_tree().create_timer(5).timeout
 	queue_free()
+
+
+func _on_hit_area_entered(area):
+	print(123)
+	if area.is_in_group("player"):
+		hit_player = true
+
+
+
+func _on_hit_area_exited(area):
+	if area.is_in_group("player"):
+		hit_player = false
