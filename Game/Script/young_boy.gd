@@ -1,20 +1,29 @@
 extends CharacterBody2D
 
 var walk_speed = 75
-var run_speed = 150
+var run_speed = 175
 var last_direction: String = "down" 
 var health = 100 
+
+var damage = 5
 
 var bullet_equip = false
 var bullet_cooldown = true
 var bullet = preload("res://Game/World/bullet.tscn")
 var mouse_lock = null
 var attacking = false
+var death = false
+
+var hit_player_by_mob = false
+
+@onready var hit_timer = $HitTimer  
 
 func _ready():
-	pass
+	hit_timer.wait_time = 1  
+	hit_timer.one_shot = false  
 
 func _process(_delta):
+	$CanvasLayer/Label.text = str(health)
 	mouse_lock = get_global_mouse_position() - self.position
 	
 	var movement = movement_vector()
@@ -120,9 +129,43 @@ func movement_vector():
 	return Vector2(movement_x, movement_y)
 	
 func attack():
-	attacking = true  # Блокируем повторные атаки
-	await get_tree().create_timer(0.8).timeout  # Ждём 1 секунду
-	attacking = false  # Снимаем блокировку атаки
+	attacking = true  
+	await get_tree().create_timer(0.8).timeout  
+	attacking = false  
+
+func take_damage(damage):
+	if !death:
+		health -= damage
+		hit_player_by_mob = true
+
+		#await get_tree().create_timer(0.6).timeout 
+		#hit_player_by_mob = false  
+
+		if health <= 0:
+			death_player()
 
 func player():
 	pass
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("hit"):
+		hit_player_by_mob = true
+		hit_timer.start() 
+
+func _on_area_2d_area_exited(area):
+	if area.is_in_group("hit"):
+		hit_player_by_mob = false
+		hit_timer.stop()  
+
+func _on_hit_timer_timeout():
+	if hit_player_by_mob == true:
+		take_damage(damage)
+
+func death_player():
+	death = true
+	walk_speed = 0
+	run_speed = 0
+	queue_free()
+	$AnimatedSprite2D.play("death")
+	await get_tree().create_timer(5).timeout
+	queue_free()
