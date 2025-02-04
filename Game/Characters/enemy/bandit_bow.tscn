@@ -1,6 +1,7 @@
-[gd_scene load_steps=64 format=3 uid="uid://g0fp4gh041e3"]
+[gd_scene load_steps=65 format=3 uid="uid://g0fp4gh041e3"]
 
 [ext_resource type="Texture2D" uid="uid://bgwgr4k3p5fcy" path="res://Res/Characters/bandit_attack.png" id="1_2rpqw"]
+[ext_resource type="Script" path="res://Game/Script/bandit_bow.gd" id="1_04kqg"]
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="2_xvvcr"]
 [ext_resource type="Texture2D" uid="uid://db2eorx8b6qhi" path="res://Res/Characters/bandit_bow.png" id="3_l4nq0"]
 [ext_resource type="Texture2D" uid="uid://btu7ws1lrwob5" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/banditDust_.png" id="4_rniye"]
@@ -207,7 +208,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qyrir")
 }, {
-"duration": 1.0,
+"duration": 7.5,
 "texture": SubResource("AtlasTexture_ciht2")
 }, {
 "duration": 1.0,
@@ -441,9 +442,10 @@ radius = 5.0
 height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bptk0"]
-radius = 54.0093
+radius = 84.006
 
 [node name="bandit_bow" type="CharacterBody2D"]
+script = ExtResource("1_04kqg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
@@ -452,7 +454,9 @@ shape = SubResource("CapsuleShape2D_hlpra")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.871, 0.901)
 sprite_frames = SubResource("SpriteFrames_ijdj8")
-animation = &"attack"
+animation = &"bow"
+frame = 2
+frame_progress = 0.562198
 offset = Vector2(0, -3.32964)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -472,3 +476,7 @@ shape = SubResource("CapsuleShape2D_husou")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detector"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_bptk0")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_exited" from="detector" to="." method="_on_detector_area_exited"]

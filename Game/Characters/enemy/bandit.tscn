@@ -462,8 +462,7 @@ shape = SubResource("CapsuleShape2D_fhk72")
 scale = Vector2(0.871, 0.901)
 sprite_frames = SubResource("SpriteFrames_exk01")
 animation = &"attack"
-frame = 3
-frame_progress = 0.927459
+frame_progress = 0.146831
 offset = Vector2(2.29621, -5.54939)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]

@@ -16,8 +16,6 @@ var min_distance = 15
 
 var hit_player = false
 
-
-
 func _ready():
 	randomize()
 	dead = false
@@ -106,11 +104,8 @@ func take_damage(damage):
 		if health <= 0:
 			death()
 func _on_hit_area_entered(area):
-	print(123)
 	if area.is_in_group("player"):
 		hit_player = true
-
-
 
 func _on_hit_area_exited(area):
 	if area.is_in_group("player"):
@@ -119,6 +114,7 @@ func _on_hit_area_exited(area):
 func death():
 	dead = true
 	speed = 0
+	$hit.queue_free()
 	play_animation()
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(6).timeout
 	queue_free()

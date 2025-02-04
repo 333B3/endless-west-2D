@@ -6,6 +6,8 @@ var last_direction: String = "down"
 var health = 100 
 
 var damage = 5
+var DamageBow = 10
+var BowHit = false
 
 var bullet_equip = false
 var bullet_cooldown = true
@@ -19,7 +21,7 @@ var hit_player_by_mob = false
 @onready var hit_timer = $HitTimer  
 
 func _ready():
-	hit_timer.wait_time = 1  
+	hit_timer.wait_time = 0.9  
 	hit_timer.one_shot = false  
 
 func _process(_delta):
@@ -133,6 +135,16 @@ func attack():
 	await get_tree().create_timer(0.8).timeout  
 	attacking = false  
 
+func  take_damage_by_bow(DamageBow):
+	if !death:
+		health -= DamageBow
+		BowHit = true
+		await get_tree().create_timer(0.6).timeout 
+		BowHit = false  
+
+		if health <= 0:
+			death_player()
+
 func take_damage(damage):
 	if !death:
 		health -= damage
@@ -150,6 +162,7 @@ func player():
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("hit"):
 		hit_player_by_mob = true
+		hit_timer.wait_time = 0.9  
 		hit_timer.start() 
 
 func _on_area_2d_area_exited(area):
@@ -165,7 +178,13 @@ func death_player():
 	death = true
 	walk_speed = 0
 	run_speed = 0
+	
 	queue_free()
 	$AnimatedSprite2D.play("death")
 	await get_tree().create_timer(5).timeout
 	queue_free()
+
+
+func _on_hit_box_area_entered(area):
+	if area.is_in_group("Bow"):
+		take_damage(10)
