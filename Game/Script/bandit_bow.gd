@@ -126,13 +126,15 @@ func attack_player():
 	if !can_attack:  # Проверяем, можно ли атаковать
 		return
 	can_attack = false
-	var arrow_scene = preload("res://Game/World/Bow.tscn")  
+	await get_tree().create_timer(attack_cooldown).timeout  
+	var arrow_scene = preload("res://Game/World/Bow.tscn")
 	var arrow = arrow_scene.instantiate()  
 	arrow.set_direction(player_direction())
-	var spawn_offset = player_direction() * 40  
-	arrow.global_position = global_position + spawn_offset
+	#var spawn_offset = player_direction() * 40  
+	arrow.global_position = global_position 
+	#+ spawn_offset
 	add_child(arrow) 
-	await get_tree().create_timer(attack_cooldown).timeout 
+	#await get_tree().create_timer(attack_cooldown).timeout 
 	can_attack = true  
 	
 func attack():

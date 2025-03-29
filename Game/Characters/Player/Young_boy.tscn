@@ -1,6 +1,6 @@
 [gd_scene load_steps=134 format=3 uid="uid://cf6schj5hnndc"]
 
-[ext_resource type="Script" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
+[ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
 [ext_resource type="Texture2D" uid="uid://bxq87a2o0inlv" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/attack & reload/cowboy_attack_down_spritesheet.png" id="2_ggj1k"]
 [ext_resource type="Texture2D" uid="uid://de52uiu3a8wdq" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_left_spritesheet.png" id="3_3gart"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bxh7mbhb8jq3" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_left_slash_spritesheet.png" id="20_d0jiw"]
 [ext_resource type="Texture2D" uid="uid://oaqk3aet0ulc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet.png" id="21_jewta"]
 [ext_resource type="Texture2D" uid="uid://c7nnsc4qekrdi" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_up_slash_spritesheet.png" id="22_2cfc8"]
-[ext_resource type="Script" path="res://Game/Script/camera_2d.gd" id="23_7yk5j"]
+[ext_resource type="Script" uid="uid://dw88r30go1ef2" path="res://Game/Script/camera_2d.gd" id="23_7yk5j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
 radius = 5.0

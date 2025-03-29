@@ -1,7 +1,7 @@
 [gd_scene load_steps=65 format=3 uid="uid://g0fp4gh041e3"]
 
 [ext_resource type="Texture2D" uid="uid://bgwgr4k3p5fcy" path="res://Res/Characters/bandit_attack.png" id="1_2rpqw"]
-[ext_resource type="Script" path="res://Game/Script/bandit_bow.gd" id="1_04kqg"]
+[ext_resource type="Script" uid="uid://mhbjqspw88ww" path="res://Game/Script/bandit_bow.gd" id="1_04kqg"]
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="2_xvvcr"]
 [ext_resource type="Texture2D" uid="uid://db2eorx8b6qhi" path="res://Res/Characters/bandit_bow.png" id="3_l4nq0"]
 [ext_resource type="Texture2D" uid="uid://btu7ws1lrwob5" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/banditDust_.png" id="4_rniye"]
