@@ -1,7 +1,6 @@
-res://Game/Menu Buttons/button.gd
-res://Game/Menu Buttons/menu.tscn
 res://Game/World/World.tscn
 res://Game/Characters/enemy/bandit.tscn
 res://Game/Main_Map/backup.tscn
-res://Game/Main_Map/main loc.tscn
 res://Game/Main_Map/main_loc.tscn
+res://Game/Menu Buttons/menu.tscn
+res://Game/Characters/Player/Young_boy.tscn

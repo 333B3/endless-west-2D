@@ -1100,5 +1100,9 @@ position = Vector2(298, 341)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(278, -38)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+position = Vector2(21, 274)
+polygon = PackedVector2Array(-26, 19, 27, 20, 27, -29, 0, -45, -28, -30, -28, 10)
+
 [node name="trader" parent="." instance=ExtResource("6_u0gfn")]
 position = Vector2(300, 293)

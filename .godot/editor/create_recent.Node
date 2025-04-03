@@ -1,6 +1,7 @@
-AnimationPlayer
+CollisionPolygon2D
 CollisionShape2D
 Area2D
+AnimationPlayer
 Timer
 CanvasLayer
 Camera2D
@@ -11,4 +12,3 @@ Marker2D
 VisibleOnScreenEnabler2D
 Sprite2D
 TileMapLayer
-CollisionPolygon2D

@@ -59,6 +59,9 @@ shader_parameter/speed = 0.2
 [sub_resource type="SystemFont" id="SystemFont_du64s"]
 font_names = PackedStringArray("Bookman Old Style")
 
+[sub_resource type="Animation" id="Animation_04xun"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_ri3ww"]
 resource_name = "new_animation"
 markers = [{
@@ -66,9 +69,6 @@ markers = [{
 "name": &"new_marker",
 "time": 1.22
 }]
-
-[sub_resource type="Animation" id="Animation_04xun"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b4fcn"]
 _data = {
