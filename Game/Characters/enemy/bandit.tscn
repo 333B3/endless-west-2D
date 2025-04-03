@@ -1,7 +1,11 @@
 [gd_scene load_steps=66 format=3 uid="uid://dtd0op3wthp5l"]
 
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="1_to7gm"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://b6ba1iomo122p" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
+=======
+[ext_resource type="Script" uid="uid://cyjw27f4uwf5l" path="res://Game/Script/bandit.gd" id="1_u1xqu"]
+>>>>>>> e3d4eb58beabb2045461038389d41bcd3760bd48
 [ext_resource type="Texture2D" uid="uid://bgwgr4k3p5fcy" path="res://Res/Characters/bandit_attack.png" id="2_ve6q0"]
 [ext_resource type="Texture2D" uid="uid://btu7ws1lrwob5" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/banditDust_.png" id="3_fbnl6"]
 [ext_resource type="Texture2D" uid="uid://db2eorx8b6qhi" path="res://Res/Characters/bandit_bow.png" id="4_a2s6j"]
@@ -461,8 +465,8 @@ shape = SubResource("CapsuleShape2D_fhk72")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.871, 0.901)
 sprite_frames = SubResource("SpriteFrames_exk01")
-animation = &"attack"
-frame_progress = 0.146831
+animation = &"bow"
+frame_progress = 0.30415
 offset = Vector2(2.29621, -5.54939)
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
