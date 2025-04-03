@@ -12,8 +12,16 @@ config_version=5
 
 config/name="Endless West"
 run/main_scene="res://Game/World/World.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[aseprite_importers]
+
+aseprite_executable_path="D:/Aseprite/bin/aseprite.exe"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/nklbdev.aseprite_importers/plugin.cfg")
 
 [global_group]
 
