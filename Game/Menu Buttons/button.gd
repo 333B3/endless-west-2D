@@ -1,7 +1,9 @@
 extends Button
 
-# Назва сцени, яку потрібно відкрити
-const GAME_SCENE = "res://Game/World/World.tscn"
+@onready var animation_player = $"../AnimationPlayer"
+
 
 func _on_pressed():
-	get_tree().change_scene_to_file(GAME_SCENE)
+	#animation_player.play("FadeOut")  # Анімація затемнення
+	#await animation_player.animation_finished  # Чекаємо завершення
+	get_tree().change_scene_to_file("res://Game/Main_Map/main_loc.tscn")

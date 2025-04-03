@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=4 uid="uid://dx1pki8pflecj"]
 
-[ext_resource type="Texture2D" uid="uid://c4c3eyoyhx0tx" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/DESERTV2++.png" id="1_kk56y"]
-[ext_resource type="Texture2D" uid="uid://dy0ysdins5513" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/pixel-art-house-export.png" id="2_eyiw4"]
-[ext_resource type="Texture2D" uid="uid://conxgrj6q70le" path="res://Res/Map/Tileset/Props/Props-All.png" id="3_022vj"]
-[ext_resource type="Texture2D" uid="uid://4fdv42s0savy" path="res://Res/Map/AnimatedTreeFree/AnimatedTreeFree/AnimatedAutum.png" id="4_4vp0c"]
-[ext_resource type="PackedScene" uid="uid://cf6schj5hnndc" path="res://Game/Characters/Player/Young_boy.tscn" id="5_403sy"]
-[ext_resource type="PackedScene" uid="uid://c8bd0pqwcqjlo" path="res://Game/Characters/Player/trader.tscn" id="6_5yfhn"]
+[ext_resource type="Texture2D" uid="uid://c4c3eyoyhx0tx" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/DESERTV2++.png" id="1_l3pse"]
+[ext_resource type="Texture2D" uid="uid://dy0ysdins5513" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/pixel-art-house-export.png" id="2_3emqs"]
+[ext_resource type="Texture2D" uid="uid://conxgrj6q70le" path="res://Res/Map/Tileset/Props/Props-All.png" id="3_vrokx"]
+[ext_resource type="Texture2D" uid="uid://4fdv42s0savy" path="res://Res/Map/AnimatedTreeFree/AnimatedTreeFree/AnimatedAutum.png" id="4_xaq2a"]
+[ext_resource type="PackedScene" uid="uid://cf6schj5hnndc" path="res://Game/Characters/Player/Young_boy.tscn" id="5_6wdoh"]
+[ext_resource type="PackedScene" uid="uid://c8bd0pqwcqjlo" path="res://Game/Characters/Player/trader.tscn" id="6_u0gfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6am0"]
-texture = ExtResource("1_kk56y")
+texture = ExtResource("1_l3pse")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -533,7 +533,7 @@ texture = ExtResource("1_kk56y")
 27:29/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wta3v"]
-texture = ExtResource("2_eyiw4")
+texture = ExtResource("2_3emqs")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -796,7 +796,7 @@ sources/0 = SubResource("TileSetAtlasSource_v6am0")
 sources/1 = SubResource("TileSetAtlasSource_wta3v")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sq3f"]
-texture = ExtResource("3_022vj")
+texture = ExtResource("3_vrokx")
 9:0/size_in_atlas = Vector2i(2, 3)
 9:0/0 = 0
 9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.50781, 8, 4.33103, 8, 10.1723, 7.99754, 11.2253, 12.7279, 5.21491, 14.4957, 5.92202, 20.8597, -5.39169, 20.5061, -3.62392, 16.617, -3.44715, 14.3189, -6.27557, 14.4957, -10.8718, 11.844, -10.5182, 8.66206)
@@ -852,7 +852,7 @@ texture = ExtResource("3_022vj")
 0:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x68xu"]
-texture = ExtResource("4_4vp0c")
+texture = ExtResource("4_xaq2a")
 1:0/0 = 0
 2:0/0 = 0
 5:0/0 = 0
@@ -1054,7 +1054,7 @@ texture = ExtResource("4_4vp0c")
 62:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np6sa"]
-texture = ExtResource("1_kk56y")
+texture = ExtResource("1_l3pse")
 8:27/size_in_atlas = Vector2i(2, 2)
 8:27/0 = 0
 8:27/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.0988, -13.9654, 4.86136, -13.9654, 4.86136, -6.36396, 9.45755, -6.36396, 14.4073, 7.07107, 9.98788, 9.54594, 9.81111, 14.8492, -7.33624, 14.6725, -10.8718, 9.72272, -13.3466, 4.77297, -10.695, -4.06586, -6.82909, -5.52799)
@@ -1092,13 +1092,13 @@ tile_set = SubResource("TileSet_env3b")
 [node name="Pixel-art-house-export" type="Sprite2D" parent="."]
 position = Vector2(299, 233)
 scale = Vector2(0.408203, 0.441406)
-texture = ExtResource("2_eyiw4")
+texture = ExtResource("2_3emqs")
 
-[node name="Young_boy" parent="." instance=ExtResource("5_403sy")]
-position = Vector2(108, 166)
+[node name="Young_boy" parent="." instance=ExtResource("5_6wdoh")]
+position = Vector2(298, 341)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(278, -38)
 
-[node name="trader" parent="." instance=ExtResource("6_5yfhn")]
+[node name="trader" parent="." instance=ExtResource("6_u0gfn")]
 position = Vector2(300, 293)
