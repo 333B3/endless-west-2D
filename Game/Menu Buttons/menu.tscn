@@ -3,17 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://d0102dprk43n4" path="res://Game/Menu Buttons/Large Buttons/Large Buttons/New game Button.png" id="1_1ha7t"]
 [ext_resource type="Texture2D" uid="uid://quwaqrbplju" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/9 Background.png" id="1_wrcku"]
 [ext_resource type="Texture2D" uid="uid://cmab5uv0pvqih" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/8 Stars2.png" id="2_kk6d0"]
-<<<<<<< HEAD
 [ext_resource type="Shader" uid="uid://sd1x6548wd1i" path="res://Game/Menu Buttons/8.gdshader" id="2_qnlpb"]
-=======
-[ext_resource type="Shader" uid="uid://dq3j57qltliiy" path="res://Game/Menu Buttons/8.gdshader" id="2_qnlpb"]
->>>>>>> e3d4eb58beabb2045461038389d41bcd3760bd48
 [ext_resource type="Texture2D" uid="uid://4jwcwn4pj58h" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/1 Layer1.png" id="2_spqeg"]
 [ext_resource type="Texture2D" uid="uid://bico3by1aylus" path="res://Game/Menu Buttons/Large Buttons/Large Buttons/Load Button.png" id="3_0cogu"]
 [ext_resource type="Texture2D" uid="uid://kldk1xoih0y0" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/7 Clouds2.png" id="3_2p5wm"]
 [ext_resource type="Texture2D" uid="uid://dlrfpsuswewcl" path="res://Game/Menu Buttons/Large Buttons/Large Buttons/Settings Button.png" id="3_7ulc0"]
 [ext_resource type="Texture2D" uid="uid://c3hiu0gfxn7b5" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/6 Sun.png" id="4_gj5r8"]
-<<<<<<< HEAD
 [ext_resource type="Shader" uid="uid://bkjg0bx52dskj" path="res://Game/Menu Buttons/7.gdshader" id="4_o3pwg"]
 [ext_resource type="Texture2D" uid="uid://b6mmftx5bkt03" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/5 Mountains.png" id="5_21qqj"]
 [ext_resource type="Texture2D" uid="uid://cjgprjvmdh7do" path="res://Game/Menu Buttons/Large Buttons/Colored Large Buttons/Exit  col_Button.png" id="5_xpxiv"]
@@ -28,22 +23,6 @@
 [ext_resource type="Shader" uid="uid://b48byoi5vkwi0" path="res://Game/Menu Buttons/1.gdshader" id="16_oqcva"]
 [ext_resource type="Script" uid="uid://dj284x6fxmp77" path="res://Game/Menu Buttons/button.gd" id="19_al7mg"]
 [ext_resource type="Script" uid="uid://dnvn0gfmtbvme" path="res://Game/Menu Buttons/button_4.gd" id="22_8vhrs"]
-=======
-[ext_resource type="Shader" uid="uid://cp4jguma0onns" path="res://Game/Menu Buttons/7.gdshader" id="4_o3pwg"]
-[ext_resource type="Texture2D" uid="uid://b6mmftx5bkt03" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/5 Mountains.png" id="5_21qqj"]
-[ext_resource type="Texture2D" uid="uid://cjgprjvmdh7do" path="res://Game/Menu Buttons/Large Buttons/Colored Large Buttons/Exit  col_Button.png" id="5_xpxiv"]
-[ext_resource type="Shader" uid="uid://c1hglgvadwq5c" path="res://Game/Menu Buttons/6.gdshader" id="6_1ijy8"]
-[ext_resource type="Texture2D" uid="uid://yi2dr5h5uyyl" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/4 Layer4.png" id="6_74njc"]
-[ext_resource type="Texture2D" uid="uid://bxgnfwvpkb7a4" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/3 Layer3.png" id="7_tw3dh"]
-[ext_resource type="Shader" uid="uid://viejrtjeq311" path="res://Game/Menu Buttons/5.gdshader" id="8_dsk66"]
-[ext_resource type="Texture2D" uid="uid://eu4vmvsrhyv0" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/2 Layer2.png" id="8_ju6jw"]
-[ext_resource type="Shader" uid="uid://j8dl6jws7q8x" path="res://Game/Menu Buttons/4.gdshader" id="10_e8elo"]
-[ext_resource type="Shader" uid="uid://c1h441umh7t0c" path="res://Game/Menu Buttons/3.gdshader" id="12_7wlbw"]
-[ext_resource type="Shader" uid="uid://c0wxo1nsifjmh" path="res://Game/Menu Buttons/2.gdshader" id="14_8y03c"]
-[ext_resource type="Shader" uid="uid://dhx41vy8o0tp3" path="res://Game/Menu Buttons/1.gdshader" id="16_oqcva"]
-[ext_resource type="Script" uid="uid://cvsod7kte0bpg" path="res://Game/Menu Buttons/button.gd" id="19_al7mg"]
-[ext_resource type="Script" uid="uid://bnyp1pavwmgy" path="res://Game/Menu Buttons/button_4.gd" id="22_8vhrs"]
->>>>>>> e3d4eb58beabb2045461038389d41bcd3760bd48
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swdj6"]
 shader = ExtResource("2_qnlpb")

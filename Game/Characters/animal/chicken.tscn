@@ -1,11 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b67smtqvfqwa4"]
 
 [ext_resource type="Texture2D" uid="uid://deo3l8vhetse0" path="res://Res/Characters/Animal/Basic Asset Pack/Basic Animal Animations/Clucking Chicken/CluckingChicken.png" id="1_frm5m"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://j1oqo8n2ydrk" path="res://Game/Script/chicken.gd" id="1_nf4mr"]
-=======
-[ext_resource type="Script" uid="uid://dhmcn8aq3v8mv" path="res://Game/Script/chicken.gd" id="1_nf4mr"]
->>>>>>> e3d4eb58beabb2045461038389d41bcd3760bd48
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyo1i"]
 atlas = ExtResource("1_frm5m")
