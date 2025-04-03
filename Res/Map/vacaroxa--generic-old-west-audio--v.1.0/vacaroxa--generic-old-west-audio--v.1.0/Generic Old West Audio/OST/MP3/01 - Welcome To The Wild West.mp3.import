@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgdd5sxg1vi5x"
+path="res://.godot/imported/01 - Welcome To The Wild West.mp3-7031826fe8f41c75222827bacb271569.mp3str"
+
+[deps]
+
+source_file="res://Res/Map/vacaroxa--generic-old-west-audio--v.1.0/vacaroxa--generic-old-west-audio--v.1.0/Generic Old West Audio/OST/MP3/01 - Welcome To The Wild West.mp3"
+dest_files=["res://.godot/imported/01 - Welcome To The Wild West.mp3-7031826fe8f41c75222827bacb271569.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

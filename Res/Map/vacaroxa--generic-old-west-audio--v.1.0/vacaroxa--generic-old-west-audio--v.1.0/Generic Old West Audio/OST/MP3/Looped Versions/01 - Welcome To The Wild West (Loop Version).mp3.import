@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8lf05r572wpp"
+path="res://.godot/imported/01 - Welcome To The Wild West (Loop Version).mp3-caba47b227456d75b9697532f9477733.mp3str"
+
+[deps]
+
+source_file="res://Res/Map/vacaroxa--generic-old-west-audio--v.1.0/vacaroxa--generic-old-west-audio--v.1.0/Generic Old West Audio/OST/MP3/Looped Versions/01 - Welcome To The Wild West (Loop Version).mp3"
+dest_files=["res://.godot/imported/01 - Welcome To The Wild West (Loop Version).mp3-caba47b227456d75b9697532f9477733.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

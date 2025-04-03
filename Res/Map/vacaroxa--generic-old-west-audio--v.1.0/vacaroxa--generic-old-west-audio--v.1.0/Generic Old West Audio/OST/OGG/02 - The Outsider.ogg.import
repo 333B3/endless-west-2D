@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3m85xu63osof"
+path="res://.godot/imported/02 - The Outsider.ogg-a2f8d3f302a1d097b597a9f37a7c9c1c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Res/Map/vacaroxa--generic-old-west-audio--v.1.0/vacaroxa--generic-old-west-audio--v.1.0/Generic Old West Audio/OST/OGG/02 - The Outsider.ogg"
+dest_files=["res://.godot/imported/02 - The Outsider.ogg-a2f8d3f302a1d097b597a9f37a7c9c1c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

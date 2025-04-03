@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dq5fndlfr66uu"
+path="res://.godot/imported/04 - A New Day (Loop Version).ogg-c6cead90ebc4eb29ca29226fee2e2260.oggvorbisstr"
+
+[deps]
+
+source_file="res://Res/Map/vacaroxa--generic-old-west-audio--v.1.0/vacaroxa--generic-old-west-audio--v.1.0/Generic Old West Audio/OST/OGG/Looped Versions/04 - A New Day (Loop Version).ogg"
+dest_files=["res://.godot/imported/04 - A New Day (Loop Version).ogg-c6cead90ebc4eb29ca29226fee2e2260.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://232suxqdvj4j"
+path="res://.godot/imported/05 - Here's To The Pioneers.mp3-1f4cf50037dc4390314ee1e3f15c84e4.mp3str"
+
+[deps]
+
+source_file="res://Res/Map/vacaroxa--generic-old-west-audio--v.1.0/vacaroxa--generic-old-west-audio--v.1.0/Generic Old West Audio/OST/MP3/05 - Here's To The Pioneers.mp3"
+dest_files=["res://.godot/imported/05 - Here's To The Pioneers.mp3-1f4cf50037dc4390314ee1e3f15c84e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6ttorgocy6v"
+path="res://.godot/imported/04 - A New Day.mp3-348a98c8403de1dfe934ef6e7f04f6e5.mp3str"
+
+[deps]
+
+source_file="res://Res/Map/vacaroxa--generic-old-west-audio--v.1.0/vacaroxa--generic-old-west-audio--v.1.0/Generic Old West Audio/OST/MP3/04 - A New Day.mp3"
+dest_files=["res://.godot/imported/04 - A New Day.mp3-348a98c8403de1dfe934ef6e7f04f6e5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
