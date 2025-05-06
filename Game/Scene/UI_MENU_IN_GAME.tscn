@@ -33,6 +33,7 @@ patch_margin_right = 468
 patch_margin_bottom = 389
 
 [node name="resume" type="Button" parent="PanelContainer/NinePatchRect"]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 102.0
 offset_right = 258.0
@@ -42,6 +43,7 @@ theme_override_font_sizes/font_size = 0
 text = "Resume"
 
 [node name="setting" type="Button" parent="PanelContainer/NinePatchRect"]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 137.0
 offset_right = 259.0
@@ -50,6 +52,7 @@ size_flags_horizontal = 4
 text = "Setting"
 
 [node name="save" type="Button" parent="PanelContainer/NinePatchRect"]
+layout_mode = 0
 offset_left = 170.0
 offset_top = 171.0
 offset_right = 261.0
@@ -58,6 +61,7 @@ size_flags_horizontal = 4
 text = "Save"
 
 [node name="load" type="Button" parent="PanelContainer/NinePatchRect"]
+layout_mode = 0
 offset_left = 169.0
 offset_top = 205.0
 offset_right = 262.0
@@ -65,6 +69,7 @@ offset_bottom = 236.0
 text = "Load"
 
 [node name="main_menu" type="Button" parent="PanelContainer/NinePatchRect"]
+layout_mode = 0
 offset_left = 167.0
 offset_top = 239.0
 offset_right = 263.0
