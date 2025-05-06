@@ -1,3 +1,4 @@
+res://Game/Scene
 res://Game/Menu Buttons
 res://Res/Characters
 res://Game/Script
@@ -19,4 +20,3 @@ res://Game/Characters/Player
 res://Res/Characters/Old_man
 res://Res/Map/Tileset/Props
 res://Res/Map/Tileset/Tileset
-res://Game
