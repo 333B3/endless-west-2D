@@ -8,5 +8,6 @@ func _on_pressed():
 		"res://Game/Main_Map/main_loc.tscn", {
 			"pattern_enter" : "circle",
 			"pattern_leave" : "fade",
+			
 		}
 	)
