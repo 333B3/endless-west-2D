@@ -182,9 +182,11 @@ func death_player():
 	queue_free()
 	$AnimatedSprite2D.play("death")
 	await get_tree().create_timer(5).timeout
-	queue_free()
+
+	$Dead_menu.visible = true
 
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("Bow"):
 		take_damage(10)
+		

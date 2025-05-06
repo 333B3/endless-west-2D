@@ -1108,8 +1108,11 @@ polygon = PackedVector2Array(-26, 19, 27, 20, 27, -29, 0, -45, -28, -30, -28, 10
 [node name="trader" parent="." instance=ExtResource("6_u0gfn")]
 position = Vector2(300, 293)
 
-[node name="Control" parent="." instance=ExtResource("7_3emqs")]
-offset_left = 305.0
-offset_top = 336.0
-offset_right = 305.0
-offset_bottom = 336.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("7_3emqs")]
+visible = false
+offset_left = 18.0
+offset_top = 89.0
+offset_right = -54.0
+offset_bottom = 43.0
