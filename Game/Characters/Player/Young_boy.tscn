@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=136 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://c7nnsc4qekrdi" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_up_slash_spritesheet.png" id="22_2cfc8"]
 [ext_resource type="Script" uid="uid://dw88r30go1ef2" path="res://Game/Script/camera_2d.gd" id="23_7yk5j"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="24_7jkfr"]
+[ext_resource type="PackedScene" uid="uid://bsxwv40v8o6f1" path="res://Game/Scene/UI_MENU_IN_GAME.tscn" id="25_vb8vb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
 radius = 5.0
@@ -965,15 +966,6 @@ script = ExtResource("23_7yk5j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_74hxk")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 35.0
-offset_bottom = 25.0
-metadata/_edit_use_anchors_ = true
-
 [node name="HitTimer" type="Timer" parent="."]
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -981,14 +973,32 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CapsuleShape2D_otuna")
 
+[node name="HP" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HP"]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 35.0
+offset_bottom = 25.0
+metadata/_edit_use_anchors_ = true
+
 [node name="Dead_menu" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="dead_menu" parent="Dead_menu" instance=ExtResource("24_7jkfr")]
+visible = false
 offset_left = -289.0
 offset_top = -225.0
 offset_right = -291.0
 offset_bottom = -225.0
+
+[node name="Pause" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="Pause" instance=ExtResource("25_vb8vb")]
+visible = false
+offset_left = 230.0
+offset_top = 38.0
+offset_right = 230.0
+offset_bottom = 38.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

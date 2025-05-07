@@ -25,7 +25,7 @@ func _ready():
 	hit_timer.one_shot = false  
 
 func _process(_delta):
-	$CanvasLayer/Label.text = str(health)
+	$HP/Label.text = str(health)
 	mouse_lock = get_global_mouse_position() - self.position
 	
 	var movement = movement_vector()

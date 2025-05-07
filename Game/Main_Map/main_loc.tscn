@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dx1pki8pflecj"]
+[gd_scene load_steps=14 format=4 uid="uid://dx1pki8pflecj"]
 
 [ext_resource type="Texture2D" uid="uid://c4c3eyoyhx0tx" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/DESERTV2++.png" id="1_l3pse"]
 [ext_resource type="Texture2D" uid="uid://dy0ysdins5513" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/pixel-art-house-export.png" id="2_3emqs"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://4fdv42s0savy" path="res://Res/Map/AnimatedTreeFree/AnimatedTreeFree/AnimatedAutum.png" id="4_xaq2a"]
 [ext_resource type="PackedScene" uid="uid://cf6schj5hnndc" path="res://Game/Characters/Player/Young_boy.tscn" id="5_6wdoh"]
 [ext_resource type="PackedScene" uid="uid://c8bd0pqwcqjlo" path="res://Game/Characters/Player/trader.tscn" id="6_u0gfn"]
-[ext_resource type="PackedScene" uid="uid://bsxwv40v8o6f1" path="res://Game/Scene/UI_MENU_IN_GAME.tscn" id="7_3emqs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6am0"]
 texture = ExtResource("1_l3pse")
@@ -1107,12 +1106,3 @@ polygon = PackedVector2Array(-26, 19, 27, 20, 27, -29, 0, -45, -28, -30, -28, 10
 
 [node name="trader" parent="." instance=ExtResource("6_u0gfn")]
 position = Vector2(300, 293)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("7_3emqs")]
-visible = false
-offset_left = 18.0
-offset_top = 89.0
-offset_right = -54.0
-offset_bottom = 43.0

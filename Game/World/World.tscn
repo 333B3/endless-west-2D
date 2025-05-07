@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsyea3lxe4yr4"]
+[gd_scene load_steps=6 format=3 uid="uid://bsyea3lxe4yr4"]
 
 [ext_resource type="PackedScene" uid="uid://btpx8bcd8yk1p" path="res://Game/Main_Map/tile_map_layer.tscn" id="1_seqlg"]
 [ext_resource type="PackedScene" uid="uid://cf6schj5hnndc" path="res://Game/Characters/Player/Young_boy.tscn" id="2_5q4vx"]
 [ext_resource type="PackedScene" uid="uid://dtd0op3wthp5l" path="res://Game/Characters/enemy/bandit.tscn" id="3_lthya"]
 [ext_resource type="PackedScene" uid="uid://b67smtqvfqwa4" path="res://Game/Characters/animal/chicken.tscn" id="4_jf3jy"]
 [ext_resource type="PackedScene" uid="uid://g0fp4gh041e3" path="res://Game/Characters/enemy/bandit_bow.tscn" id="5_t2g08"]
-[ext_resource type="PackedScene" uid="uid://bsxwv40v8o6f1" path="res://Game/Scene/UI_MENU_IN_GAME.tscn" id="6_ov2xx"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,10 +25,4 @@ position = Vector2(22, -60)
 position = Vector2(19, -102)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pause_menu" parent="CanvasLayer" instance=ExtResource("6_ov2xx")]
 visible = false
-offset_left = 18.0
-offset_top = 89.0
-offset_right = -54.0
-offset_bottom = 43.0
