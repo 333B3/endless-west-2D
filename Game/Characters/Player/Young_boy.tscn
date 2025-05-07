@@ -927,7 +927,7 @@ radius = 8.0
 radius = 5.0
 height = 16.0
 
-[node name="Young_boy" type="CharacterBody2D" groups=["player"]]
+[node name="Young_boy" type="CharacterBody2D" groups=["Death_check"]]
 z_index = 1
 collision_layer = 0
 script = ExtResource("1_ag20o")
@@ -986,10 +986,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="dead_menu" parent="Dead_menu" instance=ExtResource("24_7jkfr")]
 visible = false
-offset_left = -289.0
-offset_top = -225.0
-offset_right = -291.0
-offset_bottom = -225.0
+offset_left = 256.0
+offset_top = 43.0
+offset_right = 254.0
+offset_bottom = 43.0
 
 [node name="Pause" type="CanvasLayer" parent="."]
 

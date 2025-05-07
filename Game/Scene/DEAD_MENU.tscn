@@ -1,12 +1,19 @@
-[gd_scene format=3 uid="uid://h71wpj3rsvua"]
+[gd_scene load_steps=2 format=3 uid="uid://h71wpj3rsvua"]
+
+[ext_resource type="Script" uid="uid://dp4avxv2waeqa" path="res://Game/Scene/dead_menu.gd" id="1_hnmb0"]
 
 [node name="dead_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 235.0
+offset_top = 51.0
+offset_right = 235.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hnmb0")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -21,7 +28,7 @@ region_rect = Rect2(197.463, 8.22319, 504.126, 432.395)
 patch_margin_right = 468
 patch_margin_bottom = 389
 
-[node name="resume" type="Button" parent="PanelContainer/NinePatchRect"]
+[node name="restart" type="Button" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
 offset_left = 171.0
 offset_top = 102.0
@@ -31,7 +38,7 @@ size_flags_stretch_ratio = 0.0
 theme_override_font_sizes/font_size = 0
 text = "Restart"
 
-[node name="setting" type="Button" parent="PanelContainer/NinePatchRect"]
+[node name="load" type="Button" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
 offset_left = 172.0
 offset_top = 140.0
@@ -48,3 +55,7 @@ offset_top = 178.0
 offset_right = 264.0
 offset_bottom = 209.0
 text = "Main menu"
+
+[connection signal="pressed" from="PanelContainer/NinePatchRect/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/NinePatchRect/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="PanelContainer/NinePatchRect/main_menu" to="." method="_on_main_menu_pressed"]

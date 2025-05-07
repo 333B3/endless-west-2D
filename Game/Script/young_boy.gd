@@ -5,6 +5,7 @@ var run_speed = 175
 var last_direction: String = "down" 
 var health = 100 
 
+
 var damage = 5
 var DamageBow = 10
 var BowHit = false
@@ -21,6 +22,7 @@ var hit_player_by_mob = false
 @onready var hit_timer = $HitTimer  
 
 func _ready():
+	add_to_group("death_test")
 	hit_timer.wait_time = 0.9  
 	hit_timer.one_shot = false  
 
@@ -179,12 +181,7 @@ func death_player():
 	walk_speed = 0
 	run_speed = 0
 	
-	queue_free()
 	$AnimatedSprite2D.play("death")
-	await get_tree().create_timer(5).timeout
-
-	$Dead_menu.visible = true
-
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("Bow"):
