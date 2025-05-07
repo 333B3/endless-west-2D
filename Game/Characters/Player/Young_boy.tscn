@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=135 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://oaqk3aet0ulc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet.png" id="21_jewta"]
 [ext_resource type="Texture2D" uid="uid://c7nnsc4qekrdi" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_up_slash_spritesheet.png" id="22_2cfc8"]
 [ext_resource type="Script" uid="uid://dw88r30go1ef2" path="res://Game/Script/camera_2d.gd" id="23_7yk5j"]
+[ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="24_7jkfr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
 radius = 5.0
@@ -979,6 +980,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CapsuleShape2D_otuna")
+
+[node name="Dead_menu" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="dead_menu" parent="Dead_menu" instance=ExtResource("24_7jkfr")]
+offset_left = -289.0
+offset_top = -225.0
+offset_right = -291.0
+offset_bottom = -225.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
