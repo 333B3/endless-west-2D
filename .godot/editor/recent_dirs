@@ -1,3 +1,6 @@
+res://Game/Dialog/Style
+res://Game/Dialog/Timeline
+res://Game/Dialog/Character
 res://Game/Scene
 res://Game/Menu Buttons
 res://Res/Characters
@@ -17,6 +20,3 @@ res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/dea
 res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle
 res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/walk
 res://Game/Characters/Player
-res://Res/Characters/Old_man
-res://Res/Map/Tileset/Props
-res://Res/Map/Tileset/Tileset
