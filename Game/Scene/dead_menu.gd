@@ -6,14 +6,14 @@ extends Control
 func _process(delta):
 	if young_boy and young_boy.death:
 		death_menu.visible = true
-		get_tree().paused = true
+		#get_tree().paused = true
 	else:
 		death_menu.visible = false
 		get_tree().paused = false
 
 func _ready():
 	death_menu.visible = false
-	print("young_boy знайдено: ", young_boy)
+	
 
 
 func _on_restart_pressed():

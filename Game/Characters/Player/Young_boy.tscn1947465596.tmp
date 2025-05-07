@@ -552,7 +552,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_koel0")
 }, {
-"duration": 100.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_omhbl")
 }],
 "loop": true,
@@ -940,8 +940,8 @@ position = Vector2(-9.53674e-07, 9.53674e-07)
 scale = Vector2(0.827, 1)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
 animation = &"death"
-frame = 5
-frame_progress = 0.147698
+frame = 3
+frame_progress = 0.287733
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

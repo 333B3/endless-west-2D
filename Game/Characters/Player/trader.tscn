@@ -89,7 +89,7 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.227263
 
-[node name="speak" type="Area2D" parent="."]
+[node name="speak" type="Area2D" parent="." groups=["trader"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="speak"]
 shape = SubResource("CircleShape2D_gb0iw")

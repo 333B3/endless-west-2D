@@ -12,3 +12,7 @@ res://Game/Characters/Player/Old_man.tscn
 res://Game/Dialog/character/master.dch
 res://Game/Dialog/character/john.dch
 res://Game/Dialog/style/New_File.tres
+res://Game/Dialog/timeline/First.dtl
+res://Game/Characters/Player/trader.gd
+res://Game/Script/young_boy.gd
+res://Game/Scene/dead_menu.gd

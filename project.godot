@@ -26,8 +26,13 @@ directories/dch_directory={
 "john": "res://Game/Dialog/character/john.dch",
 "master": "res://Game/Dialog/character/master.dch"
 }
-directories/dtl_directory={}
-layout/style_directory={}
+directories/dtl_directory={
+"First": "res://Game/Dialog/timeline/First.dtl"
+}
+layout/style_directory={
+"": "res://Game/Dialog/style/New_File.tres",
+"New_File": "res://Game/Dialog/style/New_File.tres"
+}
 glossary/default_case_sensitive=true
 layout/style_list=["res://Game/Dialog/style/New_File.tres"]
 layout/default_style="res://Game/Dialog/style/New_File.tres"

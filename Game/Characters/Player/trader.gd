@@ -5,10 +5,10 @@ var player: Node2D
 var is_chatting = false
 var is_roaming = true
 
-#func _process(delta):
-	#if player_in_area:
-		#if Input.is_action_just_pressed("action"):
-			#run_dialogue("timeline")
+func _process(delta):
+	if player_in_area:
+		if Input.is_action_just_pressed("action"):
+			run_dialogue("First")
 
 func _on_speak_area_entered(area):
 	if area.is_in_group("player"):
@@ -22,7 +22,9 @@ func _on_speak_area_exited(area):
 		player_in_area = false
 		player = null
 		
-#func run_dialogue(dialogue_string):
-	#is_chatting = true
-	#is_roaming = false
-	##Dialogic.start(dialogue_string)
+func run_dialogue(dialogue_string):
+	is_chatting = true
+	is_roaming = false
+	var layout = Dialogic.start(dialogue_string)
+	layout.register_character(load("res://Game/Dialog/character/master.dch"), $".")
+	
