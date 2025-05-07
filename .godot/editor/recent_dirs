@@ -1,6 +1,5 @@
-res://Game/Dialog/Style
-res://Game/Dialog/Timeline
-res://Game/Dialog/Character
+res://Game/Dialog/style
+res://Game/Dialog/character
 res://Game/Scene
 res://Game/Menu Buttons
 res://Res/Characters

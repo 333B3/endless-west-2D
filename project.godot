@@ -18,15 +18,19 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"john": "res://Game/Dialog/character/john.dch",
+"master": "res://Game/Dialog/character/master.dch"
+}
 directories/dtl_directory={}
 layout/style_directory={}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://Game/Dialog/style/New_File.tres"]
+layout/default_style="res://Game/Dialog/style/New_File.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -64,7 +68,7 @@ audio/channel_defaults={
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [global_group]
 

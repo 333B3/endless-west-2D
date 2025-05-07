@@ -982,18 +982,18 @@ offset_right = 35.0
 offset_bottom = 25.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Dead_menu" type="CanvasLayer" parent="."]
+[node name="Dead_menu1" type="CanvasLayer" parent="."]
 
-[node name="dead_menu" parent="Dead_menu" instance=ExtResource("24_7jkfr")]
+[node name="dead_menu" parent="Dead_menu1" instance=ExtResource("24_7jkfr")]
 visible = false
 offset_left = 256.0
 offset_top = 43.0
 offset_right = 254.0
 offset_bottom = 43.0
 
-[node name="Pause" type="CanvasLayer" parent="."]
+[node name="Pause1" type="CanvasLayer" parent="."]
 
-[node name="Pause_menu" parent="Pause" instance=ExtResource("25_vb8vb")]
+[node name="Pause_menu" parent="Pause1" instance=ExtResource("25_vb8vb")]
 visible = false
 offset_left = 230.0
 offset_top = 38.0
