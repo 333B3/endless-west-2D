@@ -9,22 +9,20 @@ func _process(delta):
 	if player_in_area:
 		if Input.is_action_just_pressed("action"):
 			run_dialogue("First")
-
-func _on_speak_area_entered(area):
-	if area.is_in_group("player"):
-		player_in_area = true
-		player = area.get_parent()
-
-
-
-func _on_speak_area_exited(area):
-	if area.is_in_group("player"):
-		player_in_area = false
-		player = null
 		
 func run_dialogue(dialogue_string):
 	is_chatting = true
 	is_roaming = false
-	var layout = Dialogic.start(dialogue_string)
-	layout.register_character(load("res://Game/Dialog/character/master.dch"), $".")
+	Dialogic.start(dialogue_string)
+
+
 	
+func _on_detect_dialogue_area_entered(area):
+	if area.is_in_group("player"):
+		player_in_area = true
+		player = area.get_parent()
+
+func _on_detect_dialogue_area_exited(area):
+	if area.is_in_group("player"):
+		player_in_area = false
+		player = null

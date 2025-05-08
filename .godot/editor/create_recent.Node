@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 Node
 Button
 TouchScreenButton
@@ -11,5 +13,3 @@ VBoxContainer
 PanelContainer
 ColorRect
 MarginContainer
-Control
-Container
