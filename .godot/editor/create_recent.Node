@@ -1,9 +1,11 @@
-CollisionShape2D
-Area2D
+Node
+Button
+TouchScreenButton
+TextureRect
+Panel
+GridContainer
 CanvasLayer
 NinePatchRect
-GridContainer
-Button
 ShaderGlobalsOverride
 VBoxContainer
 PanelContainer
@@ -11,4 +13,3 @@ ColorRect
 MarginContainer
 Control
 Container
-CollisionPolygon2D

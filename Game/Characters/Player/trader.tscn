@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8bd0pqwcqjlo"]
+[gd_scene load_steps=12 format=3 uid="uid://c8bd0pqwcqjlo"]
 
 [ext_resource type="Texture2D" uid="uid://bc1xl1jrq4xms" path="res://Res/Characters/Idle Working.png" id="1_hpv1r"]
-[ext_resource type="Script" uid="uid://bn8aggr0s3kp0" path="res://Game/Characters/Player/trader.gd" id="1_s41m7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4bs2"]
 radius = 6.0
@@ -71,11 +70,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gb0iw"]
-radius = 62.0725
-
 [node name="trader" type="CharacterBody2D"]
-script = ExtResource("1_s41m7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
@@ -87,14 +82,5 @@ scale = Vector2(0.81975, 0.90625)
 sprite_frames = SubResource("SpriteFrames_48jt2")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.227263
-
-[node name="speak" type="Area2D" parent="." groups=["trader"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="speak"]
-shape = SubResource("CircleShape2D_gb0iw")
-
-[connection signal="area_entered" from="speak" to="." method="_on_speak_area_entered"]
-[connection signal="area_exited" from="speak" to="." method="_on_speak_area_exited"]
-[connection signal="body_entered" from="speak" to="." method="_on_speak_body_entered"]
-[connection signal="body_exited" from="speak" to="." method="_on_speak_body_exited"]
+frame = 1
+frame_progress = 0.588463

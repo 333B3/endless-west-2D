@@ -1,18 +1,18 @@
-res://Game/Dialog/timeline
-res://Game/Dialog/style
-res://Game/Dialog/character
+res://Game/Script/classes
+res://Game/Item
+res://Game/Script
+res://Game
+res://Game/World
+res://
 res://Game/Scene
 res://Game/Menu Buttons
 res://Res/Characters
-res://Game/Script
 res://Game/Characters/enemy
 res://Game/Characters/animal
 res://Res/Characters/Animal/Basic Asset Pack/Basic Animal Animations/Clucking Chicken
 res://Res/Characters/enemy/desertSprites_ [version 1.0]
 res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/attack & reload
 res://Res/Map/Tileset/Bullet_Pixel
-res://
-res://Game/World
 res://Game/Main_Map
 res://Res/Map/Bones
 res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash

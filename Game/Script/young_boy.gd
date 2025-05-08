@@ -5,7 +5,6 @@ var run_speed = 175
 var last_direction: String = "down" 
 var health = 100 
 
-
 var damage = 5
 var DamageBow = 10
 var BowHit = false
@@ -19,25 +18,14 @@ var death = false
 
 var hit_player_by_mob = false
 
-var trader_in_area = false
-var is_chatting = false
-var is_roaming = true
-
 @onready var hit_timer = $HitTimer  
 
 func _ready():
-	
-	add_to_group("death_test")
-	add_to_group("player")
 	hit_timer.wait_time = 0.9  
 	hit_timer.one_shot = false  
 
 func _process(_delta):
-	if trader_in_area:
-		if Input.is_action_just_pressed("action"):
-			run_dialogue("First")
-
-	$HP/Label.text = str(health)
+	$CanvasLayer/Label.text = str(health)
 	mouse_lock = get_global_mouse_position() - self.position
 	
 	var movement = movement_vector()
@@ -76,9 +64,7 @@ func _process(_delta):
 			if mouse_lock.y > 0:
 				$AnimatedSprite2D.play("wait_down")  # Нижняя сторона
 			else:
-				$AnimatedSprite2D.play("wait_up")
-	elif death == true:
-		$AnimatedSprite2D.play("death")
+				$AnimatedSprite2D.play("wait_up") 
 	elif movement != Vector2.ZERO and bullet_equip == false:
 		if movement == Vector2(1, 0):
 			last_direction = "right"
@@ -137,8 +123,6 @@ func play_animation(dir):
 	if bullet_equip:
 		walk_speed = 0
 		run_speed = 0
-		
-
 
 
 func movement_vector():
@@ -166,13 +150,14 @@ func take_damage(damage):
 		health -= damage
 		hit_player_by_mob = true
 
+		#await get_tree().create_timer(0.6).timeout 
+		#hit_player_by_mob = false  
+
 		if health <= 0:
 			death_player()
 
 func player():
 	pass
-	
-
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("hit"):
@@ -180,16 +165,10 @@ func _on_area_2d_area_entered(area):
 		hit_timer.wait_time = 0.9  
 		hit_timer.start() 
 
-	if area.is_in_group("trader"):
-		trader_in_area = true
-
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("hit"):
 		hit_player_by_mob = false
 		hit_timer.stop()  
-		
-	if area.is_in_group("player"):
-		trader_in_area = false
 
 func _on_hit_timer_timeout():
 	if hit_player_by_mob == true:
@@ -197,19 +176,17 @@ func _on_hit_timer_timeout():
 
 func death_player():
 	death = true
-	remove_from_group("player")
+	walk_speed = 0
 	run_speed = 0
+	
+	queue_free()
 	$AnimatedSprite2D.play("death")
+	await get_tree().create_timer(5).timeout
+
+	$Dead_menu.visible = true
+
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("Bow"):
 		take_damage(10)
 		
-
-		
-func run_dialogue(dialogue_string):
-	is_chatting = true
-	is_roaming = false
-	var layout = Dialogic.start(dialogue_string)
-	layout.register_character(load("res://Game/Dialog/character/john.dch"), $".")
-	

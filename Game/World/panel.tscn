@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://da2eodq54sfuu"]
+
+[ext_resource type="Script" uid="uid://ckho4xivwhkok" path="res://Game/Script/classes/slot.gd" id="1_02d57"]
+
+[node name="slot" type="Panel"]
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_02d57")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0

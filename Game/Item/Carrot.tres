@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://p5m1j2rc1dg1"]
+
+[ext_resource type="Script" uid="uid://b2fk6dn1gmicw" path="res://Game/Script/classes/class.gd" id="1_5iy73"]
+[ext_resource type="Texture2D" uid="uid://iwka8icyc1hm" path="res://Res/Map/pixelveg/250 pixel Veggie/32x32/carrot_01.png" id="2_aoo2r"]
+
+[resource]
+script = ExtResource("1_5iy73")
+ItemName = "Carrot"
+type = "Food"
+texture = ExtResource("2_aoo2r")
+metadata/_custom_type_script = "uid://b2fk6dn1gmicw"

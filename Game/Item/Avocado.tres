@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bo7wenhaocgiv"]
+
+[ext_resource type="Script" uid="uid://b2fk6dn1gmicw" path="res://Game/Script/classes/class.gd" id="1_fjvlu"]
+[ext_resource type="Texture2D" uid="uid://d0xu1rtxca1u1" path="res://Res/Map/pixelveg/250 pixel Veggie/32x32/avacado_01.png" id="2_ntdav"]
+
+[resource]
+script = ExtResource("1_fjvlu")
+ItemName = "Avocado"
+type = "Food"
+texture = ExtResource("2_ntdav")
+metadata/_custom_type_script = "uid://b2fk6dn1gmicw"
