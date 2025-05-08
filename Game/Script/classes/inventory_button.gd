@@ -24,7 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if get_viewport().gui_get_hovered_control() == null:
-			print("Мишка клікнула в гру — не по Button")
+			pass
 
 func _on_toggle_button_pressed() -> void:
 	_toggle_inventory()

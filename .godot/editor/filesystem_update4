@@ -1,9 +1,6 @@
-res://Game/dialogic/character/master.dch
-res://Game/dialogic/Style/bublse.tres
 res://Game/Characters/Player/trader.tscn
-res://Game/dialogic/timeline/First.dtl
+res://Game/dialogic/Style/bublse.tres
 res://Game/World/World.tscn
-res://Game/Characters/Player/trader.gd
 res://Game/Characters/enemy/bandit.tscn
 res://Game/Main_Map/backup.tscn
 res://Game/Main_Map/main_loc.tscn
@@ -13,5 +10,7 @@ res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/Scene/DEAD_MENU.tscn
 res://Game/World/Inventory.tscn
 res://Game/World/panel.tscn
-res://Game/dialogic/character/John.dch
-res://Game/Script/young_boy.gd
+res://Game/Script/classes/inventory_button.gd
+res://Game/Script/classes/class.gd
+res://Game/Item/Avocado.tres
+res://Game/Main_Map/dange2.tscn
