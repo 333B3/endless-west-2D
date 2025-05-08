@@ -23,19 +23,53 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"john": "res://Game/Dialog/character/john.dch",
-"master": "res://Game/Dialog/character/master.dch"
+"John": "res://Game/dialogic/character/John.dch",
+"master": "res://Game/dialogic/character/master.dch"
 }
 directories/dtl_directory={
-"First": "res://Game/Dialog/timeline/First.dtl"
+"First": "res://Game/dialogic/timeline/First.dtl"
 }
 layout/style_directory={
-"": "res://Game/Dialog/style/buble.tres",
-"BUBLES": "res://Game/Dialog/style/BUBLES.tres",
-"buble": "res://Game/Dialog/style/buble.tres"
+"": "res://Game/dialogic/Style/bublse.tres",
+"bublse": "res://Game/dialogic/Style/bublse.tres"
 }
-layout/style_list=["res://Game/Dialog/style/buble.tres", "res://Game/Dialog/style/BUBLES.tres"]
-layout/default_style="res://Game/Dialog/style/buble.tres"
+layout/style_list=["res://Game/dialogic/Style/bublse.tres"]
+layout/default_style="res://Game/dialogic/Style/bublse.tres"
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
+glossary/default_case_sensitive=true
+variables={}
 
 [editor_plugins]
 

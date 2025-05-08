@@ -13,7 +13,8 @@ func _process(delta):
 func run_dialogue(dialogue_string):
 	is_chatting = true
 	is_roaming = false
-	Dialogic.start(dialogue_string)
+	var layout = Dialogic.start(dialogue_string)
+	layout.register_character(load("res://Game/dialogic/character/master.dch"), $".")
 
 
 	

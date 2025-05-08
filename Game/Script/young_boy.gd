@@ -18,6 +18,10 @@ var death = false
 
 var hit_player_by_mob = false
 
+var trader_in_area = false
+var is_chatting = true
+var is_roaming = false
+
 @onready var hit_timer = $HitTimer  
 
 func _ready():
@@ -25,6 +29,9 @@ func _ready():
 	hit_timer.one_shot = false  
 
 func _process(_delta):
+	if trader_in_area:
+		if Input.is_action_just_pressed("action"):
+			run_dialogue("First")
 	$CanvasLayer/Label.text = str(health)
 	mouse_lock = get_global_mouse_position() - self.position
 	
@@ -124,6 +131,11 @@ func play_animation(dir):
 		walk_speed = 0
 		run_speed = 0
 
+func run_dialogue(dialogue_string):
+	is_chatting = true
+	is_roaming = false
+	var layout = Dialogic.start(dialogue_string)
+	layout.register_character(load("res://Game/dialogic/character/John.dch"), $".")
 
 func movement_vector():
 	var movement_x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
@@ -164,11 +176,16 @@ func _on_area_2d_area_entered(area):
 		hit_player_by_mob = true
 		hit_timer.wait_time = 0.9  
 		hit_timer.start() 
+		
+	if area.is_in_group("trader"):
+		trader_in_area = true
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("hit"):
 		hit_player_by_mob = false
 		hit_timer.stop()  
+	if area.is_in_group("trader"):
+		trader_in_area = true
 
 func _on_hit_timer_timeout():
 	if hit_player_by_mob == true:

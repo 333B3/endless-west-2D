@@ -1,4 +1,6 @@
-res://Game/Dialog/style
+res://Game/dialogic/Style
+res://Game/dialogic/character
+res://Game/dialogic/timeline
 res://Game/Script/classes
 res://Game/Item
 res://Game/Script
@@ -18,5 +20,3 @@ res://Game/Main_Map
 res://Res/Map/Bones
 res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash
 res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/death
-res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle
-res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/walk
