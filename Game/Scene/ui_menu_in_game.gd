@@ -21,15 +21,15 @@ func CheckESC():
 func _on_resume_pressed():
 	resume()
 
-func _on_main_menu_pressed():
-	if get_tree().paused:
-		get_tree().paused = false
-	SceneManager.change_scene(
-		"res://Game/Menu Buttons/menu.tscn", {
-			"pattern_enter" : "circle",
-			"pattern_leave" : "fade",
-		}
-	)
+#func _on_main_menu_pressed():
+	#if get_tree().paused:
+		#get_tree().paused = false
+	#SceneManager.change_scene(
+		#"res://Game/Menu Buttons/menu.tscn", {
+			#"pattern_enter" : "circle",
+			#"pattern_leave" : "fade",
+		#}
+	#)
 
 func _on_setting_pressed():
 	pass # Replace with function body.

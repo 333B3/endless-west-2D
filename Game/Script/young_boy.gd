@@ -22,6 +22,8 @@ var trader_in_area = false
 var is_chatting = true
 var is_roaming = false
 
+@onready var inventory :Inventory = get_node("CanvasLayer2/Node")
+
 @onready var hit_timer = $HitTimer  
 
 func _ready():
@@ -207,3 +209,21 @@ func _on_hit_box_area_entered(area):
 	if area.is_in_group("Bow"):
 		take_damage(10)
 		
+
+
+#func _on_pick_item_body_entered(body: Node2D) -> void:
+	#if body.get("item"):
+		#get_node("CanvasLayer2/Node").add_item(body.item)
+		#body.queue_free()
+
+func _on_pick_item_area_entered(area: Area2D) -> void:
+	print("Area2D: ", area)
+	var item_node = area.get_parent()
+	if item_node and item_node.is_in_group("item"):
+		var item = item_node.get("item")
+		print("Item: ", item)
+		if item:
+			var inventory_node = get_node("CanvasLayer2/Node")
+			if inventory_node:
+				inventory_node.add_item(item)
+				item_node.queue_free()

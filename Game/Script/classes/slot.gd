@@ -13,6 +13,13 @@ class_name Slot
 		else:
 			$TextureRect.texture = null
 	
+@export var count :int = 1:
+	set(value):
+		count = value
+		if value != null:
+			$Label.text = str(value)
+		else:
+			$Label.text = "i"
 func get_preview():
 	var preview_texture = TextureRect.new()
 	preview_texture.texture = texture_rect.texture

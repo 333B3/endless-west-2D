@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=137 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -927,9 +927,12 @@ radius = 8.0
 radius = 5.0
 height = 16.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vb8vb"]
+
 [node name="Young_boy" type="CharacterBody2D" groups=["player"]]
 z_index = 1
-collision_layer = 0
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ag20o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -993,7 +996,14 @@ offset_bottom = -225.0
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("25_vb8vb")]
 
+[node name="pick_item" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pick_item"]
+visible = false
+shape = SubResource("CircleShape2D_vb8vb")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="pick_item" to="." method="_on_pick_item_area_entered"]
