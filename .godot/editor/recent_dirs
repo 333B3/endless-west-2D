@@ -1,4 +1,5 @@
 res://Game/Script/classes
+res://Game/World
 res://Res/Map/pixelveg/250 pixel Veggie/32x32
 res://Game/Item
 res://Game/dialogic/Style
@@ -6,7 +7,6 @@ res://Game/dialogic/character
 res://Game/dialogic/timeline
 res://Game/Script
 res://Game
-res://Game/World
 res://
 res://Game/Scene
 res://Game/Menu Buttons

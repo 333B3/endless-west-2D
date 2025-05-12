@@ -211,11 +211,6 @@ func _on_hit_box_area_entered(area):
 		
 
 
-#func _on_pick_item_body_entered(body: Node2D) -> void:
-	#if body.get("item"):
-		#get_node("CanvasLayer2/Node").add_item(body.item)
-		#body.queue_free()
-
 func _on_pick_item_area_entered(area: Area2D) -> void:
 	print("Area2D: ", area)
 	var item_node = area.get_parent()

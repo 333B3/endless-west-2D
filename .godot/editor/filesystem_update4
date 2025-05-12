@@ -1,23 +1,11 @@
-res://Game/Characters/Player/Young_boy.tscn
-res://Game/dialogic/Style/bublse.tres
 res://Game/World/World.tscn
-res://Game/Characters/enemy/bandit.tscn
-res://Game/Main_Map/backup.tscn
-res://Game/Main_Map/main_loc.tscn
-res://Game/Menu Buttons/menu.tscn
-res://Game/Scene/UI_MENU_IN_GAME.tscn
-res://Game/Scene/DEAD_MENU.tscn
-res://Game/Characters/Player/trader.tscn
-res://Game/World/Inventory.tscn
-res://Game/World/panel.tscn
-res://Game/Main_Map/dange2.tscn
-res://Game/Script/young_boy.gd
-res://Game/Script/classes/item.gd
-res://Game/Script/classes/Inventory.gd
-res://Game/Item/item.tscn
-res://Game/Script/classes/inventory_button.gd
+res://Game/dialogic/Style/bublse.tres
 res://Game/Script/classes/slot.gd
+res://Game/Characters/Player/Young_boy.tscn
+res://Game/World/Inventory.tscn
+res://Game/Item/item.tscn
+res://Game/Main_Map/main_loc.tscn
 res://Game/World/slot.tscn
-res://addons/scene_manager/SceneManager.gd
-res://Game/Menu Buttons/button.gd
-res://Game/Scene/ui_menu_in_game.gd
+res://Game/Menu Buttons/menu.tscn
+res://Game/Script/classes/Inventory.gd
+res://Game/Script/classes/inventory_button.gd
