@@ -21,14 +21,26 @@ var hit_player_by_mob = false
 var trader_in_area = false
 var is_chatting = true
 var is_roaming = false
+var inventory_open: bool = false
 
-@onready var inventory :Inventory = get_node("CanvasLayer2/Node")
+@onready var inventory_ui := get_node("CanvasLayer2")  
+@onready var weapon_slot: Slot = get_node("CanvasLayer2/WeaponSlot/slot")  
+@onready var inventory_node := get_node("CanvasLayer2/Node")  
 
 @onready var hit_timer = $HitTimer  
 
 func _ready():
 	hit_timer.wait_time = 0.9  
 	hit_timer.one_shot = false  
+	# Скидаємо weapon_slot.item, якщо він не в інвентарі
+	if weapon_slot and weapon_slot.item != null:
+		print("Перевірка при старті: weapon_slot.item = ", weapon_slot.item.ItemName if weapon_slot.item else "null")
+		if not is_item_in_inventory(weapon_slot.item):
+			print("Предмет у weapon_slot не в інвентарі, скидаємо weapon_slot.item")
+			weapon_slot.item = null
+			bullet_equip = false 
+		else:
+			print("Предмет у weapon_slot знайдено в інвентарі")
 
 func _process(_delta):
 	if trader_in_area:
@@ -40,17 +52,33 @@ func _process(_delta):
 	var movement = movement_vector()
 	var direction = movement.normalized()
 	var current_speed = walk_speed
-	
-	if bullet_equip == true and Input.is_action_just_pressed("shoot") and !attacking:
-		attack()
 
+	# Отримуємо позицію миші
+	var mouse_pos = get_viewport().get_mouse_position()
+	var ui_node = get_node("CanvasLayer2")  
+
+	# Перевірка: миша не над UI
+	var is_mouse_over_ui = false
+	if ui_node:
+		for control in ui_node.get_children():
+			if control is Control and control.is_visible_in_tree() and control.get_global_rect().has_point(mouse_pos):
+				is_mouse_over_ui = true
+				break
+
+	if Input.is_action_just_pressed("shoot"):
+		if weapon_slot and weapon_slot.item != null and weapon_slot.is_in_group("weapon"):
+			print("Спроба використати зброю. weapon_slot.item = ", weapon_slot.item.ItemName if weapon_slot.item else "null")
+			print("Інвентар відкритий: ", inventory_open, ", Миша над UI: ", is_mouse_over_ui, ", У інвентарі: ", is_item_in_inventory(weapon_slot.item))
+			if not inventory_open and not is_mouse_over_ui and is_item_in_inventory(weapon_slot.item):
+				use_weapon()
+			else:
+				print("Використання заблоковано: Інвентар відкритий: ", inventory_open, ", Миша над UI: ", is_mouse_over_ui, ", Предмет у інвентарі: ", is_item_in_inventory(weapon_slot.item))
 
 	# ПРОВЕРКА КНОПКИ ШИФТ
 	if Input.is_action_pressed("run"):
 		current_speed = run_speed
 
 	velocity = current_speed * direction
-
 
 	if attacking == true:
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
@@ -108,23 +136,37 @@ func _process(_delta):
 	var mouse_position = get_global_mouse_position()
 	$Marker2D.look_at(mouse_position)
 	
+	# Оновлена логіка стрільби з bullet_equip
 	if Input.is_action_just_pressed("shoot") and bullet_equip and bullet_cooldown:
-		bullet_cooldown = false
-		var bullet_instance = bullet.instantiate()
-		bullet_instance.rotation = $Marker2D.rotation
-		bullet_instance.global_position = $Marker2D.global_position
-		add_child(bullet_instance)
-		await get_tree().create_timer(0.8).timeout
-		bullet_cooldown = true
-		
-	if Input.is_action_just_pressed("shoot_mode"):
-		if bullet_equip:
-			bullet_equip = false
+		if weapon_slot and weapon_slot.item != null and is_item_in_inventory(weapon_slot.item):
+			bullet_cooldown = false
+			var bullet_instance = bullet.instantiate()
+			bullet_instance.rotation = $Marker2D.rotation
+			bullet_instance.global_position = $Marker2D.global_position
+			add_child(bullet_instance)
+			await get_tree().create_timer(0.8).timeout
+			bullet_cooldown = true
 		else:
-			bullet_equip = true
+			print("Не можна стріляти: зброя не екіпірована або не в інвентарі")
+			bullet_equip = false  # Скидаємо bullet_equip, якщо зброя відсутня
+	
+	if Input.is_action_just_pressed("shoot_mode"):
+		if weapon_slot and weapon_slot.item != null and is_item_in_inventory(weapon_slot.item):
+			bullet_equip = not bullet_equip
+			print("Переключено bullet_equip на: ", bullet_equip)
+		else:
+			bullet_equip = false
+			print("Не можна переключити режим: зброя не екіпірована або не в інвентарі")
 	
 	play_animation(direction)
 	
+func use_weapon():
+	var weapon = weapon_slot.item
+	if weapon != null and weapon.is_in_group("weapon"):
+		weapon.use()
+	else:
+		print("У слоті зброї немає зброї або це не зброя!")
+
 func play_animation(dir):
 	if !bullet_equip:
 		walk_speed = 75
@@ -149,7 +191,7 @@ func attack():
 	await get_tree().create_timer(0.8).timeout  
 	attacking = false  
 
-func  take_damage_by_bow(DamageBow):
+func take_damage_by_bow(DamageBow):
 	if !death:
 		health -= DamageBow
 		BowHit = true
@@ -178,7 +220,7 @@ func _on_area_2d_area_entered(area):
 		hit_player_by_mob = true
 		hit_timer.wait_time = 0.9  
 		hit_timer.start() 
-		
+			
 	if area.is_in_group("trader"):
 		trader_in_area = true
 
@@ -204,21 +246,34 @@ func death_player():
 
 	$Dead_menu.visible = true
 
-
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("Bow"):
 		take_damage(10)
-		
-
 
 func _on_pick_item_area_entered(area: Area2D) -> void:
 	print("Area2D: ", area)
 	var item_node = area.get_parent()
 	if item_node and item_node.is_in_group("item"):
 		var item = item_node.get("item")
-		print("Item: ", item)
+		print("Пiдiбрано предмет: ", item.ItemName if item else "null")
 		if item:
 			var inventory_node = get_node("CanvasLayer2/Node")
 			if inventory_node:
 				inventory_node.add_item(item)
+				print("Додано до інвентарю: ", inventory_node.get_items())
 				item_node.queue_free()
+				# Скидаємо weapon_slot.item, якщо він не в інвентарі
+				if weapon_slot and weapon_slot.item != null and not is_item_in_inventory(weapon_slot.item):
+					print("Скидаємо weapon_slot.item, бо не в інвентарі")
+					weapon_slot.item = null
+					bullet_equip = false
+
+# Перевірка, чи предмет у інвентарі
+func is_item_in_inventory(item_to_check):
+	if inventory_node and inventory_node.has_method("get_items"):
+		var items = inventory_node.get_items()
+		print("Поточні предмети в інвентарі: ", items)
+		for item in items:
+			if item and item_to_check and item.ItemName == item_to_check.ItemName:  
+				return true
+	return false

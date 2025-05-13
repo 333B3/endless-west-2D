@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+
 @export var item: Item = null:
 	set(value):
 		item = value
@@ -10,3 +11,4 @@ extends RigidBody2D
 
 func _ready():
 	add_to_group("item")  # Додаємо цей вузол до групи "items"
+	add_to_group("weapon")  # Додаємо до "weapon"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bx846ol6naj4s"]
+
+[ext_resource type="Script" uid="uid://b2fk6dn1gmicw" path="res://Game/Script/classes/class.gd" id="1_lj6s8"]
+[ext_resource type="Texture2D" uid="uid://vfqyo15f4aum" path="res://Res/Characters/Young_Boy/Sprite-0001.png" id="2_7n0hq"]
+
+[resource]
+script = ExtResource("1_lj6s8")
+ItemName = "Weapone"
+type = "Gun"
+texture = ExtResource("2_7n0hq")
+metadata/_custom_type_script = "uid://b2fk6dn1gmicw"

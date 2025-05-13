@@ -191,4 +191,22 @@ offset_bottom = -236.0
 rotation = 4.71239
 icon = ExtResource("2_du2xy")
 
+[node name="WeaponSlot" type="GridContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.00002
+offset_top = 445.0
+offset_right = 42.0
+offset_bottom = 485.0
+grow_vertical = 2
+rotation = 4.71316
+columns = 10
+
+[node name="slot" parent="WeaponSlot" instance=ExtResource("1_3n7vm")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
 [connection signal="pressed" from="ToggleButton" to="." method="_on_button_pressed"]
