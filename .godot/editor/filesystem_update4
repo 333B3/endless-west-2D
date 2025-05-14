@@ -1,13 +1,13 @@
-res://Game/Main_Map/main_loc.tscn
+res://Game/Menu Buttons/menu.tscn
 res://Game/dialogic/Style/bublse.tres
+res://Game/Scene/ui_menu_in_game.gd
+res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/World/World.tscn
 res://Game/Characters/Player/Young_boy.tscn
 res://Game/World/Inventory.tscn
 res://Game/Item/item.tscn
+res://Game/Main_Map/main_loc.tscn
 res://Game/World/slot.tscn
-res://Game/Menu Buttons/menu.tscn
-res://Game/Characters/enemy/bandit_tutorial.tscn
-res://Game/Script/bandit.gd
 res://Game/Characters/enemy/bandit.tscn
-res://Game/Characters/enemy/bandit_tutorial.gd
-res://Game/dialogic/timeline/First.dtl
+res://Game/Characters/enemy/bandit_tutorial.tscn
+res://Game/Menu_Buttons/menu.tscn
