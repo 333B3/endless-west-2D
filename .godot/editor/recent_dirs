@@ -1,3 +1,4 @@
+res://Game/Characters/enemy
 res://Game/Item
 res://Game/Script/classes
 res://Game/World
@@ -11,7 +12,6 @@ res://
 res://Game/Scene
 res://Game/Menu Buttons
 res://Res/Characters
-res://Game/Characters/enemy
 res://Game/Characters/animal
 res://Res/Characters/Animal/Basic Asset Pack/Basic Animal Animations/Clucking Chicken
 res://Res/Characters/enemy/desertSprites_ [version 1.0]

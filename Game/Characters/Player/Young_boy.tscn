@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=136 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://bxh7mbhb8jq3" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_left_slash_spritesheet.png" id="20_d0jiw"]
 [ext_resource type="Texture2D" uid="uid://oaqk3aet0ulc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet.png" id="21_jewta"]
 [ext_resource type="Texture2D" uid="uid://c7nnsc4qekrdi" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_up_slash_spritesheet.png" id="22_2cfc8"]
-[ext_resource type="Script" uid="uid://dw88r30go1ef2" path="res://Game/Script/camera_2d.gd" id="23_7yk5j"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="24_7jkfr"]
 [ext_resource type="PackedScene" uid="uid://dlbwunr1qcfvx" path="res://Game/World/Inventory.tscn" id="25_vb8vb"]
 
@@ -921,7 +920,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74hxk"]
-radius = 8.0
+radius = 9.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_otuna"]
 radius = 5.0
@@ -936,6 +935,7 @@ collision_mask = 3
 script = ExtResource("1_ag20o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
 shape = SubResource("CapsuleShape2D_1dx12")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -944,22 +944,6 @@ scale = Vector2(0.827, 1)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
 animation = &"reload_left"
 frame_progress = 0.430385
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-limit_left = -3873
-limit_top = -3714
-limit_right = 5294
-limit_bottom = 4430
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
-script = ExtResource("23_7yk5j")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
