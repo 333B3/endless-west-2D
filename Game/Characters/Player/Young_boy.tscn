@@ -942,9 +942,8 @@ shape = SubResource("CapsuleShape2D_1dx12")
 position = Vector2(-9.53674e-07, 9.53674e-07)
 scale = Vector2(0.827, 1)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
-animation = &"death"
-frame = 3
-frame_progress = 0.287733
+animation = &"reload_left"
+frame_progress = 0.430385
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

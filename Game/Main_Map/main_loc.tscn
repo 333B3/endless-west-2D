@@ -1122,15 +1122,15 @@ offset_right = -54.0
 offset_bottom = 43.0
 
 [node name="Item" parent="." instance=ExtResource("8_6wdoh")]
-position = Vector2(291, 313)
+position = Vector2(428, 316)
 item = ExtResource("10_n8yls")
 
 [node name="Item2" parent="." instance=ExtResource("8_6wdoh")]
-position = Vector2(339, 255)
+position = Vector2(421, 289)
 item = ExtResource("9_u0gfn")
 
 [node name="Item3" parent="." instance=ExtResource("8_6wdoh")]
-position = Vector2(328, 313)
+position = Vector2(443, 268)
 item = ExtResource("10_n8yls")
 
 [node name="Item4" parent="." instance=ExtResource("8_6wdoh")]

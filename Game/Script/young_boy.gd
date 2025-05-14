@@ -43,11 +43,13 @@ func _ready():
 			print("Предмет у weapon_slot знайдено в інвентарі")
 
 func _process(_delta):
+		# ДИАЛОГ
 	if trader_in_area:
 		if Input.is_action_just_pressed("action"):
 			run_dialogue("First")
 	$CanvasLayer/Label.text = str(health)
 	mouse_lock = get_global_mouse_position() - self.position
+		#КОНЕЦ ДИАЛОГА
 	
 	var movement = movement_vector()
 	var direction = movement.normalized()
@@ -90,7 +92,7 @@ func _process(_delta):
 			if mouse_lock.y > 0:
 				$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
 			else:
-				$AnimatedSprite2D.play("attack_up") 
+				$AnimatedSprite2D.play("attack_up") #Верх
 	elif bullet_equip and attacking != true:
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
@@ -229,7 +231,7 @@ func _on_area_2d_area_exited(area):
 		hit_player_by_mob = false
 		hit_timer.stop()  
 	if area.is_in_group("trader"):
-		trader_in_area = true
+		trader_in_area = false
 
 func _on_hit_timer_timeout():
 	if hit_player_by_mob == true:
