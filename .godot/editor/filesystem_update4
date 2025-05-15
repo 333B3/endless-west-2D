@@ -6,5 +6,10 @@ res://Game/Item/item.tscn
 res://Game/Main_Map/main_loc.tscn
 res://Game/World/slot.tscn
 res://Game/Menu Buttons/menu.tscn
-res://Game/Script/young_boy.gd
 res://Game/Script/classes/slot.gd
+res://Game/Script/classes/item.gd
+res://Game/Script/classes/Inventory.gd
+res://Game/Main_Map/dange2.tscn
+res://Game/Main_Map/dange3.tscn
+res://Game/Main_Map/dange4.tscn
+res://Game/Main_Map/dungeos.tscn

@@ -10,5 +10,5 @@ extends RigidBody2D
 			$TextureRect.texture = null
 
 func _ready():
-	add_to_group("item")  # Додаємо цей вузол до групи "items"
-	add_to_group("weapon")  # Додаємо до "weapon"
+	add_to_group("item")  
+	add_to_group("weapon")  
