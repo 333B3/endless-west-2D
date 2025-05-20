@@ -1,0 +1,292 @@
+[gd_scene load_steps=36 format=3 uid="uid://camlxmrbu5mi3"]
+
+[ext_resource type="Texture2D" uid="uid://d0102dprk43n4" path="res://Game/Menu Buttons/Large Buttons/Large Buttons/New game Button.png" id="1_1ha7t"]
+[ext_resource type="Texture2D" uid="uid://quwaqrbplju" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/9 Background.png" id="1_wrcku"]
+[ext_resource type="Texture2D" uid="uid://cmab5uv0pvqih" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/8 Stars2.png" id="2_kk6d0"]
+[ext_resource type="Shader" uid="uid://dq3j57qltliiy" path="res://Game/Menu Buttons/8.gdshader" id="2_qnlpb"]
+[ext_resource type="Texture2D" uid="uid://4jwcwn4pj58h" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/1 Layer1.png" id="2_spqeg"]
+[ext_resource type="Texture2D" uid="uid://bico3by1aylus" path="res://Game/Menu Buttons/Large Buttons/Large Buttons/Load Button.png" id="3_0cogu"]
+[ext_resource type="Texture2D" uid="uid://kldk1xoih0y0" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/7 Clouds2.png" id="3_2p5wm"]
+[ext_resource type="Texture2D" uid="uid://dlrfpsuswewcl" path="res://Game/Menu Buttons/Large Buttons/Large Buttons/Settings Button.png" id="3_7ulc0"]
+[ext_resource type="Texture2D" uid="uid://c3hiu0gfxn7b5" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/6 Sun.png" id="4_gj5r8"]
+[ext_resource type="Shader" uid="uid://cp4jguma0onns" path="res://Game/Menu Buttons/7.gdshader" id="4_o3pwg"]
+[ext_resource type="Texture2D" uid="uid://b6mmftx5bkt03" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/5 Mountains.png" id="5_21qqj"]
+[ext_resource type="Texture2D" uid="uid://cjgprjvmdh7do" path="res://Game/Menu Buttons/Large Buttons/Colored Large Buttons/Exit  col_Button.png" id="5_xpxiv"]
+[ext_resource type="Shader" uid="uid://c1hglgvadwq5c" path="res://Game/Menu Buttons/6.gdshader" id="6_1ijy8"]
+[ext_resource type="Texture2D" uid="uid://yi2dr5h5uyyl" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/4 Layer4.png" id="6_74njc"]
+[ext_resource type="Texture2D" uid="uid://bxgnfwvpkb7a4" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/3 Layer3.png" id="7_tw3dh"]
+[ext_resource type="Shader" uid="uid://viejrtjeq311" path="res://Game/Menu Buttons/5.gdshader" id="8_dsk66"]
+[ext_resource type="Texture2D" uid="uid://eu4vmvsrhyv0" path="res://Game/Menu Buttons/Desert Parallax by Cryptogene/2 Layer2.png" id="8_ju6jw"]
+[ext_resource type="Shader" uid="uid://j8dl6jws7q8x" path="res://Game/Menu Buttons/4.gdshader" id="10_e8elo"]
+[ext_resource type="Shader" uid="uid://c1h441umh7t0c" path="res://Game/Menu Buttons/3.gdshader" id="12_7wlbw"]
+[ext_resource type="Shader" uid="uid://c0wxo1nsifjmh" path="res://Game/Menu Buttons/2.gdshader" id="14_8y03c"]
+[ext_resource type="Shader" uid="uid://dhx41vy8o0tp3" path="res://Game/Menu Buttons/1.gdshader" id="16_oqcva"]
+[ext_resource type="Script" uid="uid://cvsod7kte0bpg" path="res://Game/Menu Buttons/button.gd" id="19_al7mg"]
+[ext_resource type="Script" uid="uid://bnyp1pavwmgy" path="res://Game/Menu Buttons/button_4.gd" id="22_8vhrs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swdj6"]
+shader = ExtResource("2_qnlpb")
+shader_parameter/speed = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mu1r4"]
+shader = ExtResource("4_o3pwg")
+shader_parameter/speed = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yu3cs"]
+shader = ExtResource("6_1ijy8")
+shader_parameter/speed = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d372x"]
+shader = ExtResource("8_dsk66")
+shader_parameter/speed = 0.06
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf3ac"]
+shader = ExtResource("10_e8elo")
+shader_parameter/speed = 0.08
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a41ao"]
+shader = ExtResource("12_7wlbw")
+shader_parameter/speed = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4spr"]
+shader = ExtResource("14_8y03c")
+shader_parameter/speed = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdj6m"]
+shader = ExtResource("16_oqcva")
+shader_parameter/speed = 0.2
+
+[sub_resource type="SystemFont" id="SystemFont_du64s"]
+font_names = PackedStringArray("Bookman Old Style")
+
+[sub_resource type="Animation" id="Animation_04xun"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ri3ww"]
+resource_name = "new_animation"
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"new_marker",
+"time": 1.22
+}]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4fcn"]
+_data = {
+&"RESET": SubResource("Animation_04xun"),
+&"new_animation": SubResource("Animation_ri3ww")
+}
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -23.0
+offset_right = 40.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wrcku")
+expand_mode = 1
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_swdj6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kk6d0")
+expand_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mu1r4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2p5wm")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yu3cs")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gj5r8")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_d372x")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_21qqj")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_cf3ac")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_74njc")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_a41ao")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_tw3dh")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_k4spr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ju6jw")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_pdj6m")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_spqeg")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Seperator"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -5.0
+offset_top = 70.0
+offset_right = -5.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_du64s")
+theme_override_font_sizes/font_size = 100
+text = "Endless West
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 205.0
+offset_right = 771.0
+offset_bottom = 313.0
+size_flags_horizontal = 4
+icon = ExtResource("1_1ha7t")
+script = ExtResource("19_al7mg")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 315.0
+offset_right = 771.0
+offset_bottom = 423.0
+icon = ExtResource("3_0cogu")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 425.0
+offset_right = 771.0
+offset_bottom = 533.0
+icon = ExtResource("3_7ulc0")
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 536.0
+offset_right = 771.0
+offset_bottom = 644.0
+icon = ExtResource("5_xpxiv")
+script = ExtResource("22_8vhrs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b4fcn")
+}
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
