@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=4 uid="uid://dx1pki8pflecj"]
+[gd_scene load_steps=30 format=4 uid="uid://dx1pki8pflecj"]
 
 [ext_resource type="Texture2D" uid="uid://c4c3eyoyhx0tx" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/DESERTV2++.png" id="1_l3pse"]
 [ext_resource type="Texture2D" uid="uid://dy0ysdins5513" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/pixel-art-house-export.png" id="2_3emqs"]
 [ext_resource type="Texture2D" uid="uid://conxgrj6q70le" path="res://Res/Map/Tileset/Props/Props-All.png" id="3_vrokx"]
 [ext_resource type="Texture2D" uid="uid://4fdv42s0savy" path="res://Res/Map/AnimatedTreeFree/AnimatedTreeFree/AnimatedAutum.png" id="4_xaq2a"]
 [ext_resource type="PackedScene" uid="uid://cf6schj5hnndc" path="res://Game/Characters/Player/Young_boy.tscn" id="5_6wdoh"]
+[ext_resource type="PackedScene" uid="uid://do5t4klui0h5s" path="res://Game/Scene/Tree.tscn" id="5_gqob1"]
 [ext_resource type="Script" uid="uid://dw88r30go1ef2" path="res://Game/Script/camera_2d.gd" id="6_n8yls"]
 [ext_resource type="PackedScene" uid="uid://c8bd0pqwcqjlo" path="res://Game/Characters/Player/trader.tscn" id="6_u0gfn"]
 [ext_resource type="PackedScene" uid="uid://bsxwv40v8o6f1" path="res://Game/Scene/UI_MENU_IN_GAME.tscn" id="7_3emqs"]
@@ -1121,6 +1122,7 @@ metadata/_edit_vertical_guides_ = [688.0]
 [node name="Tree" type="TileMapLayer" parent="."]
 z_index = 2
 y_sort_enabled = true
+scale = Vector2(1, 1.00626)
 tile_map_data = PackedByteArray("AAACAA4AAAAJAAAAAAACABkAAAAJAAAAAAADAB0AAAAJAAAAAAAGABcAAAAJAAAAAAAGABsAAAAJAAAAAAAIABYAAAAJAAAAAAAIABcAAAAJAAAAAAAJABwAAAAJAAAAAAAKABUAAAAJAAAAAAALAAwAAAAJAAAAAAAMAAkAAAAJAAAAAAANAAUAAAAJAAAAAAAQABsAAAAJAAAAAAATAAUAAAAJAAAAAAAVAAQAAAAJAAAAAAAVABYAAAAJAAAAAAAWAAoAAAAJAAAAAAAWABQAAAAJAAAAAAAZABwAAAAJAAAAAAAaAAwAAAAJAAAAAAAcABUAAAAJAAAAAAAdAAsAAAAJAAAAAAAdAAwAAAAJAAAAAAAeABMAAAAJAAAAAAAhABUAAAAJAAAAAAAkABEAAAAJAAAAAAAmABkAAAAJAAAAAAApAA0AAAAJAAAAAAAgAA0AAgACABkAAAAhAA0AAgACABkAAAAiAA0AAgACABkAAAAjAA0AAgACABkAAAAkAA0AAgACABkAAAAlAA0AAgACABkAAAAmAA0AAgACABkAAAAmAAwAAgACABkAAAAmAAsAAgACABkAAAAmAAoAAgACABkAAAAmAAkAAgACABkAAAAgAAkAAgACABkAAAAgAAoAAgACABkAAAAgAAsAAgACABkAAAAgAAwAAgACABkAAAAhAAkAAgACABkAAAAiAAkAAgACABkAAAAjAAkAAgACABkAAAAkAAkAAgACABkAAAAlAAkAAgACABkAAAA=")
 tile_set = SubResource("TileSet_env3b")
 
@@ -1221,3 +1223,8 @@ shape = SubResource("RectangleShape2D_o60pt")
 
 [node name="Bandit_tutorial" parent="teer" instance=ExtResource("13_8q380")]
 position = Vector2(566, 180)
+
+[node name="Area2D" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(407, 299)
+collision_layer = 3
+collision_mask = 7

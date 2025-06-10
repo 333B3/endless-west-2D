@@ -26,6 +26,8 @@ var inventory_open: bool = false
 @onready var inventory_ui := get_node("CanvasLayer2")  
 @onready var weapon_slot: Slot = get_node("CanvasLayer2/WeaponSlot/slot")  
 @onready var inventory_node := get_node("CanvasLayer2/Node")  
+@onready var tilemap_tree = get_node("Area2D")
+@onready var tree_scene = preload("res://Game/Scene/Tree.tscn")
 
 @onready var hit_timer = $HitTimer  
 
@@ -279,3 +281,20 @@ func is_item_in_inventory(item_to_check):
 			if item and item_to_check and item.ItemName == item_to_check.ItemName:  
 				return true
 	return false
+	
+func try_cut_tree(global_position: Vector2):
+	var local_pos = tilemap_tree.to_local(global_position)
+	var cell = tilemap_tree.local_to_map(local_pos)
+	
+	var tile_id = tilemap_tree.get_cell_source_id(0, cell)
+	if tile_id != -1:
+		# Припустимо, 0 — це дерево
+		if tile_id == 0:
+			# Видаляємо тайл дерева
+			tilemap_tree.erase_cell(0, cell)
+
+			# Додаємо сцену дерева
+			var tree = tree_scene.instantiate()
+			var tree_pos = tilemap_tree.map_to_local(cell)
+			tree.global_position = tilemap_tree.to_global(tree_pos)
+			get_tree().current_scene.add_child(tree)
