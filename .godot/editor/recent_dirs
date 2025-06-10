@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+res://Game/Script
+res://Res/UI/setting
+>>>>>>> 1be2cf21c532f96bdab227e301745634b87686c8
 res://Game/Scene
 E:/Project
 res://Res
@@ -10,10 +15,12 @@ res://Res/Map/pixelveg/250 pixel Veggie/32x32
 res://Game/dialogic/Style
 res://Game/dialogic/character
 res://Game/dialogic/timeline
-res://Game/Script
 res://Game
 res://
+<<<<<<< HEAD
 res://Game/Menu Buttons
+=======
+>>>>>>> 1be2cf21c532f96bdab227e301745634b87686c8
 res://Res/Characters
 res://Game/Characters/animal
 res://Res/Characters/Animal/Basic Asset Pack/Basic Animal Animations/Clucking Chicken

@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 StaticBody2D
 AnimationPlayer
+=======
+Button
+TextureRect
+PanelContainer
+>>>>>>> 1be2cf21c532f96bdab227e301745634b87686c8
 CollisionShape2D
 Area2D
 Node
@@ -8,8 +14,12 @@ Label
 Panel
 Sprite2D
 RigidBody2D
+<<<<<<< HEAD
 TextureRect
 Button
+=======
+Node
+>>>>>>> 1be2cf21c532f96bdab227e301745634b87686c8
 TouchScreenButton
 GridContainer
 CanvasLayer

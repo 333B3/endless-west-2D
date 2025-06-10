@@ -8,7 +8,15 @@ res://Game/Menu_Buttons/menu.tscn
 res://Game/Characters/enemy/bandit.tscn
 res://Game/Characters/enemy/bandit_tutorial.tscn
 res://Game/Scene/UI_MENU_IN_GAME.tscn
+<<<<<<< HEAD
 res://Game/World/World.tscn
 res://Game/Scene/Tree.tscn
 res://Game/Scene/tree.gd
 res://Game/Script/young_boy.gd
+=======
+res://Game/Scene/Setting_menu.tscn
+res://Game/Menu_Buttons/button.gd
+res://Game/Menu_Buttons/button_3.gd
+res://Game/Script/setting_menu.gd
+res://Game/Scene/ui_menu_in_game.gd
+>>>>>>> 1be2cf21c532f96bdab227e301745634b87686c8
