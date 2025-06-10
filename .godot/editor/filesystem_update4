@@ -1,2 +1,33 @@
+<<<<<<< HEAD
 res://Game/Menu_Buttons/menu.tscn
 res://Game/dialogic/Style/bublse.tres
+=======
+res://Game/World/World.tscn
+res://Game/dialogic/Style/bublse.tres
+res://Game/Characters/Player/Young_boy.tscn
+res://Game/World/Inventory.tscn
+res://Game/Item/item.tscn
+res://Game/Main_Map/main_loc.tscn
+res://Game/World/slot.tscn
+res://Game/Menu_Buttons/menu.tscn
+res://Game/Characters/enemy/bandit.tscn
+res://Game/Characters/enemy/bandit_tutorial.tscn
+res://Game/Scene/UI_MENU_IN_GAME.tscn
+res://Game/Scene/Setting_menu.tscn
+res://Game/Menu_Buttons/button.gd
+res://Game/Menu_Buttons/button_3.gd
+res://Game/Script/setting_menu.gd
+res://Game/Scene/ui_menu_in_game.gd
+res://Game/Script/young_boy.gd
+res://Game/Scene/Tree.tscn
+res://Game/Script/menu.gd
+res://Game/Scene/tree.gd
+res://Game/Characters/Player/trader.tscn
+res://Game/Characters/enemy/big_bandit.tscn
+res://Game/Characters/enemy/big_bandit.gd
+res://Game/Script/bandit.gd
+res://Game/Scene/DEAD_MENU.tscn
+res://Game/Script/camera_2d.gd
+res://Game/Script/dead_menu.gd
+res://Game/Scene/dead_menu.gd
+>>>>>>> bc3c018cd50ff82f50dda0eddc4945be4b82b672

@@ -78,8 +78,8 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [global_group]
 
 bullet=""
-hit=""
 Bow=""
+Hit_Big_Bandit=""
 
 [input]
 

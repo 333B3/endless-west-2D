@@ -1,20 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsyea3lxe4yr4"]
+[gd_scene load_steps=10 format=3 uid="uid://bsyea3lxe4yr4"]
 
 [ext_resource type="PackedScene" uid="uid://btpx8bcd8yk1p" path="res://Game/Main_Map/tile_map_layer.tscn" id="1_seqlg"]
 [ext_resource type="PackedScene" uid="uid://cf6schj5hnndc" path="res://Game/Characters/Player/Young_boy.tscn" id="2_5q4vx"]
+[ext_resource type="Script" uid="uid://dw88r30go1ef2" path="res://Game/Script/camera_2d.gd" id="3_dtptj"]
 [ext_resource type="PackedScene" uid="uid://dtd0op3wthp5l" path="res://Game/Characters/enemy/bandit.tscn" id="3_lthya"]
 [ext_resource type="PackedScene" uid="uid://b67smtqvfqwa4" path="res://Game/Characters/animal/chicken.tscn" id="4_jf3jy"]
 [ext_resource type="PackedScene" uid="uid://g0fp4gh041e3" path="res://Game/Characters/enemy/bandit_bow.tscn" id="5_t2g08"]
 [ext_resource type="PackedScene" uid="uid://bsxwv40v8o6f1" path="res://Game/Scene/UI_MENU_IN_GAME.tscn" id="6_ov2xx"]
+[ext_resource type="PackedScene" uid="uid://sjw8g732gioh" path="res://Game/Characters/enemy/big_bandit.tscn" id="7_5xt6m"]
+[ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="9_bgsr8"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_seqlg")]
 
 [node name="Main_Character" parent="." instance=ExtResource("2_5q4vx")]
+position = Vector2(133, 70)
+
+[node name="Camera2D2" type="Camera2D" parent="Main_Character"]
+zoom = Vector2(4.3, 4.3)
+limit_left = -3872
+limit_top = -37125
+limit_right = 5300
+limit_bottom = 4450
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+script = ExtResource("3_dtptj")
 
 [node name="Bandit" parent="." instance=ExtResource("3_lthya")]
-position = Vector2(146, -4)
+position = Vector2(168, -21)
+
+[node name="Big_bandit" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(-40, 50)
 
 [node name="Bandit2" parent="." instance=ExtResource("3_lthya")]
 position = Vector2(80, 64)
@@ -23,7 +46,7 @@ position = Vector2(80, 64)
 position = Vector2(22, -60)
 
 [node name="bandit_bow" parent="." instance=ExtResource("5_t2g08")]
-position = Vector2(19, -102)
+position = Vector2(19, -113)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -33,3 +56,5 @@ offset_left = 18.0
 offset_top = 89.0
 offset_right = -54.0
 offset_bottom = 43.0
+
+[node name="dead_menu" parent="CanvasLayer" instance=ExtResource("9_bgsr8")]
