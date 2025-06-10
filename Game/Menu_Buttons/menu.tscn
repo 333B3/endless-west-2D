@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://camlxmrbu5mi3"]
+[gd_scene load_steps=37 format=3 uid="uid://camlxmrbu5mi3"]
 
 [ext_resource type="Texture2D" uid="uid://d0102dprk43n4" path="res://Game/Menu_Buttons/Large Buttons/Large Buttons/New game Button.png" id="1_1ha7t"]
 [ext_resource type="Texture2D" uid="uid://quwaqrbplju" path="res://Game/Menu_Buttons/Desert Parallax by Cryptogene/9 Background.png" id="1_wrcku"]
@@ -23,6 +23,7 @@
 [ext_resource type="Shader" uid="uid://dhx41vy8o0tp3" path="res://Game/Menu_Buttons/1.gdshader" id="16_oqcva"]
 [ext_resource type="Script" uid="uid://cvsod7kte0bpg" path="res://Game/Menu_Buttons/button.gd" id="19_al7mg"]
 [ext_resource type="Script" uid="uid://bnyp1pavwmgy" path="res://Game/Menu_Buttons/button_4.gd" id="22_8vhrs"]
+[ext_resource type="Script" uid="uid://1xuuai5flbna" path="res://Game/Menu_Buttons/button_3.gd" id="22_882td"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swdj6"]
 shader = ExtResource("2_qnlpb")
@@ -273,6 +274,7 @@ offset_top = 425.0
 offset_right = 771.0
 offset_bottom = 533.0
 icon = ExtResource("3_7ulc0")
+script = ExtResource("22_882td")
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
@@ -289,4 +291,5 @@ libraries = {
 }
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
 [connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]

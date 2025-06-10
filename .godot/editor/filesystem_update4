@@ -9,3 +9,8 @@ res://Game/Menu_Buttons/menu.tscn
 res://Game/Characters/enemy/bandit.tscn
 res://Game/Characters/enemy/bandit_tutorial.tscn
 res://Game/Scene/UI_MENU_IN_GAME.tscn
+res://Game/Scene/Setting_menu.tscn
+res://Game/Menu_Buttons/button.gd
+res://Game/Menu_Buttons/button_3.gd
+res://Game/Script/setting_menu.gd
+res://Game/Scene/ui_menu_in_game.gd

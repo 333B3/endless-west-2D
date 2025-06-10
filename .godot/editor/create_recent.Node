@@ -1,3 +1,6 @@
+Button
+TextureRect
+PanelContainer
 CollisionShape2D
 CharacterBody2D
 Area2D
@@ -5,10 +8,7 @@ Label
 Panel
 Sprite2D
 RigidBody2D
-TextureRect
 Node
-Button
 TouchScreenButton
 GridContainer
 CanvasLayer
-NinePatchRect
