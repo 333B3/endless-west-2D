@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=128 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -18,10 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://47hlrgdyysjb" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/attack & reload/cowboy_reload_left_spritesheet.png" id="12_578nw"]
 [ext_resource type="Texture2D" uid="uid://dpjh3jtxqs4nv" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/attack & reload/cowboy_reload_right_spritesheet.png" id="13_xc5ef"]
 [ext_resource type="Texture2D" uid="uid://5mu4jh7110w3" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/attack & reload/cowboy_reload_up_spritesheet.png" id="14_qypq0"]
-[ext_resource type="Texture2D" uid="uid://hpn4ckaycfqr" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_down_slash_spritesheet.png" id="19_d6t3g"]
-[ext_resource type="Texture2D" uid="uid://bxh7mbhb8jq3" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_left_slash_spritesheet.png" id="20_d0jiw"]
-[ext_resource type="Texture2D" uid="uid://oaqk3aet0ulc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet.png" id="21_jewta"]
-[ext_resource type="Texture2D" uid="uid://c7nnsc4qekrdi" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_up_slash_spritesheet.png" id="22_2cfc8"]
+[ext_resource type="Texture2D" uid="uid://tvl6i5bm0gjr" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet1.png" id="19_7jkfr"]
+[ext_resource type="Texture2D" uid="uid://dew0xtmxvo0fg" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet2.png" id="20_vb8vb"]
+[ext_resource type="Texture2D" uid="uid://cln8cwvk23i6q" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet3.png" id="21_pp0ff"]
+[ext_resource type="Texture2D" uid="uid://bnbnmjo1qjfuc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet43.png" id="22_6keac"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="24_7jkfr"]
 [ext_resource type="PackedScene" uid="uid://dlbwunr1qcfvx" path="res://Game/World/Inventory.tscn" id="25_vb8vb"]
 
@@ -325,53 +325,21 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("6_twhaq")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_06w0a"]
-atlas = ExtResource("19_d6t3g")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8v7o"]
+atlas = ExtResource("19_7jkfr")
+region = Rect2(0, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3rcn"]
-atlas = ExtResource("19_d6t3g")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_grbof"]
+atlas = ExtResource("20_vb8vb")
+region = Rect2(0, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkoa8"]
-atlas = ExtResource("19_d6t3g")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5884"]
+atlas = ExtResource("21_pp0ff")
+region = Rect2(0, 0, 96, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_558q8"]
-atlas = ExtResource("20_d0jiw")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wpw14"]
-atlas = ExtResource("20_d0jiw")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a65ow"]
-atlas = ExtResource("20_d0jiw")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7hrc"]
-atlas = ExtResource("21_jewta")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qay3q"]
-atlas = ExtResource("21_jewta")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8jteb"]
-atlas = ExtResource("21_jewta")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_56qdl"]
-atlas = ExtResource("22_2cfc8")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w8x3y"]
-atlas = ExtResource("22_2cfc8")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrm5w"]
-atlas = ExtResource("22_2cfc8")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_57x0n"]
+atlas = ExtResource("22_6keac")
+region = Rect2(0, 0, 96, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aukxk"]
 atlas = ExtResource("2_ggj1k")
@@ -764,58 +732,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_06w0a")
+"texture": SubResource("AtlasTexture_g8v7o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f3rcn")
+"texture": SubResource("AtlasTexture_grbof")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rkoa8")
+"texture": SubResource("AtlasTexture_x5884")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57x0n")
 }],
-"loop": true,
-"name": &"slash_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_558q8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wpw14")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a65ow")
-}],
-"loop": true,
-"name": &"slash_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d7hrc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qay3q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8jteb")
-}],
-"loop": true,
-"name": &"slash_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_56qdl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w8x3y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nrm5w")
-}],
-"loop": true,
-"name": &"slash_up",
+"loop": false,
+"name": &"slash",
 "speed": 5.0
 }, {
 "frames": [{
@@ -942,8 +871,9 @@ shape = SubResource("CapsuleShape2D_1dx12")
 position = Vector2(-9.53674e-07, 9.53674e-07)
 scale = Vector2(0.827, 1)
 sprite_frames = SubResource("SpriteFrames_ufhbq")
-animation = &"reload_left"
-frame_progress = 0.430385
+animation = &"slash"
+frame = 1
+frame_progress = 0.505354
 
 [node name="Marker2D" type="Marker2D" parent="."]
 

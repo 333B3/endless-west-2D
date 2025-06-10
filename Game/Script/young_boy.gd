@@ -33,6 +33,9 @@ var inventory_open: bool = false
 
 @onready var hit_timer = $HitTimer  
 
+var near_tree = false
+var hit_tree = false
+
 func _ready():
 	hit_timer.wait_time = 0.9  
 	hit_timer.one_shot = false  
@@ -85,7 +88,7 @@ func _process(_delta):
 		current_speed = run_speed
 
 	velocity = current_speed * direction
-
+	
 	if attacking == true:
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
@@ -97,6 +100,12 @@ func _process(_delta):
 				$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
 			else:
 				$AnimatedSprite2D.play("attack_up") #Верх
+	elif near_tree == true and bullet_equip == false:
+		if Input.is_action_just_pressed("shoot"):
+			$AnimatedSprite2D.play("slash")
+			#await get_tree().create_timer(1.0).timeout
+			#$AnimatedSprite2D.stop()
+
 	elif bullet_equip and attacking != true:
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
@@ -196,6 +205,13 @@ func attack():
 	attacking = true  
 	await get_tree().create_timer(0.8).timeout  
 	attacking = false  
+	
+func hit_tree_timer():
+	if Input.is_action_just_pressed("shoot"):
+		hit_tree = true
+		await get_tree().create_timer(0,7).timeout
+		hit_tree = false
+
 
 func take_damage_by_bow(DamageBow):
 	if !death:
@@ -237,6 +253,9 @@ func _on_area_2d_area_entered(area):
 		hit_player_by_big_mob = true
 		hit_timer.wait_time = 0.9  
 		hit_timer.start() 
+	
+	if area.is_in_group("tree"):
+		near_tree = true
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("hit"):
@@ -247,6 +266,9 @@ func _on_area_2d_area_exited(area):
 	if area.is_in_group("Hit_Big_Bandit"):
 		hit_player_by_big_mob = false
 		hit_timer.stop() 
+
+	if area.is_in_group("tree"):
+		near_tree = false
 
 func _on_hit_timer_timeout():
 	if hit_player_by_mob == true:
