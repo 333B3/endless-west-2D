@@ -2,11 +2,12 @@ extends Control
 
 @onready var young_boy = get_tree().get_first_node_in_group("Death_check")
 @onready var death_menu = $"."
+@export var death :bool
 
 func _process(delta):
-	if young_boy and young_boy.death:
+	if death == true:
 		death_menu.visible = true
-		#get_tree().paused = true
+		get_tree().paused = true
 	else:
 		death_menu.visible = false
 		get_tree().paused = false
@@ -30,9 +31,3 @@ func _on_main_menu_pressed():
 	get_tree().paused = false
 	if get_tree().paused:
 		get_tree().paused = false
-	SceneManager.change_scene(
-		"res://Game/Menu Buttons/menu.tscn", {
-			"pattern_enter" : "circle",
-			"pattern_leave" : "fade",
-		}
-	)

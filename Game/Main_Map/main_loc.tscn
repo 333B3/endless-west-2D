@@ -1123,7 +1123,7 @@ metadata/_edit_vertical_guides_ = [688.0]
 z_index = 2
 y_sort_enabled = true
 scale = Vector2(1, 1.00626)
-tile_map_data = PackedByteArray("AAACAA4AAAAJAAAAAAACABkAAAAJAAAAAAADAB0AAAAJAAAAAAAGABcAAAAJAAAAAAAGABsAAAAJAAAAAAAIABYAAAAJAAAAAAAIABcAAAAJAAAAAAAJABwAAAAJAAAAAAAKABUAAAAJAAAAAAALAAwAAAAJAAAAAAAMAAkAAAAJAAAAAAANAAUAAAAJAAAAAAAQABsAAAAJAAAAAAATAAUAAAAJAAAAAAAVAAQAAAAJAAAAAAAVABYAAAAJAAAAAAAWAAoAAAAJAAAAAAAWABQAAAAJAAAAAAAZABwAAAAJAAAAAAAaAAwAAAAJAAAAAAAcABUAAAAJAAAAAAAdAAsAAAAJAAAAAAAdAAwAAAAJAAAAAAAeABMAAAAJAAAAAAAhABUAAAAJAAAAAAAkABEAAAAJAAAAAAAmABkAAAAJAAAAAAApAA0AAAAJAAAAAAAgAA0AAgACABkAAAAhAA0AAgACABkAAAAiAA0AAgACABkAAAAjAA0AAgACABkAAAAkAA0AAgACABkAAAAlAA0AAgACABkAAAAmAA0AAgACABkAAAAmAAwAAgACABkAAAAmAAsAAgACABkAAAAmAAoAAgACABkAAAAmAAkAAgACABkAAAAgAAkAAgACABkAAAAgAAoAAgACABkAAAAgAAsAAgACABkAAAAgAAwAAgACABkAAAAhAAkAAgACABkAAAAiAAkAAgACABkAAAAjAAkAAgACABkAAAAkAAkAAgACABkAAAAlAAkAAgACABkAAAA=")
+tile_map_data = PackedByteArray("AAAgAA0AAgACABkAAAAhAA0AAgACABkAAAAiAA0AAgACABkAAAAjAA0AAgACABkAAAAkAA0AAgACABkAAAAlAA0AAgACABkAAAAmAA0AAgACABkAAAAmAAwAAgACABkAAAAmAAsAAgACABkAAAAmAAoAAgACABkAAAAmAAkAAgACABkAAAAgAAkAAgACABkAAAAgAAoAAgACABkAAAAgAAsAAgACABkAAAAgAAwAAgACABkAAAAhAAkAAgACABkAAAAiAAkAAgACABkAAAAjAAkAAgACABkAAAAkAAkAAgACABkAAAAlAAkAAgACABkAAAA=")
 tile_set = SubResource("TileSet_env3b")
 
 [node name="Pixel-art-house-export" type="Sprite2D" parent="."]
@@ -1135,7 +1135,7 @@ texture = ExtResource("2_3emqs")
 position = Vector2(298, 341)
 
 [node name="Camera2D2" type="Camera2D" parent="Young_boy"]
-zoom = Vector2(3, 3)
+zoom = Vector2(4.3, 4.3)
 limit_left = 0
 limit_top = 0
 limit_right = 688
@@ -1224,7 +1224,202 @@ shape = SubResource("RectangleShape2D_o60pt")
 [node name="Bandit_tutorial" parent="teer" instance=ExtResource("13_8q380")]
 position = Vector2(566, 180)
 
+[node name="Area2D7" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(622, 441)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D6" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(387, 435)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D5" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(550, 416)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D4" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(609, 365)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D2" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(626, 286)
+collision_layer = 3
+collision_mask = 7
+
 [node name="Area2D" parent="." instance=ExtResource("5_gqob1")]
-position = Vector2(407, 299)
+position = Vector2(533, 311)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D8" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(446, 305)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D9" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(471, 382)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D3" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(446, 305)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D10" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(446, 305)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D16" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(454, 155)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D15" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(655, 215)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D14" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(429, 230)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D13" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(363, 289)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D17" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(230, 317)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D12" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(159, 357)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D11" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(247, 416)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D25" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(142, 270)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D26" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(488, 416)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D24" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(35, 430)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D23" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(85, 363)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D22" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(134, 430)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D18" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(387, 365)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D31" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(313, 145)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D32" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(497, 253)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D30" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(380, 181)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D29" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(238, 177)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D28" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(68, 247)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D27" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(102, 172)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D19" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(187, 196)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D35" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(454, 64)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D34" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(655, 108)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D36" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(570, 70)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D33" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(505, 108)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D20" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(387, 89)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D38" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(72, 64)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D39" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(204, 25)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D40" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(300, 50)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D37" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(170, 95)
+collision_layer = 3
+collision_mask = 7
+
+[node name="Area2D21" parent="." instance=ExtResource("5_gqob1")]
+position = Vector2(255, 108)
 collision_layer = 3
 collision_mask = 7

@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://camlxmrbu5mi3"]
+[gd_scene load_steps=38 format=3 uid="uid://camlxmrbu5mi3"]
 
 [ext_resource type="Texture2D" uid="uid://d0102dprk43n4" path="res://Game/Menu_Buttons/Large Buttons/Large Buttons/New game Button.png" id="1_1ha7t"]
+[ext_resource type="Script" uid="uid://bkd4xxlfoq45n" path="res://Game/Script/menu.gd" id="1_4te8n"]
 [ext_resource type="Texture2D" uid="uid://quwaqrbplju" path="res://Game/Menu_Buttons/Desert Parallax by Cryptogene/9 Background.png" id="1_wrcku"]
 [ext_resource type="Texture2D" uid="uid://cmab5uv0pvqih" path="res://Game/Menu_Buttons/Desert Parallax by Cryptogene/8 Stars2.png" id="2_kk6d0"]
 [ext_resource type="Shader" uid="uid://dq3j57qltliiy" path="res://Game/Menu_Buttons/8.gdshader" id="2_qnlpb"]
@@ -21,9 +22,6 @@
 [ext_resource type="Shader" uid="uid://c1h441umh7t0c" path="res://Game/Menu_Buttons/3.gdshader" id="12_7wlbw"]
 [ext_resource type="Shader" uid="uid://c0wxo1nsifjmh" path="res://Game/Menu_Buttons/2.gdshader" id="14_8y03c"]
 [ext_resource type="Shader" uid="uid://dhx41vy8o0tp3" path="res://Game/Menu_Buttons/1.gdshader" id="16_oqcva"]
-[ext_resource type="Script" uid="uid://cvsod7kte0bpg" path="res://Game/Menu_Buttons/button.gd" id="19_al7mg"]
-[ext_resource type="Script" uid="uid://bnyp1pavwmgy" path="res://Game/Menu_Buttons/button_4.gd" id="22_8vhrs"]
-[ext_resource type="Script" uid="uid://1xuuai5flbna" path="res://Game/Menu_Buttons/button_3.gd" id="22_882td"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swdj6"]
 shader = ExtResource("2_qnlpb")
@@ -60,6 +58,33 @@ shader_parameter/speed = 0.2
 [sub_resource type="SystemFont" id="SystemFont_du64s"]
 font_names = PackedStringArray("Bookman Old Style")
 
+[sub_resource type="GDScript" id="GDScript_6yvlx"]
+script/source = "extends Button
+
+@onready var animation_player = $\"../AnimationPlayer\"
+
+
+func _on_pressed():
+	var mainLoc = load(\"res://Game/Main_Map/main_loc.tscn\")
+	get_tree().change_scene_to_packed(mainLoc)
+"
+
+[sub_resource type="GDScript" id="GDScript_4hw03"]
+script/source = "extends Button
+
+
+func _on_pressed():
+	var Setting_menu = load(\"res://Game/Scene/Setting_menu.tscn\")
+	get_tree().change_scene_to_packed(Setting_menu)
+"
+
+[sub_resource type="GDScript" id="GDScript_882td"]
+script/source = "extends Button
+
+func _on_pressed():
+	get_tree().quit()
+"
+
 [sub_resource type="Animation" id="Animation_04xun"]
 length = 0.001
 
@@ -88,6 +113,7 @@ offset_right = 40.0
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4te8n")
 
 [node name="TextureRect9" type="TextureRect" parent="."]
 layout_mode = 1
@@ -249,7 +275,7 @@ layout_mode = 2
 theme_override_constants/separation = 18
 alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="New" type="Button" parent="."]
 layout_mode = 0
 offset_left = 463.0
 offset_top = 205.0
@@ -257,9 +283,9 @@ offset_right = 771.0
 offset_bottom = 313.0
 size_flags_horizontal = 4
 icon = ExtResource("1_1ha7t")
-script = ExtResource("19_al7mg")
+script = SubResource("GDScript_6yvlx")
 
-[node name="Button2" type="Button" parent="."]
+[node name="Load" type="Button" parent="."]
 layout_mode = 0
 offset_left = 463.0
 offset_top = 315.0
@@ -267,29 +293,29 @@ offset_right = 771.0
 offset_bottom = 423.0
 icon = ExtResource("3_0cogu")
 
-[node name="Button3" type="Button" parent="."]
+[node name="Setting" type="Button" parent="."]
 layout_mode = 0
 offset_left = 463.0
 offset_top = 425.0
 offset_right = 771.0
 offset_bottom = 533.0
 icon = ExtResource("3_7ulc0")
-script = ExtResource("22_882td")
+script = SubResource("GDScript_4hw03")
 
-[node name="Button4" type="Button" parent="."]
+[node name="Exit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 463.0
 offset_top = 536.0
 offset_right = 771.0
 offset_bottom = 644.0
 icon = ExtResource("5_xpxiv")
-script = ExtResource("22_8vhrs")
+script = SubResource("GDScript_882td")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_b4fcn")
 }
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
-[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[connection signal="pressed" from="New" to="." method="_on_new_pressed"]
+[connection signal="pressed" from="Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -6,6 +6,7 @@ var last_direction: String = "down"
 var health = 100 
 
 var damage = 5
+var big_damage = 20
 var DamageBow = 10
 var BowHit = false
 
@@ -14,9 +15,10 @@ var bullet_cooldown = true
 var bullet = preload("res://Game/World/bullet.tscn")
 var mouse_lock = null
 var attacking = false
-var death = false
+@export var death := false
 
 var hit_player_by_mob = false
+var hit_player_by_big_mob = false
 
 var trader_in_area = false
 var is_chatting = true
@@ -209,10 +211,13 @@ func take_damage(damage):
 	if !death:
 		health -= damage
 		hit_player_by_mob = true
+		if health <= 0:
+			death_player()
 
-		#await get_tree().create_timer(0.6).timeout 
-		#hit_player_by_mob = false  
-
+func take_big_damage(big_damage):
+	if !death:
+		health -= big_damage
+		hit_player_by_big_mob = true
 		if health <= 0:
 			death_player()
 
@@ -227,6 +232,11 @@ func _on_area_2d_area_entered(area):
 			
 	if area.is_in_group("trader"):
 		trader_in_area = true
+		
+	if area.is_in_group("Hit_Big_Bandit"):
+		hit_player_by_big_mob = true
+		hit_timer.wait_time = 0.9  
+		hit_timer.start() 
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("hit"):
@@ -234,10 +244,15 @@ func _on_area_2d_area_exited(area):
 		hit_timer.stop()  
 	if area.is_in_group("trader"):
 		trader_in_area = false
+	if area.is_in_group("Hit_Big_Bandit"):
+		hit_player_by_big_mob = false
+		hit_timer.stop() 
 
 func _on_hit_timer_timeout():
 	if hit_player_by_mob == true:
 		take_damage(damage)
+	if hit_player_by_big_mob == true:
+		take_big_damage(big_damage)
 
 func death_player():
 	death = true
@@ -288,7 +303,6 @@ func try_cut_tree(global_position: Vector2):
 	
 	var tile_id = tilemap_tree.get_cell_source_id(0, cell)
 	if tile_id != -1:
-		# Припустимо, 0 — це дерево
 		if tile_id == 0:
 			# Видаляємо тайл дерева
 			tilemap_tree.erase_cell(0, cell)
