@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	var mainLoc = load("res://Game/Main_Map/main_loc.tscn")
+	var Setting_menu = load("res://Game/Scene/Setting_menu.tscn")
 
 func _on_new_pressed():
 	var mainLoc = load("res://Game/Main_Map/main_loc.tscn")

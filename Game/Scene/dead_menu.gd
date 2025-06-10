@@ -5,6 +5,7 @@ extends Control
 @export var death :bool
 
 func _process(delta):
+
 	if death == true:
 		death_menu.visible = true
 		get_tree().paused = true
