@@ -50,7 +50,7 @@ func _ready():
 			print("Предмет у weapon_slot знайдено в інвентарі")
 
 func _process(_delta):
-	if Input.is_action_just_pressed("shoot") and near_tree == true:
+	if Input.is_action_just_pressed("shoot") and near_tree == true and bullet_equip == false:
 		print("bumbum")
 		hit_tree = true
 		await get_tree().create_timer(0.8).timeout
