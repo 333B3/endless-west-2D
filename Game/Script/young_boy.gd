@@ -50,6 +50,13 @@ func _ready():
 			print("Предмет у weapon_slot знайдено в інвентарі")
 
 func _process(_delta):
+	if Input.is_action_just_pressed("shoot") and near_tree == true:
+		print("bumbum")
+		hit_tree = true
+		await get_tree().create_timer(0.8).timeout
+		hit_tree = false
+	else:
+		pass
 		# ДИАЛОГ
 	if trader_in_area:
 		if Input.is_action_just_pressed("action"):
@@ -100,11 +107,8 @@ func _process(_delta):
 				$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
 			else:
 				$AnimatedSprite2D.play("attack_up") #Верх
-	elif near_tree == true and bullet_equip == false:
-		if Input.is_action_just_pressed("shoot"):
-			$AnimatedSprite2D.play("slash")
-			#await get_tree().create_timer(1.0).timeout
-			#$AnimatedSprite2D.stop()
+	elif near_tree == true and bullet_equip == false and hit_tree == true:
+		$AnimatedSprite2D.play("slash")
 
 	elif bullet_equip and attacking != true:
 		if abs(mouse_lock.x) > abs(mouse_lock.y):

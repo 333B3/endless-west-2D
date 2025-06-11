@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c7wajkropvnyu" path="res://Res/UI/setting/Setting_menu_np.PNG" id="1_0q8sl"]
 [ext_resource type="Script" uid="uid://bwn84lm3lr2mk" path="res://Game/Script/setting_menu.gd" id="1_lgnbx"]
-[ext_resource type="Texture2D" uid="uid://citps3uv5gjm1" path="res://Game/Menu Buttons/Menu Buttons sprite (BnW).png" id="3_nwnwx"]
+[ext_resource type="Texture2D" uid="uid://citps3uv5gjm1" path="res://Game/Menu_Buttons/Menu Buttons sprite (BnW).png" id="3_nwnwx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bimgr"]
 atlas = ExtResource("3_nwnwx")

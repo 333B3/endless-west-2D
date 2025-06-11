@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var health := 5
+@export var health := 4
 @export var item_scene: PackedScene
 
 var player_in_area = false
@@ -13,19 +13,13 @@ func _ready():
 	pass
 
 func _process(delta):
+	if health == 4:
+		$AnimatedSprite2D.play("idle")
+	if health == 3:
+		$AnimatedSprite2D.play("hit")
 	if health <= 0 and not is_animating:
 		animated_sprite.play("down")
-		
 
-	
-	#if health == 0 and not is_animating:
-		#animated_sprite.play("down")
-		#is_animating = true
-		#await get_tree().create_timer(4.0).timeout
-		#animated_sprite.stop()
-		#is_animating = false
-		#print("Анімація 'down' завершена і зупинена")
-	
 	if Input.is_action_just_pressed("shoot") and player_in_area == true:
 		print(health)
 		hit()
@@ -43,12 +37,13 @@ func _on_animated_sprite_2d_animation_finished():
 
 func hit():
 	health -= 1
+	
 	if health <= 0:
 		die()
 
 func die():
 	$CollisionShape2D.disabled = true
-	
+	$CollisionShape2D2.disabled = false
 	drop_items()
 	#queue_free()
 
