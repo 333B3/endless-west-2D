@@ -37,7 +37,6 @@ func _on_animated_sprite_2d_animation_finished():
 
 func hit():
 	health -= 1
-	
 	if health <= 0:
 		die()
 
