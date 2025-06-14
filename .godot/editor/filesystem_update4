@@ -11,3 +11,7 @@ res://Game/Characters/enemy/bandit.tscn
 res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/Characters/enemy/big_bandit.tscn
 res://Game/Scene/DEAD_MENU.tscn
+<<<<<<< HEAD
+=======
+res://Game/Scene/tree.gd
+>>>>>>> b6c381a35e9252b6e68fa3316ee707e2a3e87fee
