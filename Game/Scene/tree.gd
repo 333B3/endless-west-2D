@@ -14,7 +14,7 @@ func _process(_delta):
 		animated_sprite.play("idle")
 	elif health == 3:
 		animated_sprite.play("hit")
-	elif health <= 0 and not is_animating:
+	elif health == 0 and not is_animating:
 		animated_sprite.play("down")
 
 	if Input.is_action_just_pressed("shoot") and player_in_area:
@@ -29,7 +29,7 @@ func _on_animated_sprite_2d_animation_finished():
 
 func hit():
 	health -= 1
-	if health <= 0:
+	if health == 0:
 		die()
 
 func die():
@@ -42,7 +42,7 @@ func drop_items():
 		var drop = item_scene.instantiate()
 
 		# !!! Встановлюємо item_data тут !!!
-		drop.item_data = load("D:/Sand/endless-west-2D/Game/Item/Avocado.tres")  # або Carrot.tres — залежить від дерева
+		drop.item_data = load("res://Game/Item/Avocado.tres")  # або Carrot.tres — залежить від дерева
 
 		drop.global_position = global_position
 		get_tree().current_scene.add_child(drop)

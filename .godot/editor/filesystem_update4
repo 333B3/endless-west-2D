@@ -11,7 +11,4 @@ res://Game/Characters/enemy/bandit.tscn
 res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/Characters/enemy/big_bandit.tscn
 res://Game/Scene/DEAD_MENU.tscn
-res://Game/Script/classes/item.gd
-res://Game/Script/classes/class.gd
-res://Game/Script/young_boy.gd
-res://Game/Script/classes/Inventory.gd
+res://Game/Scene/tree.gd
