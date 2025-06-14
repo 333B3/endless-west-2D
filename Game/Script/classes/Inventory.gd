@@ -9,7 +9,7 @@ signal item_added(item)
 # Додаємо предмет до інвентарю
 func add_item(item: Item):
 	for i in Item.keys():
-		if Item[i]["item"].ItemName == item.ItemName:  # Порівнюємо за ItemName
+		if Item[i]["item"] == item:  
 			Item[i]["count"] += 1
 			emit_signal("item_added", item)
 			return

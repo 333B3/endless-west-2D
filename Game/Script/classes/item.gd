@@ -1,14 +1,22 @@
 extends RigidBody2D
 
-
-@export var item: Item = null:
-	set(value):
-		item = value
-		if value != null:
-			$TextureRect.texture = value.texture
-		else:
-			$TextureRect.texture = null
+@export var item_data: Resource
+var item: Resource  # ← ДОДАТИ ЦЕ
 
 func _ready():
-	add_to_group("item")  # Додаємо цей вузол до групи "items"
-	add_to_group("weapon")  # Додаємо до "weapon"
+	item = item_data  # ← ДОДАТИ ЦЕ
+
+	add_to_group("item")
+	add_to_group("weapon")
+
+	if item_data:
+		if item_data is Item:
+			if has_node("TextureRect"):
+				$TextureRect.texture = item_data.texture
+				print("✅ Завантажено предмет:", item_data.resource_name)
+			else:
+				push_error("❌ TextureRect не знайдено!")
+		else:
+			push_error("❌ item_data не є типом Item!")
+	else:
+		push_error("❌ item_data: null")

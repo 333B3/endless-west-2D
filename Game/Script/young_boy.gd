@@ -41,7 +41,7 @@ func _ready():
 	hit_timer.one_shot = false  
 	# Скидаємо weapon_slot.item, якщо він не в інвентарі
 	if weapon_slot and weapon_slot.item != null:
-		print("Перевірка при старті: weapon_slot.item = ", weapon_slot.item.ItemName if weapon_slot.item else "null")
+		print("Перевірка при старті: weapon_slot.item = ", weapon_slot.item.item_name if weapon_slot.item else "null")
 		if not is_item_in_inventory(weapon_slot.item):
 			print("Предмет у weapon_slot не в інвентарі, скидаємо weapon_slot.item")
 			weapon_slot.item = null
@@ -83,7 +83,7 @@ func _process(_delta):
 
 	if Input.is_action_just_pressed("shoot"):
 		if weapon_slot and weapon_slot.item != null and weapon_slot.is_in_group("weapon"):
-			print("Спроба використати зброю. weapon_slot.item = ", weapon_slot.item.ItemName if weapon_slot.item else "null")
+			print("Спроба використати зброю. weapon_slot.item = ", weapon_slot.item.item_name if weapon_slot.item else "null")
 			print("Інвентар відкритий: ", inventory_open, ", Миша над UI: ", is_mouse_over_ui, ", У інвентарі: ", is_item_in_inventory(weapon_slot.item))
 			if not inventory_open and not is_mouse_over_ui and is_item_in_inventory(weapon_slot.item):
 				use_weapon()
@@ -300,7 +300,7 @@ func _on_pick_item_area_entered(area: Area2D) -> void:
 	var item_node = area.get_parent()
 	if item_node and item_node.is_in_group("item"):
 		var item = item_node.get("item")
-		print("Пiдiбрано предмет: ", item.ItemName if item else "null")
+		print("Пiдiбрано предмет: ", item.item_name if item else "null")
 		if item:
 			var inventory_node = get_node("CanvasLayer2/Node")
 			if inventory_node:
@@ -319,7 +319,7 @@ func is_item_in_inventory(item_to_check):
 		var items = inventory_node.get_items()
 		print("Поточні предмети в інвентарі: ", items)
 		for item in items:
-			if item and item_to_check and item.ItemName == item_to_check.ItemName:  
+			if item and item_to_check and item.item_name == item_to_check.item_name: 
 				return true
 	return false
 	
@@ -338,3 +338,4 @@ func try_cut_tree(global_position: Vector2):
 			var tree_pos = tilemap_tree.map_to_local(cell)
 			tree.global_position = tilemap_tree.to_global(tree_pos)
 			get_tree().current_scene.add_child(tree)
+			

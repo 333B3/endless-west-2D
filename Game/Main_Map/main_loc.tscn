@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dx1pki8pflecj"]
+[gd_scene load_steps=29 format=4 uid="uid://dx1pki8pflecj"]
 
 [ext_resource type="Texture2D" uid="uid://c4c3eyoyhx0tx" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/DESERTV2++.png" id="1_l3pse"]
 [ext_resource type="Texture2D" uid="uid://dy0ysdins5513" path="res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG/pixel-art-house-export.png" id="2_3emqs"]
@@ -10,9 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c8bd0pqwcqjlo" path="res://Game/Characters/Player/trader.tscn" id="6_u0gfn"]
 [ext_resource type="PackedScene" uid="uid://bsxwv40v8o6f1" path="res://Game/Scene/UI_MENU_IN_GAME.tscn" id="7_3emqs"]
 [ext_resource type="PackedScene" uid="uid://bgi4tcb1aab8j" path="res://Game/Item/item.tscn" id="8_6wdoh"]
-[ext_resource type="Resource" uid="uid://p5m1j2rc1dg1" path="res://Game/Item/Carrot.tres" id="9_u0gfn"]
-[ext_resource type="Resource" uid="uid://bo7wenhaocgiv" path="res://Game/Item/Avocado.tres" id="10_n8yls"]
-[ext_resource type="Resource" uid="uid://bx846ol6naj4s" path="res://Game/Item/Waepon_1.tres" id="11_u0gfn"]
+[ext_resource type="Resource" uid="uid://p5m1j2rc1dg1" path="res://Game/Item/Carrot.tres" id="10_8q380"]
+[ext_resource type="Resource" uid="uid://bx846ol6naj4s" path="res://Game/Item/Waepon_1.tres" id="11_gqob1"]
 [ext_resource type="PackedScene" uid="uid://bc3ppda5p5qe0" path="res://Game/Characters/enemy/bandit_tutorial.tscn" id="13_8q380"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6am0"]
@@ -1169,21 +1168,13 @@ offset_top = 89.0
 offset_right = -54.0
 offset_bottom = 43.0
 
-[node name="Item" parent="." instance=ExtResource("8_6wdoh")]
-position = Vector2(77, 408)
-item = ExtResource("10_n8yls")
-
-[node name="Item2" parent="." instance=ExtResource("8_6wdoh")]
-position = Vector2(64, 293)
-item = ExtResource("9_u0gfn")
-
 [node name="Item3" parent="." instance=ExtResource("8_6wdoh")]
 position = Vector2(47, 177)
-item = ExtResource("10_n8yls")
+item_data = ExtResource("10_8q380")
 
 [node name="Item4" parent="." instance=ExtResource("8_6wdoh")]
 position = Vector2(558, 230)
-item = ExtResource("11_u0gfn")
+item_data = ExtResource("11_gqob1")
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 
