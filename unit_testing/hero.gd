@@ -50,21 +50,21 @@ func _ready():
 		#else:
 			#print("Предмет у weapon_slot знайдено в інвентарі")
 	pass
-
-func _process(_delta):
-	if Input.is_action_just_pressed("shoot") and near_tree == true and bullet_equip == false:
-		print("bumbum")
-		hit_tree = true
-		await get_tree().create_timer(0.8).timeout
-		hit_tree = false
-	else:
-		pass
+#
+#func _process(_delta):
+	#if Input.is_action_just_pressed("shoot") and near_tree == true and bullet_equip == false:
+		#print("bumbum")
+		#hit_tree = true
+		#await get_tree().create_timer(0.8).timeout
+		#hit_tree = false
+	#else:
+		#pass
 		# ДИАЛОГ
-	if trader_in_area:
-		if Input.is_action_just_pressed("action"):
-			run_dialogue("First")
-	$CanvasLayer/Label.text = str(health)
-	mouse_lock = get_global_mouse_position() - self.position
+	#if trader_in_area:
+		#if Input.is_action_just_pressed("action"):
+			#run_dialogue("First")
+	#$CanvasLayer/Label.text = str(health)
+	#mouse_lock = get_global_mouse_position() - self.position
 		#КОНЕЦ ДИАЛОГА
 	
 	var movement = movement_vector()
@@ -148,14 +148,14 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_down")
 			else:
 				$AnimatedSprite2D.play("walk_down")
-	else:
+	#else:
 		# Idle анимация соответствует последнему положению игрока
-		$AnimatedSprite2D.play("idle_" + last_direction)
+		#$AnimatedSprite2D.play("idle_" + last_direction)
 
 	move_and_slide()
 
 	var mouse_position = get_global_mouse_position()
-	$Marker2D.look_at(mouse_position)
+	#$Marker2D.look_at(mouse_position)
 	
 	# Оновлена логіка стрільби з bullet_equip
 	#if Input.is_action_just_pressed("shoot") and bullet_equip and bullet_cooldown:
@@ -288,7 +288,7 @@ func death_player():
 	run_speed = 0
 	
 	queue_free()
-	$AnimatedSprite2D.play("death")
+#	$AnimatedSprite2D.play("death")
 	await get_tree().create_timer(5).timeout
 
 	$Dead_menu.visible = true

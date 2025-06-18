@@ -1,8 +1,5 @@
-res://Game/Scene/DEAD_MENU.tscn
-res://Game/dialogic/Style/bublse.tres
-res://test/test_hero.gd
-res://unit_testing/hero.gd
 res://Game/World/World.tscn
+res://Game/dialogic/Style/bublse.tres
 res://Game/Characters/Player/Young_boy.tscn
 res://Game/Item/item.tscn
 res://Game/Main_Map/main_loc.tscn
@@ -13,3 +10,12 @@ res://Game/Scene/Setting_menu.tscn
 res://Game/Characters/enemy/bandit.tscn
 res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/Characters/enemy/big_bandit.tscn
+res://Game/Scene/DEAD_MENU.tscn
+res://test/test_hero.gd
+res://unit_testing/hero.gd
+res://unit_testing/tree.gd
+res://test/test_tree.gd
+res://unit_testing/trader.gd
+res://test/test_trader.gd
+res://unit_testing/bandit.gd
+res://test/test_bandit.gd
