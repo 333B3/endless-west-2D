@@ -1,5 +1,7 @@
-AudioStreamPlayer
+Node2D
 Label
+HScrollBar
+AudioStreamPlayer
 Timer
 CollisionShape2D
 AnimatedSprite2D
@@ -11,5 +13,3 @@ Button
 TextureRect
 PanelContainer
 Node
-Panel
-Sprite2D
