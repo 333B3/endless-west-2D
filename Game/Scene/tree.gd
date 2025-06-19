@@ -42,7 +42,7 @@ func drop_items():
 		var drop = item_scene.instantiate()
 
 		# !!! Встановлюємо item_data тут !!!
-		drop.item_data = load("res://Game/Item/Avocado.tres")  # або Carrot.tres — залежить від дерева
+		drop.item_data = load("res://Game/Item/Wood.tres")  
 
 		drop.global_position = global_position
 		get_tree().current_scene.add_child(drop)

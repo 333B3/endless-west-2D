@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c4mtdri82t80g"]
+
+[ext_resource type="Script" uid="uid://b2fk6dn1gmicw" path="res://Game/Script/classes/class.gd" id="1_rryn4"]
+[ext_resource type="Texture2D" uid="uid://dn1ij0mbi4hsp" path="res://Res/Map/Cute_Fantasy_Free/wood.png" id="2_bpvvj"]
+
+[resource]
+script = ExtResource("1_rryn4")
+texture = ExtResource("2_bpvvj")
+name = ""
+description = ""
+type = "Material"
+is_stackable = true
+item_name = ""
+item_type = ""
+metadata/_custom_type_script = "uid://b2fk6dn1gmicw"
