@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=130 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -851,6 +851,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_74hxk"]
 radius = 9.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_vb8vb"]
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_7jkfr"]
+line_spacing = 2.665
+outline_size = 1
+shadow_size = 3
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_otuna"]
 radius = 5.0
 height = 16.0
@@ -885,11 +893,20 @@ shape = SubResource("CircleShape2D_74hxk")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 3.0
+offset_left = 29.0
 offset_top = 2.0
-offset_right = 35.0
+offset_right = 61.0
 offset_bottom = 25.0
+label_settings = SubResource("LabelSettings_vb8vb")
 metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 41.0
+offset_bottom = 25.0
+text = "Hp:"
+label_settings = SubResource("LabelSettings_7jkfr")
 
 [node name="HitTimer" type="Timer" parent="."]
 
@@ -915,8 +932,17 @@ offset_bottom = -225.0
 visible = false
 shape = SubResource("CircleShape2D_vb8vb")
 
+[node name="RegenDelayTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="RegenIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="pick_item" to="." method="_on_pick_item_area_entered"]
+[connection signal="timeout" from="RegenDelayTimer" to="." method="_on_regen_delay_timer_timeout"]
+[connection signal="timeout" from="RegenIntervalTimer" to="." method="_on_regen_interval_timer_timeout"]

@@ -1,2 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
+/unit_testing
+/test
+/test
+/test
+test/test_hero.gd
+/test
+/unit_testing

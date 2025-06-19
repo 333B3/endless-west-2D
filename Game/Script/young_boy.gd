@@ -36,7 +36,19 @@ var inventory_open: bool = false
 var near_tree = false
 var hit_tree = false
 
+@onready var regen_delay_timer = $RegenDelayTimer  
+@onready var regen_interval_timer = $RegenIntervalTimer  
+
 func _ready():
+	# Налаштування таймерів
+	regen_delay_timer.wait_time = 5.0
+	regen_delay_timer.one_shot = true
+	regen_interval_timer.wait_time = 0.5
+	regen_interval_timer.one_shot = false
+	regen_delay_timer.stop()
+	regen_interval_timer.stop()
+	print("Таймери ініціалізовані")
+
 	hit_timer.wait_time = 0.9  
 	hit_timer.one_shot = false  
 	# Скидаємо weapon_slot.item, якщо він не в інвентарі
@@ -179,6 +191,22 @@ func _process(_delta):
 	
 	play_animation(direction)
 	
+	if health > 0 and regen_delay_timer.is_stopped():
+		regen_delay_timer.start()
+
+func _on_regen_delay_timer_timeout():
+	if health < 100:  # Початок відновлення тільки якщо здоров’я менше 100
+		$RegenIntervalTimer.start()
+
+func _on_regen_interval_timer_timeout():
+	if health < 100:
+		health += 1
+		print("Health regenerated to: ", health)
+	else:
+		health = 100  # Обмежуємо максимум
+		regen_interval_timer.stop()
+		print("Здоров’я повністю відновлено до 100")
+
 func use_weapon():
 	var weapon = weapon_slot.item
 	if weapon != null and weapon.is_in_group("weapon"):
