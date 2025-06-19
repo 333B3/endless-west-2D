@@ -201,11 +201,10 @@ func _on_regen_delay_timer_timeout():
 func _on_regen_interval_timer_timeout():
 	if health < 100:
 		health += 1
-		print("Health regenerated to: ", health)
 	else:
 		health = 100  # Обмежуємо максимум
 		regen_interval_timer.stop()
-		print("Здоров’я повністю відновлено до 100")
+
 
 func use_weapon():
 	var weapon = weapon_slot.item
