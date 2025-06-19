@@ -10,7 +10,8 @@ func _on_new_pressed():
 
 
 func _on_setting_pressed():
-	$Control.visible = true
+	var Setting_menu = load("res://Game/Scene/Setting_menu.tscn")
+	get_tree().change_scene_to_packed(Setting_menu)
 
 
 func _on_exit_pressed():
