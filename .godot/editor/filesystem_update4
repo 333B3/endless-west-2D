@@ -17,3 +17,4 @@ res://Game/Script/setting_menu.gd
 res://default_bus_layout.tres
 res://Game/Scene/audio_global.gd
 res://Game/FX/default_audio.tres
+res://Game/Script/young_boy.gd

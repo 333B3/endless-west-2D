@@ -39,6 +39,8 @@ var hit_tree = false
 @onready var regen_delay_timer = $RegenDelayTimer  
 @onready var regen_interval_timer = $RegenIntervalTimer  
 
+var walk_sound = false
+
 func _ready():
 	# Налаштування таймерів
 	regen_delay_timer.wait_time = 5.0
@@ -140,27 +142,32 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_right")
 			else:
 				$AnimatedSprite2D.play("walk_right")
+
 		elif movement == Vector2(-1, 0):
 			last_direction = "left"
 			if current_speed == run_speed:
 				$AnimatedSprite2D.play("run_left")
 			else:
 				$AnimatedSprite2D.play("walk_left")
+
 		elif movement == Vector2(0, -1):
 			last_direction = "up"
 			if current_speed == run_speed:
 				$AnimatedSprite2D.play("run_up")
 			else:
 				$AnimatedSprite2D.play("walk_up")
+
 		elif movement == Vector2(0, 1):
 			last_direction = "down"
 			if current_speed == run_speed:
 				$AnimatedSprite2D.play("run_down")
 			else:
 				$AnimatedSprite2D.play("walk_down")
+
 	else:
 		# Idle анимация соответствует последнему положению игрока
 		$AnimatedSprite2D.play("idle_" + last_direction)
+
 
 	move_and_slide()
 
@@ -193,6 +200,10 @@ func _process(_delta):
 	
 	if health > 0 and regen_delay_timer.is_stopped():
 		regen_delay_timer.start()
+		
+
+func play_walk_sound():
+	pass
 
 func _on_regen_delay_timer_timeout():
 	if health < 100:  # Початок відновлення тільки якщо здоров’я менше 100
