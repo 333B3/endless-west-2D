@@ -14,3 +14,5 @@ res://Game/Scene/DEAD_MENU.tscn
 res://Game/Script/young_boy.gd
 res://test/test_hero.gd
 res://unit_testing/hero.gd
+res://Game/Script/menu.gd
+res://Game/Item/wood.tscn

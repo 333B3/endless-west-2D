@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=132 format=3 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cln8cwvk23i6q" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet3.png" id="21_pp0ff"]
 [ext_resource type="Texture2D" uid="uid://bnbnmjo1qjfuc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet43.png" id="22_6keac"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="24_7jkfr"]
+[ext_resource type="AudioStream" uid="uid://b7mrjaypjmhob" path="res://Game/sound/walk.mp3" id="25_pp0ff"]
 [ext_resource type="PackedScene" uid="uid://dlbwunr1qcfvx" path="res://Game/World/Inventory.tscn" id="25_vb8vb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
@@ -865,6 +866,12 @@ height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vb8vb"]
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6keac"]
+clip_count = 1
+clip_0/name = &"walk"
+clip_0/stream = ExtResource("25_pp0ff")
+clip_0/auto_advance = 0
+
 [node name="Young_boy" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 collision_layer = 2
@@ -938,6 +945,9 @@ one_shot = true
 
 [node name="RegenIntervalTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamInteractive_6keac")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
