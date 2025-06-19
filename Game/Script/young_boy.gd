@@ -96,11 +96,13 @@ func _process(_delta):
 				break
 
 	if Input.is_action_just_pressed("shoot"):
+		
 		if weapon_slot and weapon_slot.item != null and weapon_slot.is_in_group("weapon"):
 			print("Спроба використати зброю. weapon_slot.item = ", weapon_slot.item.item_name if weapon_slot.item else "null")
 			print("Інвентар відкритий: ", inventory_open, ", Миша над UI: ", is_mouse_over_ui, ", У інвентарі: ", is_item_in_inventory(weapon_slot.item))
 			if not inventory_open and not is_mouse_over_ui and is_item_in_inventory(weapon_slot.item):
 				use_weapon()
+				
 			else:
 				print("Використання заблоковано: Інвентар відкритий: ", inventory_open, ", Миша над UI: ", is_mouse_over_ui, ", Предмет у інвентарі: ", is_item_in_inventory(weapon_slot.item))
 
@@ -111,9 +113,11 @@ func _process(_delta):
 	velocity = current_speed * direction
 	
 	if attacking == true:
+		
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
 				$AnimatedSprite2D.play("attack_right")  # Правая сторона
+				
 			else:
 				$AnimatedSprite2D.play("attack_left")   # Левая сторона
 		else:
@@ -204,6 +208,10 @@ func _process(_delta):
 
 func play_walk_sound():
 	pass
+func shoot_sound_play():
+	$ShootSound.play()  # Запускаємо звук
+	await get_tree().create_timer(1.0).timeout  # Чекаємо 1 секунду
+	$ShootSound.stop()
 
 func _on_regen_delay_timer_timeout():
 	if health < 100:  # Початок відновлення тільки якщо здоров’я менше 100

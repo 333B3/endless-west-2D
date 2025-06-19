@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=4 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=132 format=4 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cln8cwvk23i6q" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet3.png" id="21_pp0ff"]
 [ext_resource type="Texture2D" uid="uid://bnbnmjo1qjfuc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet43.png" id="22_6keac"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="24_7jkfr"]
+[ext_resource type="AudioStream" uid="uid://bpfy4i7euf78d" path="res://Res/Gun vol 1/Gun vol 1/TomC_ItchSFX_Guns_01.mp3" id="25_pp0ff"]
 [ext_resource type="PackedScene" uid="uid://dlbwunr1qcfvx" path="res://Game/World/Inventory.tscn" id="25_vb8vb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
@@ -946,6 +947,9 @@ wait_time = 0.5
 [node name="walk_sound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_7jkfr")
 playback_type = 1
+
+[node name="Shoot_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_pp0ff")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
