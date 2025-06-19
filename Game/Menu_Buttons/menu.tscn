@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://camlxmrbu5mi3"]
+[gd_scene load_steps=39 format=3 uid="uid://camlxmrbu5mi3"]
 
 [ext_resource type="Texture2D" uid="uid://d0102dprk43n4" path="res://Game/Menu_Buttons/Large Buttons/Large Buttons/New game Button.png" id="1_1ha7t"]
 [ext_resource type="Script" uid="uid://bkd4xxlfoq45n" path="res://Game/Script/menu.gd" id="1_4te8n"]
@@ -22,6 +22,7 @@
 [ext_resource type="Shader" uid="uid://c1h441umh7t0c" path="res://Game/Menu_Buttons/3.gdshader" id="12_7wlbw"]
 [ext_resource type="Shader" uid="uid://c0wxo1nsifjmh" path="res://Game/Menu_Buttons/2.gdshader" id="14_8y03c"]
 [ext_resource type="Shader" uid="uid://dhx41vy8o0tp3" path="res://Game/Menu_Buttons/1.gdshader" id="16_oqcva"]
+[ext_resource type="AudioStream" uid="uid://dcok2o8jbmwit" path="res://Res/Map/vacaroxa--generic-old-west-audio--v.1.0/vacaroxa--generic-old-west-audio--v.1.0/Generic Old West Audio/OST/MP3/Looped Versions/04 - A New Day (Loop Version).mp3" id="23_4hw03"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_swdj6"]
 shader = ExtResource("2_qnlpb")
@@ -294,6 +295,10 @@ script = SubResource("GDScript_882td")
 libraries = {
 &"": SubResource("AnimationLibrary_b4fcn")
 }
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_4hw03")
+autoplay = true
 
 [connection signal="pressed" from="New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Setting" to="." method="_on_setting_pressed"]
