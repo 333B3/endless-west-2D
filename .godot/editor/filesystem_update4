@@ -12,3 +12,5 @@ res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/Characters/enemy/big_bandit.tscn
 res://Game/Scene/DEAD_MENU.tscn
 res://Game/Script/young_boy.gd
+res://test/test_hero.gd
+res://unit_testing/hero.gd
