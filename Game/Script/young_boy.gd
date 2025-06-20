@@ -40,6 +40,8 @@ var hit_tree = false
 @onready var regen_interval_timer = $RegenIntervalTimer  
 
 var walk_sound = false
+var shoot_sound = false
+var run_sound = false
 
 func _ready():
 	# Налаштування таймерів
@@ -65,7 +67,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and near_tree == true and bullet_equip == false:
-		print("bumbum")
+		
 		hit_tree = true
 		await get_tree().create_timer(0.8).timeout
 		hit_tree = false
@@ -117,14 +119,18 @@ func _process(_delta):
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
 				$AnimatedSprite2D.play("attack_right")  # Правая сторона
+				walk_sound = false
 				
 			else:
 				$AnimatedSprite2D.play("attack_left")   # Левая сторона
+				walk_sound = false
 		else:
 			if mouse_lock.y > 0:
 				$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
+				walk_sound = false
 			else:
 				$AnimatedSprite2D.play("attack_up") #Верх
+				walk_sound = false
 	elif near_tree == true and bullet_equip == false and hit_tree == true:
 		$AnimatedSprite2D.play("slash")
 
@@ -132,13 +138,17 @@ func _process(_delta):
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
 				$AnimatedSprite2D.play("wait_right")  # Правая сторона
+				walk_sound = false
 			else:
 				$AnimatedSprite2D.play("wait_left")   # Левая сторона
+				walk_sound = false
 		else:
 			if mouse_lock.y > 0:
 				$AnimatedSprite2D.play("wait_down")  # Нижняя сторона
+				walk_sound = false
 			else:
 				$AnimatedSprite2D.play("wait_up") 
+				walk_sound = false
 	elif movement != Vector2.ZERO and bullet_equip == false:
 		if movement == Vector2(1, 0):
 			last_direction = "right"
@@ -146,6 +156,7 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_right")
 			else:
 				$AnimatedSprite2D.play("walk_right")
+				walk_sound = true
 
 		elif movement == Vector2(-1, 0):
 			last_direction = "left"
@@ -153,6 +164,7 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_left")
 			else:
 				$AnimatedSprite2D.play("walk_left")
+				walk_sound = true
 
 		elif movement == Vector2(0, -1):
 			last_direction = "up"
@@ -160,6 +172,7 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_up")
 			else:
 				$AnimatedSprite2D.play("walk_up")
+				walk_sound = true
 
 		elif movement == Vector2(0, 1):
 			last_direction = "down"
@@ -167,10 +180,13 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_down")
 			else:
 				$AnimatedSprite2D.play("walk_down")
+				walk_sound = true
+	
 
 	else:
 		# Idle анимация соответствует последнему положению игрока
 		$AnimatedSprite2D.play("idle_" + last_direction)
+		walk_sound = false
 
 
 	move_and_slide()
@@ -182,11 +198,13 @@ func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and bullet_equip and bullet_cooldown:
 		if weapon_slot and weapon_slot.item != null and is_item_in_inventory(weapon_slot.item):
 			bullet_cooldown = false
+			shoot_sound = true
 			var bullet_instance = bullet.instantiate()
 			bullet_instance.rotation = $Marker2D.rotation
 			bullet_instance.global_position = $Marker2D.global_position
 			add_child(bullet_instance)
-			await get_tree().create_timer(0.8).timeout
+			await get_tree().create_timer(0.6).timeout
+			shoot_sound = false
 			bullet_cooldown = true
 		else:
 			print("Не можна стріляти: зброя не екіпірована або не в інвентарі")
@@ -204,7 +222,13 @@ func _process(_delta):
 	
 	if health > 0 and regen_delay_timer.is_stopped():
 		regen_delay_timer.start()
-		
+	
+	if walk_sound == true:
+		if !$WalkSound.playing:
+			$WalkSound.play()
+	if shoot_sound == true and bullet_cooldown == false:
+		if !$ShootSound.playing:
+			$ShootSound.play()
 
 func play_walk_sound():
 	pass
