@@ -1,3 +1,4 @@
+AudioStreamPlayer
 ResourcePreloader
 Control
 GridContainer
@@ -5,11 +6,9 @@ AudioStreamPlayer2D
 Node2D
 Label
 HScrollBar
-AudioStreamPlayer
 Timer
 CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
 Area2D
 StaticBody2D
-AnimationPlayer

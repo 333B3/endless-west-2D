@@ -115,85 +115,99 @@ func _process(_delta):
 	velocity = current_speed * direction
 	
 	if attacking == true:
-		
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
 				$AnimatedSprite2D.play("attack_right")  # Правая сторона
 				walk_sound = false
-				
+				run_sound = false
 			else:
 				$AnimatedSprite2D.play("attack_left")   # Левая сторона
 				walk_sound = false
+				run_sound = false
 		else:
 			if mouse_lock.y > 0:
 				$AnimatedSprite2D.play("attack_down")  # Нижняя сторона
 				walk_sound = false
+				run_sound = false
 			else:
 				$AnimatedSprite2D.play("attack_up") #Верх
 				walk_sound = false
+				run_sound = false
 	elif near_tree == true and bullet_equip == false and hit_tree == true:
 		$AnimatedSprite2D.play("slash")
-
 	elif bullet_equip and attacking != true:
 		if abs(mouse_lock.x) > abs(mouse_lock.y):
 			if mouse_lock.x > 0:
 				$AnimatedSprite2D.play("wait_right")  # Правая сторона
 				walk_sound = false
+				run_sound = false
 			else:
 				$AnimatedSprite2D.play("wait_left")   # Левая сторона
 				walk_sound = false
+				run_sound = false
 		else:
 			if mouse_lock.y > 0:
 				$AnimatedSprite2D.play("wait_down")  # Нижняя сторона
 				walk_sound = false
+				run_sound = false
 			else:
 				$AnimatedSprite2D.play("wait_up") 
 				walk_sound = false
+				run_sound = false
 	elif movement != Vector2.ZERO and bullet_equip == false:
 		if movement == Vector2(1, 0):
 			last_direction = "right"
 			if current_speed == run_speed:
 				$AnimatedSprite2D.play("run_right")
+				run_sound = true
+				walk_sound = false
 			else:
 				$AnimatedSprite2D.play("walk_right")
 				walk_sound = true
+				run_sound = false
 
 		elif movement == Vector2(-1, 0):
 			last_direction = "left"
 			if current_speed == run_speed:
 				$AnimatedSprite2D.play("run_left")
+				run_sound = true
+				walk_sound = false
 			else:
 				$AnimatedSprite2D.play("walk_left")
 				walk_sound = true
+				run_sound = false
 
 		elif movement == Vector2(0, -1):
 			last_direction = "up"
 			if current_speed == run_speed:
 				$AnimatedSprite2D.play("run_up")
+				run_sound = true
+				walk_sound = false
 			else:
 				$AnimatedSprite2D.play("walk_up")
 				walk_sound = true
+				run_sound = false
 
 		elif movement == Vector2(0, 1):
 			last_direction = "down"
 			if current_speed == run_speed:
 				$AnimatedSprite2D.play("run_down")
+				run_sound = true
+				walk_sound = false
 			else:
 				$AnimatedSprite2D.play("walk_down")
 				walk_sound = true
-	
-
+				run_sound = false
 	else:
 		# Idle анимация соответствует последнему положению игрока
 		$AnimatedSprite2D.play("idle_" + last_direction)
 		walk_sound = false
-
+		run_sound = false
 
 	move_and_slide()
 
 	var mouse_position = get_global_mouse_position()
 	$Marker2D.look_at(mouse_position)
-	
 	# Оновлена логіка стрільби з bullet_equip
 	if Input.is_action_just_pressed("shoot") and bullet_equip and bullet_cooldown:
 		if weapon_slot and weapon_slot.item != null and is_item_in_inventory(weapon_slot.item):
@@ -226,6 +240,15 @@ func _process(_delta):
 	if walk_sound == true:
 		if !$WalkSound.playing:
 			$WalkSound.play()
+		if walk_sound == false:
+			$WalkSound.stop()
+
+	if run_sound == true:
+		if !$RunSound.playing:
+			$RunSound.play()
+		if run_sound == false:
+			$RunSound.stop()
+	
 	if shoot_sound == true and bullet_cooldown == false:
 		if !$ShootSound.playing:
 			$ShootSound.play()
