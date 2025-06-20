@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bouy5uonwnhpw"]
+
+[ext_resource type="Script" uid="uid://cyfsbi7u00n7v" path="res://Game/build/build.gd" id="1_eu1na"]
+
+[node name="Build" type="ResourcePreloader"]
+script = ExtResource("1_eu1na")
