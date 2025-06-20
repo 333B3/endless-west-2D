@@ -160,6 +160,7 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_up")
 			else:
 				$AnimatedSprite2D.play("walk_up")
+				walk_sound = true
 
 		elif movement == Vector2(0, 1):
 			last_direction = "down"
@@ -167,12 +168,18 @@ func _process(_delta):
 				$AnimatedSprite2D.play("run_down")
 			else:
 				$AnimatedSprite2D.play("walk_down")
+	
 
 	else:
 		# Idle анимация соответствует последнему положению игрока
 		$AnimatedSprite2D.play("idle_" + last_direction)
+		walk_sound = false
 
-
+	if direction:
+		#if !$WalkSoundd.playing:
+			$WalkSound.play
+	else:
+			$WalkSound.stop()
 	move_and_slide()
 
 	var mouse_position = get_global_mouse_position()
@@ -204,7 +211,13 @@ func _process(_delta):
 	
 	if health > 0 and regen_delay_timer.is_stopped():
 		regen_delay_timer.start()
-		
+	
+	if walk_sound == true:
+		if !$WalkSound.playing:
+			$WalkSound.play()
+	if bullet_cooldown == false:
+		if !$ShootSound.playing:
+			$ShootSound.play()
 
 func play_walk_sound():
 	pass
