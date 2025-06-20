@@ -42,3 +42,4 @@ res://Game/Scene/ui_menu_in_game.gd
 res://Game/World/Inventory.tscn
 res://default_bus_layout.tres
 res://FX/default_bus_layout.tres
+res://Game/Script/main_loc.gd

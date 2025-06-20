@@ -466,3 +466,7 @@ func try_cut_tree(global_position: Vector2):
 			tree.global_position = tilemap_tree.to_global(tree_pos)
 			get_tree().current_scene.add_child(tree)
 			
+
+
+func _on_area_2d_41_area_entered(area):
+	pass # Replace with function body.

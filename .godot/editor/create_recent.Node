@@ -1,3 +1,6 @@
+TileMapLayer
+CollisionShape2D
+Area2D
 AudioStreamPlayer
 Label
 HScrollBar
@@ -7,8 +10,6 @@ GridContainer
 AudioStreamPlayer2D
 Node2D
 Timer
-CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
-Area2D
 StaticBody2D

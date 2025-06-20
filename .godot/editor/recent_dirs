@@ -1,10 +1,11 @@
-res://Game/build
+res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG
+res://Res/Map/Tileset/Props
+res://Game/Script
 res://Res/Map/Cute_Fantasy_Free
 res://Game/Item
 res://Res/Map/Cute_Fantasy_Free/animation tree
 res://Res/Map/Cute_Fantasy_Free/Cute_Fantasy_Free/Outdoor decoration
 res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash
-res://Game/Script
 res://Res/Characters/enemy/desertSprites_ [version 1.0]
 res://Game/Characters/enemy
 res://Res/UI/setting
@@ -19,4 +20,3 @@ res://Game/dialogic/Style
 res://Game/dialogic/character
 res://Game/dialogic/timeline
 res://Game
-res://
