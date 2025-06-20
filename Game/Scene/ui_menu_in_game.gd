@@ -4,6 +4,9 @@ extends Control
 @onready var run_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("RunSound")
 @onready var shoot_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("ShootSound")
 @onready var music_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("Music")
+@onready var hit_tree_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("tree_hit")
+@onready var crash_tree_sound = get_tree().get_first_node_in_group("TreeGroup").get_node("tree_crash")
+
 func _process(delta):
 	CheckESC()
 	update_volume()
@@ -12,11 +15,15 @@ func update_volume():
 	var Music = $TextureRect/Music
 	var Walk = $TextureRect/Walk
 	var Shoot = $TextureRect/Shoot
+	var FX = $TextureRect/FX
 	
 	walk_sound.volume_db = Walk.value
 	run_sound.volume_db = Walk.value
 	shoot_sound.volume_db = Shoot.value
 	music_sound.volume_db = Music.value
+	hit_tree_sound.volume_db = FX.value
+	crash_tree_sound.volume_db = FX.value
+	
 
 func resume():
 	get_tree().paused = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsxwv40v8o6f1"]
+[gd_scene load_steps=8 format=3 uid="uid://bsxwv40v8o6f1"]
 
 [ext_resource type="Script" uid="uid://mplf7uujtm1e" path="res://Game/Scene/ui_menu_in_game.gd" id="1_5oi6p"]
 [ext_resource type="Texture2D" uid="uid://c7wajkropvnyu" path="res://Res/UI/setting/Setting_menu_np.PNG" id="2_5oi6p"]
@@ -10,6 +10,9 @@ atlas = ExtResource("3_hqm6x")
 region = Rect2(817.035, 833.086, 202.312, 200.981)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hqm6x"]
+font_size = 17
+
+[sub_resource type="LabelSettings" id="LabelSettings_e21b0"]
 font_size = 17
 
 [node name="Pause_menu" type="Control"]
@@ -161,6 +164,26 @@ offset_bottom = 232.636
 min_value = -50.0
 max_value = 20.0
 page = 1.5
+
+[node name="Label4" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 131.818
+offset_top = 253.636
+offset_right = 236.818
+offset_bottom = 277.636
+text = "Спецефекти"
+label_settings = SubResource("LabelSettings_e21b0")
+
+[node name="FX" type="HScrollBar" parent="TextureRect"]
+layout_mode = 0
+offset_left = 330.909
+offset_top = 253.636
+offset_right = 743.909
+offset_bottom = 281.636
+min_value = -50.0
+max_value = 10.0
+page = 1.5
+value = -10.0
 
 [connection signal="pressed" from="PanelContainer/NinePatchRect/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/NinePatchRect/setting" to="." method="_on_setting_pressed"]

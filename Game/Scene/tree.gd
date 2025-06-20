@@ -20,6 +20,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and player_in_area:
 		print("Tree HP:", health)
 		hit()
+	
 
 func _on_animated_sprite_2d_animation_finished():
 	if animated_sprite.animation == "down":
@@ -35,6 +36,7 @@ func hit():
 func die():
 	$CollisionShape2D.disabled = true
 	$CollisionShape2D2.disabled = false
+	$tree_crash.play()
 	drop_items()
 
 func drop_items():

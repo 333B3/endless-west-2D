@@ -35,6 +35,7 @@ var inventory_open: bool = false
 
 var near_tree = false
 var hit_tree = false
+var damage_tree = false
 
 @onready var regen_delay_timer = $RegenDelayTimer  
 @onready var regen_interval_timer = $RegenIntervalTimer  
@@ -69,10 +70,17 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("shoot") and near_tree == true and bullet_equip == false:
-		
+		damage_tree = true
+		await get_tree().create_timer(0.1).timeout
+		damage_tree = false
+
 		hit_tree = true
-		await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(0.7).timeout
 		hit_tree = false
+		
+		
+	
+
 	else:
 		pass
 		# ДИАЛОГ
@@ -254,7 +262,11 @@ func _process(_delta):
 	if shoot_sound == true and bullet_cooldown == false:
 		if !$ShootSound.playing:
 			$ShootSound.play()
-			
+	
+	if damage_tree == true:
+		if !$tree_hit.playing:
+			$tree_hit.play()
+	
 	if background_music == true:
 		if !$Music.playing:
 			await get_tree().create_timer(2.0).timeout
