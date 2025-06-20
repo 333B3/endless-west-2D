@@ -43,6 +43,8 @@ var walk_sound = false
 var shoot_sound = false
 var run_sound = false
 
+var background_music = true
+
 func _ready():
 	# Налаштування таймерів
 	regen_delay_timer.wait_time = 5.0
@@ -252,6 +254,14 @@ func _process(_delta):
 	if shoot_sound == true and bullet_cooldown == false:
 		if !$ShootSound.playing:
 			$ShootSound.play()
+			
+	if background_music == true:
+		if !$Music.playing:
+			await get_tree().create_timer(2.0).timeout
+			$Music.play()
+	
+
+
 
 func play_walk_sound():
 	pass

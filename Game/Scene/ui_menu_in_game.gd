@@ -3,7 +3,7 @@ extends Control
 @onready var walk_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("WalkSound")
 @onready var run_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("RunSound")
 @onready var shoot_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("ShootSound")
-
+@onready var music_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("Music")
 func _process(delta):
 	CheckESC()
 	update_volume()
@@ -16,6 +16,7 @@ func update_volume():
 	walk_sound.volume_db = Walk.value
 	run_sound.volume_db = Walk.value
 	shoot_sound.volume_db = Shoot.value
+	music_sound.volume_db = Music.value
 
 func resume():
 	get_tree().paused = false
