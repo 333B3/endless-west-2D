@@ -242,6 +242,16 @@ func _process(_delta):
 			bullet_equip = false
 			print("Не можна переключити режим: зброя не екіпірована або не в інвентарі")
 	
+	if death == true:
+		walk_speed = 0
+		run_speed = 0
+		$AnimatedSprite2D.play("death")
+		$DEATH.visible = true
+		await get_tree().create_timer(5).timeout
+		$DEATH.visible = false
+		
+
+	
 	play_animation(direction)
 	
 	if health > 0 and regen_delay_timer.is_stopped():
@@ -271,6 +281,7 @@ func _process(_delta):
 		if !$Music.playing:
 			await get_tree().create_timer(2.0).timeout
 			$Music.play()
+	
 	
 
 
@@ -397,14 +408,14 @@ func _on_hit_timer_timeout():
 
 func death_player():
 	death = true
-	walk_speed = 0
-	run_speed = 0
-	
-	queue_free()
-	$AnimatedSprite2D.play("death")
-	await get_tree().create_timer(5).timeout
-
-	$Dead_menu.visible = true
+	#walk_speed = 0
+	#run_speed = 0
+	#$Dead_menu.visible = true
+	#
+	#$AnimatedSprite2D.play("death")
+	#await get_tree().create_timer(10).timeout
+	#queue_free()
+	#$Dead_menu.visible = true
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("Bow"):

@@ -7,6 +7,8 @@ extends Control
 @onready var hit_tree_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("tree_hit")
 @onready var crash_tree_sound = get_tree().get_first_node_in_group("TreeGroup").get_node("tree_crash")
 
+
+
 func _process(delta):
 	CheckESC()
 	update_volume()

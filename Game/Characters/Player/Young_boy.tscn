@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=4 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=137 format=4 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -879,6 +879,13 @@ fade_time = 1.0
 stream_count = 1
 stream_0 = ExtResource("26_6keac")
 
+[sub_resource type="LabelSettings" id="LabelSettings_6keac"]
+font_size = 29
+font_color = Color(1, 0.0470588, 0.207843, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 6
+
 [node name="Young_boy" type="CharacterBody2D" groups=["PlayerGroup", "player"]]
 z_index = 1
 collision_layer = 2
@@ -933,10 +940,10 @@ shape = SubResource("CapsuleShape2D_otuna")
 visible = false
 
 [node name="dead_menu" parent="Dead_menu" instance=ExtResource("24_7jkfr")]
-offset_left = -289.0
-offset_top = -225.0
-offset_right = -291.0
-offset_bottom = -225.0
+offset_left = 267.0
+offset_top = 14.0
+offset_right = 265.0
+offset_bottom = 14.0
 
 [node name="CanvasLayer2" parent="." instance=ExtResource("25_vb8vb")]
 
@@ -971,6 +978,17 @@ volume_db = -25.0
 
 [node name="tree_hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_g8v7o")
+
+[node name="DEATH" type="Label" parent="."]
+visible = false
+offset_left = 303.0
+offset_top = 123.0
+offset_right = 879.0
+offset_bottom = 450.0
+text = "ВИ ПОМЕРЛИ"
+label_settings = SubResource("LabelSettings_6keac")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
