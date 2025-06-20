@@ -1,11 +1,11 @@
+HScrollBar
+Label
 AudioStreamPlayer
 ResourcePreloader
 Control
 GridContainer
 AudioStreamPlayer2D
 Node2D
-Label
-HScrollBar
 Timer
 CollisionShape2D
 AnimatedSprite2D
