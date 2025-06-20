@@ -41,6 +41,7 @@ var hit_tree = false
 
 var walk_sound = false
 var shoot_sound = false
+var run_sound = false
 
 func _ready():
 	# Налаштування таймерів
