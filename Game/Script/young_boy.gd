@@ -242,13 +242,8 @@ func _process(_delta):
 			bullet_equip = false
 			print("Не можна переключити режим: зброя не екіпірована або не в інвентарі")
 	
-	if death == true:
-		walk_speed = 0
-		run_speed = 0
-		$AnimatedSprite2D.play("death")
-		$DEATH.visible = true
-		await get_tree().create_timer(5).timeout
-		$DEATH.visible = false
+	if health <= 0:
+		pause_game_and_show_death_menu()
 		
 
 	
@@ -284,6 +279,12 @@ func _process(_delta):
 	
 	
 
+func pause_game_and_show_death_menu():
+	$Death.play()
+	var death_menu = preload("res://Game/Scene/DEAD_MENU.tscn").instantiate()  
+	add_child(death_menu)  # Додаємо меню як дочірній вузол
+	death_menu.visible = true  # Робимо меню видимим
+	$CanvasLayer.visible = false
 
 
 func play_walk_sound():

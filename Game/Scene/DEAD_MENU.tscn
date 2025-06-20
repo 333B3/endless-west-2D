@@ -1,16 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://h71wpj3rsvua"]
+[gd_scene load_steps=3 format=3 uid="uid://h71wpj3rsvua"]
 
 [ext_resource type="Script" uid="uid://dp4avxv2waeqa" path="res://Game/Scene/dead_menu.gd" id="1_hnmb0"]
+
+[sub_resource type="FontFile" id="FontFile_hnmb0"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="dead_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 259.0
-offset_top = 62.0
-offset_right = -264.0
-offset_bottom = -88.0
+offset_left = 14.0
+offset_top = -106.0
+offset_right = -560.0
+offset_bottom = -353.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hnmb0")
@@ -30,11 +37,12 @@ patch_margin_bottom = 389
 
 [node name="resume" type="Button" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 102.0
+offset_left = 174.0
+offset_top = 103.0
 offset_right = 258.0
-offset_bottom = 133.0
+offset_bottom = 134.0
 size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = SubResource("FontFile_hnmb0")
 theme_override_font_sizes/font_size = 0
 text = "Restart"
 
@@ -50,8 +58,11 @@ text = "Load
 
 [node name="main_menu" type="Button" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 178.0
-offset_right = 264.0
-offset_bottom = 209.0
+offset_left = 169.0
+offset_top = 177.0
+offset_right = 265.0
+offset_bottom = 208.0
 text = "Main menu"
+
+[connection signal="pressed" from="PanelContainer/NinePatchRect/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/NinePatchRect/main_menu" to="." method="_on_main_menu_pressed"]
