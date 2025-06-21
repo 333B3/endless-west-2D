@@ -10,6 +10,6 @@ name = ""
 description = ""
 type = "Material"
 is_stackable = true
-item_name = ""
+item_name = "Wood"
 item_type = ""
 metadata/_custom_type_script = "uid://b2fk6dn1gmicw"

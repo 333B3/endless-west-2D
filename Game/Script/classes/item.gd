@@ -1,10 +1,10 @@
 extends RigidBody2D
 
 @export var item_data: Resource
-var item: Resource  # ← ДОДАТИ ЦЕ
+var item: Resource  
 
 func _ready():
-	item = item_data  # ← ДОДАТИ ЦЕ
+	item = item_data  
 
 	add_to_group("item")
 	add_to_group("weapon")
