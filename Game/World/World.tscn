@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://bsyea3lxe4yr4"]
+[gd_scene load_steps=17 format=4 uid="uid://bsyea3lxe4yr4"]
 
+[ext_resource type="Script" uid="uid://bixlwauuexsel" path="res://Game/World/world.gd" id="1_bykvt"]
 [ext_resource type="PackedScene" uid="uid://btpx8bcd8yk1p" path="res://Game/Main_Map/tile_map_layer.tscn" id="1_seqlg"]
 [ext_resource type="PackedScene" uid="uid://cf6schj5hnndc" path="res://Game/Characters/Player/Young_boy.tscn" id="2_5q4vx"]
 [ext_resource type="Texture2D" uid="uid://b1fifvypo1kj" path="res://Res/Map/Tileset/Props/Texture.png" id="2_eiygp"]
@@ -570,6 +571,7 @@ sources/0 = SubResource("TileSetAtlasSource_jda3k")
 sources/1 = SubResource("TileSetAtlasSource_bbtrd")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_bykvt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AACkALL/AQANAA8AAACjALL/AQANABIAAACiALL/AQANABIAAAChALL/AQANABIAAACgALL/AQANABIAAACfALL/AQANABIAAACeALL/AQANABIAAACdALL/AQANABIAAACcALL/AQANABIAAACbALL/AQANABIAAACaALL/AQANABIAAACZALL/AQANABIAAACYALL/AQANABIAAACXALL/AQANABIAAACWALL/AQANABIAAACVALL/AQANABIAAACUALL/AQANABIAAACTALL/AQANABIAAACSALL/AQANABIAAACnAK//AQAGABIAAACSAK//AQANABAAAACTAK//AQANABAAAACUAK//AQANABAAAACVAK//AQANABAAAACWAK//AQANABAAAACXAK//AQANABAAAACYAK//AQANABAAAACZAK//AQANABAAAACaAK//AQANABAAAACbAK//AQANABAAAACcAK//AQANABAAAACdAK//AQANABAAAACeAK//AQANABAAAACfAK//AQANABAAAACgAK//AQANABAAAAChAK//AQANABAAAACiAK//AQANABAAAACjAK//AQANABAAAACkAK//AQANABAAAAA=")
@@ -626,3 +628,7 @@ visible = false
 
 [node name="Area2D" parent="." instance=ExtResource("10_new00")]
 position = Vector2(5020, -1868)
+
+[node name="PreviewContainer" type="Node2D" parent="."]
+
+[node name="HouseContainer" type="Node2D" parent="."]

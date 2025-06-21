@@ -9,7 +9,13 @@ var can_build = false
 @onready var preview_container: Node2D = $PreviewContainer 
 
 func _ready() -> void:
-	pass
+	var scene := preload("res://Game/World/Inventory.tscn")
+	var ui = scene.instantiate() 
+	add_child(ui) 
+
+	if ui.has_signal("build_button_pressed"):
+		ui.connect("build_button_pressed", Callable(self, "_on_place_button_pressed"))
+
 
 func _process(delta: float) -> void:
 	if is_in_build_mode and preview_instance:
@@ -17,13 +23,16 @@ func _process(delta: float) -> void:
 		
 func _unhandled_input(event: InputEvent) -> void:
 	if is_in_build_mode and event.is_action_released("place_house"):
-		if can_build and preview_instance:
+		print("Спроба поставити будівлю!")
+		if preview_instance:
 			var placed_house = house_scene.instantiate()
 			placed_house.position = preview_instance.position
 			add_child(placed_house)
-		preview_instance.queue_free()
-		preview_instance = null
-		is_in_build_mode = false
+
+			preview_instance.queue_free()
+			preview_instance = null
+			is_in_build_mode = false
+
 
 func _physics_process(delta: float) -> void:
 	if preview_instance:
@@ -35,10 +44,9 @@ func _physics_process(delta: float) -> void:
 		params.shape.size = Vector2(108, 96)
 		params.transform = Transform2D(0, preview_instance.global_position)
 		var collision = world_space.collide_shape(params, 1)
-		can_build = collision.is_empty()
-		can_build = true
-	else:
-		can_build = false
+
+		can_build = collision.is_empty()  # ← залиш тільки це
+
 
 func _on_place_button_pressed():
 	print("Кнопка натиснута!")

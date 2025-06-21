@@ -17,6 +17,7 @@ animations = [{
 size = Vector2(108, 96)
 
 [node name="House" type="RigidBody2D"]
+mass = 0.001
 gravity_scale = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
