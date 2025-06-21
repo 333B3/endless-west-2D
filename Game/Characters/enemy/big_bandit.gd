@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 60
+var speed = 75
 var change_direction = 2
 var timer = 1.5
 var stop_timer = 2

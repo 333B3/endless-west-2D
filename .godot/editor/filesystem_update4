@@ -11,5 +11,7 @@ res://Game/World/slot.tscn
 res://Game/Menu_Buttons/menu.tscn
 res://Game/World/Inventory.tscn
 res://Game/build/house.tscn
-res://Game/Script/classes/inventory_button.gd
-res://cursor.gd
+res://Game/Script/young_boy.gd
+res://Game/Script/bandit.gd
+res://Game/Script/bandit_bow.gd
+res://Game/Characters/enemy/big_bandit.gd

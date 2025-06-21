@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
-var walk_speed = 75
-var run_speed = 175
+var walk_speed = 70
+var run_speed = 135
 var last_direction: String = "down" 
 var health = 100 
 
-var damage = 5
-var big_damage = 20
-var DamageBow = 10
+var damage = 15
+var big_damage = 30
+var DamageBow = 20
 var BowHit = false
 
 var bullet_equip = false
@@ -315,8 +315,8 @@ func use_weapon():
 
 func play_animation(dir):
 	if !bullet_equip:
-		walk_speed = 75
-		run_speed = 150
+		walk_speed = 65
+		run_speed = 140
 	if bullet_equip:
 		walk_speed = 0
 		run_speed = 0

@@ -67,3 +67,9 @@ func _on_place_button_pressed():
 		is_in_build_mode = true
 	else:
 		print("Preview вже існує")
+
+
+func _on_area_2d_2_area_entered(area):
+	if area.is_in_group("player"):
+		var mainLoc = load("res://Game/Main_Map/main_loc.tscn")
+		get_tree().change_scene_to_packed(mainLoc)
