@@ -209,4 +209,11 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
+[node name="PlaceModeButton" type="Button" parent="."]
+offset_left = -217.0
+offset_top = 701.0
+offset_right = -146.0
+offset_bottom = 773.0
+
 [connection signal="pressed" from="ToggleButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PlaceModeButton" to="." method="_on_place_mode_button_pressed"]

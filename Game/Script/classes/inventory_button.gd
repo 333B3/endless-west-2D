@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var inventory_panel := $Inventory
 @onready var toggle_button := $ToggleButton
 @onready var weapon_slot := $WeaponSlot/slot  
+@onready var place_button = $PlaceModeButton
 var slot: Array = []
 var inventory_open := false
 var inv_node: Inventory = null
@@ -49,3 +50,8 @@ func update_inventory_slots():
 # Перевірка чи є зброя в слоті
 func get_weapon_in_slot():
 	return weapon_slot.item if weapon_slot.item != null and weapon_slot.item.is_in_group("weapon") else null
+
+signal build_button_pressed
+func _on_place_mode_button_pressed() -> void:
+	print("Натиснута кнопка побудови")
+	emit_signal("build_button_pressed")

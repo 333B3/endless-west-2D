@@ -1,5 +1,10 @@
+Node2D
 TileMapLayer
+Button
+CanvasLayer
+AnimatedSprite2D
 CollisionShape2D
+RigidBody2D
 Area2D
 AudioStreamPlayer
 Label
@@ -7,9 +12,3 @@ HScrollBar
 ResourcePreloader
 Control
 GridContainer
-AudioStreamPlayer2D
-Node2D
-Timer
-AnimatedSprite2D
-CharacterBody2D
-StaticBody2D

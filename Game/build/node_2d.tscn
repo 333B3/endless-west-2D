@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://e0yqwusb7shl"]
+
+[ext_resource type="Script" uid="uid://cue7nao5vmxmt" path="res://Game/build/node_2d.gd" id="1_kdu8g"]
+[ext_resource type="PackedScene" uid="uid://dx1pki8pflecj" path="res://Game/Main_Map/main_loc.tscn" id="3_ig83q"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kdu8g")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_ig83q")]
+
+[node name="PreviewContainer" type="Node2D" parent="."]
+
+[node name="HouseContainer" type="Node2D" parent="."]
