@@ -65,6 +65,8 @@ func play_animation():
 		$AnimatedSprite2D2.stop()
 	elif hit_player:
 		$AnimatedSprite2D.play("attack")
+		if !$hit2.playing:
+			$hit2.play()
 		$AnimatedSprite2D2.stop() 
 	elif velocity != Vector2.ZERO:
 		$AnimatedSprite2D.play("run")

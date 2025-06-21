@@ -1,10 +1,11 @@
-[gd_scene load_steps=66 format=3 uid="uid://bc3ppda5p5qe0"]
+[gd_scene load_steps=67 format=3 uid="uid://bc3ppda5p5qe0"]
 
 [ext_resource type="Script" uid="uid://bdd3qphej22ou" path="res://Game/Characters/enemy/bandit_tutorial.gd" id="1_2pmxt"]
 [ext_resource type="Texture2D" uid="uid://bgwgr4k3p5fcy" path="res://Res/Characters/bandit_attack.png" id="2_lxfcm"]
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="3_raysa"]
 [ext_resource type="Texture2D" uid="uid://db2eorx8b6qhi" path="res://Res/Characters/bandit_bow.png" id="4_sb55y"]
 [ext_resource type="Texture2D" uid="uid://btu7ws1lrwob5" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/banditDust_.png" id="5_y3xxv"]
+[ext_resource type="AudioStream" uid="uid://b2n14flfdbd2a" path="res://Game/sound/hit.mp3" id="6_lxfcm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fhk72"]
 radius = 5.0
@@ -448,7 +449,7 @@ radius = 54.0093
 radius = 9.0
 height = 18.0
 
-[node name="Bandit_tutorial" type="CharacterBody2D" groups=["player"]]
+[node name="Bandit_tutorial" type="CharacterBody2D" groups=["EnemyGroup", "player"]]
 light_mask = 0
 collision_layer = 0
 script = ExtResource("1_2pmxt")
@@ -488,6 +489,10 @@ shape = SubResource("CircleShape2D_7l2gc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
 shape = SubResource("CapsuleShape2D_av5um")
+
+[node name="hit2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lxfcm")
+volume_db = -80.0
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]

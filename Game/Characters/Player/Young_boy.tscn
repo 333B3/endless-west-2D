@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=4 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=139 format=4 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -23,11 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://cln8cwvk23i6q" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet3.png" id="21_pp0ff"]
 [ext_resource type="Texture2D" uid="uid://bnbnmjo1qjfuc" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/slash/cowboy_right_slash_spritesheet43.png" id="22_6keac"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="24_7jkfr"]
+[ext_resource type="AudioStream" uid="uid://dmbm58thgqjgh" path="res://Game/sound/shoot.mp3" id="25_g8v7o"]
 [ext_resource type="PackedScene" uid="uid://dlbwunr1qcfvx" path="res://Game/World/Inventory.tscn" id="25_vb8vb"]
 [ext_resource type="AudioStream" uid="uid://b3hp7qyr8omli" path="res://Game/music/ambient_western.mp3" id="26_6keac"]
-[ext_resource type="AudioStream" uid="uid://ibgckdt8g3w0" path="res://Game/sound/shoot2.mp3" id="26_pp0ff"]
 [ext_resource type="AudioStream" uid="uid://bscqsudnny3bc" path="res://Game/sound/tree_hit.mp3" id="27_g8v7o"]
 [ext_resource type="AudioStream" uid="uid://bmn5h64a2mc5t" path="res://Game/sound/death.mp3" id="28_g8v7o"]
+[ext_resource type="AudioStream" uid="uid://b2n14flfdbd2a" path="res://Game/sound/hit.mp3" id="29_grbof"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dx12"]
 radius = 5.0
@@ -982,7 +983,7 @@ stream = SubResource("AudioStreamMP3_pp0ff")
 volume_db = -20.0
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("26_pp0ff")
+stream = ExtResource("25_g8v7o")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_g8v7o")
@@ -993,6 +994,10 @@ stream = ExtResource("27_g8v7o")
 
 [node name="Death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_g8v7o")
+volume_db = -10.0
+
+[node name="hit_bow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_grbof")
 volume_db = -10.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

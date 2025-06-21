@@ -15,3 +15,11 @@ func _on_setting_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_button_pressed():
+	$ColorRect.visible = false
+
+
+func _on_about_pressed():
+	$ColorRect.visible = true

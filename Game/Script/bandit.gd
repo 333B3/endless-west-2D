@@ -16,6 +16,8 @@ var min_distance = 15
 
 var hit_player = false
 
+var play_hit_sound = false
+
 func _ready():
 	randomize()
 	dead = false
@@ -43,6 +45,9 @@ func _physics_process(delta):
 					velocity = Vector2.ZERO
 					timer = stop_timer
 					is_stopped = true
+	if play_hit_sound == true:
+		if !$hit2.playing:
+			$hit2.play
 
 	move_and_slide()
 	play_animation()
@@ -65,7 +70,12 @@ func play_animation():
 		$AnimatedSprite2D2.stop()
 	elif hit_player:
 		$AnimatedSprite2D.play("attack")
+		if !$hit2.playing:
+			$hit2.play()
 		$AnimatedSprite2D2.stop() 
+		play_hit_sound = true
+		await get_tree().create_timer(0.6).timeout
+		play_hit_sound = false 
 	elif velocity != Vector2.ZERO:
 		$AnimatedSprite2D.play("run")
 		$AnimatedSprite2D2.play("dust")
@@ -96,13 +106,12 @@ func take_damage(damage):
 	if !dead:
 		health -= damage
 		is_taking_damage = true
+
 		play_animation()
-
-		await get_tree().create_timer(0.6).timeout 
 		is_taking_damage = false  
-
 		if health <= 0:
 			death()
+
 func _on_hit_area_entered(area):
 	if area.is_in_group("player"):
 		hit_player = true

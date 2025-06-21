@@ -22,12 +22,21 @@ var can_attack = true
 
 var is_attacking = false
 
+var hit_sound = false
+
 func _ready():
 	randomize()
 	dead = false
 	player_in_area = false
 
 func _physics_process(delta):
+
+
+	if is_attacking == true:
+		hit_sound = true
+		await get_tree().create_timer(0.1).timeout 
+		hit_sound = false
+
 	if can_attack == false:
 		attack()
 
@@ -128,6 +137,7 @@ func attack_player():
 	can_attack = false
 	await get_tree().create_timer(attack_cooldown).timeout  
 	var arrow_scene = preload("res://Game/World/Bow.tscn")
+	$AudioStreamPlayer.play()
 	var arrow = arrow_scene.instantiate()  
 	arrow.set_direction(player_direction())
 	#var spawn_offset = player_direction() * 40  
@@ -138,7 +148,7 @@ func attack_player():
 	can_attack = true  
 	
 func attack():
-	is_attacking = true  
+	is_attacking = true 
 	await get_tree().create_timer(2).timeout  
 	is_attacking = false  
 

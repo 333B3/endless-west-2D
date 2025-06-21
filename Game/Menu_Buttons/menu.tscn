@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://camlxmrbu5mi3"]
+[gd_scene load_steps=41 format=3 uid="uid://camlxmrbu5mi3"]
 
 [ext_resource type="Texture2D" uid="uid://d0102dprk43n4" path="res://Game/Menu_Buttons/Large Buttons/Large Buttons/New game Button.png" id="1_1ha7t"]
 [ext_resource type="Script" uid="uid://bkd4xxlfoq45n" path="res://Game/Script/menu.gd" id="1_4te8n"]
@@ -82,6 +82,10 @@ _data = {
 &"RESET": SubResource("Animation_04xun"),
 &"new_animation": SubResource("Animation_ri3ww")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_882td"]
+font_size = 40
+outline_color = Color(0.498039, 0, 0, 1)
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -292,6 +296,15 @@ offset_bottom = 644.0
 icon = ExtResource("5_xpxiv")
 script = SubResource("GDScript_882td")
 
+[node name="About" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1059.0
+offset_top = 589.0
+offset_right = 1169.0
+offset_bottom = 642.0
+text = "About us
+"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_b4fcn")
@@ -310,6 +323,39 @@ offset_top = 23.0
 offset_right = 37.0
 offset_bottom = 23.0
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = -11.0
+offset_right = 1248.0
+offset_bottom = 680.0
+color = Color(0, 0, 0, 0.933333)
+
+[node name="Label" type="Label" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 21.0
+offset_top = 11.0
+offset_right = 1217.0
+offset_bottom = 678.0
+text = "Розробники:
+Кіндінов Іван
+Одиноченко Антон"
+label_settings = SubResource("LabelSettings_882td")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1071.0
+offset_top = 601.0
+offset_right = 1160.0
+offset_bottom = 656.0
+text = "Назад"
+
 [connection signal="pressed" from="New" to="." method="_on_new_pressed"]
 [connection signal="pressed" from="Setting" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

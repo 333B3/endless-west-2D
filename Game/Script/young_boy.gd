@@ -346,6 +346,8 @@ func hit_tree_timer():
 
 func take_damage_by_bow(DamageBow):
 	if !death:
+		if !$hit_bow.playing:
+			$hit_bow.play()
 		health -= DamageBow
 		BowHit = true
 		await get_tree().create_timer(0.6).timeout 

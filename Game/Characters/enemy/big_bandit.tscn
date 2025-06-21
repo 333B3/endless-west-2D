@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://sjw8g732gioh"]
+[gd_scene load_steps=60 format=3 uid="uid://sjw8g732gioh"]
 
 [ext_resource type="Script" uid="uid://c1jybl1klbcnf" path="res://Game/Characters/enemy/big_bandit.gd" id="1_f46h5"]
 [ext_resource type="Texture2D" uid="uid://bvyjgpkfow8na" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/bandit_.png" id="2_f46h5"]
 [ext_resource type="Texture2D" uid="uid://db2eorx8b6qhi" path="res://Res/Characters/bandit_bow.png" id="3_mgx70"]
 [ext_resource type="Texture2D" uid="uid://c4us5gfn6dtii" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/demon_.png" id="4_ohdik"]
 [ext_resource type="Texture2D" uid="uid://btu7ws1lrwob5" path="res://Res/Characters/enemy/desertSprites_ [version 1.0]/banditDust_.png" id="5_0gvda"]
+[ext_resource type="AudioStream" uid="uid://b2n14flfdbd2a" path="res://Game/sound/hit.mp3" id="6_f46h5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onkty"]
 radius = 7.0
@@ -397,7 +398,7 @@ radius = 54.0093
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2f51"]
 height = 22.0
 
-[node name="Big_bandit" type="CharacterBody2D"]
+[node name="Big_bandit" type="CharacterBody2D" groups=["EnemyGroup"]]
 collision_layer = 0
 script = ExtResource("1_f46h5")
 
@@ -436,6 +437,10 @@ shape = SubResource("CircleShape2D_5vf87")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
 position = Vector2(1, -1)
 shape = SubResource("CapsuleShape2D_e2f51")
+
+[node name="hit_big" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_f46h5")
+volume_db = -20.0
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
 [connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]

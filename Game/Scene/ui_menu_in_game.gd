@@ -6,7 +6,7 @@ extends Control
 @onready var music_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("Music")
 @onready var hit_tree_sound = get_tree().get_first_node_in_group("PlayerGroup").get_node("tree_hit")
 @onready var crash_tree_sound = get_tree().get_first_node_in_group("TreeGroup").get_node("tree_crash")
-
+#@onready var hit_sound = get_tree().get_first_node_in_group("EnemyGroup").get_node("hit2")
 
 
 func _process(delta):
@@ -25,6 +25,7 @@ func update_volume():
 	music_sound.volume_db = Music.value
 	hit_tree_sound.volume_db = FX.value
 	crash_tree_sound.volume_db = FX.value
+	#hit_sound.volume_db = FX.value
 	
 
 func resume():
