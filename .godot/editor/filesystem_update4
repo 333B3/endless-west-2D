@@ -12,12 +12,6 @@ res://Game/Main_Map/tile_map_layer.tscn
 res://Game/build/house.tscn
 res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/Characters/enemy/bandit.tscn
-res://Game/Script/bandit.gd
 res://Game/Characters/enemy/bandit_bow.tscn
-res://Game/Script/bandit_bow.gd
 res://Game/Characters/enemy/big_bandit.tscn
-res://Game/Characters/enemy/big_bandit.gd
-res://Game/Script/young_boy.gd
-res://Game/Scene/ui_menu_in_game.gd
 res://Game/Characters/enemy/bandit_tutorial.tscn
-res://Game/Script/menu.gd
