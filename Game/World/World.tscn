@@ -644,209 +644,209 @@ script = ExtResource("3_dtptj")
 [node name="Big_bandit" parent="." instance=ExtResource("7_5xt6m")]
 position = Vector2(4536, -1787)
 
-[node name="Big_bandit" parent="Big_bandit" instance=ExtResource("7_5xt6m")]
-position = Vector2(474, 1093)
+[node name="Big_bandit11" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(5010, -694)
 
-[node name="Big_bandit" parent="Big_bandit/Big_bandit" instance=ExtResource("7_5xt6m")]
-position = Vector2(-78, 32)
+[node name="Big_bandit12" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(4932, -662)
 
 [node name="Bandit" parent="." instance=ExtResource("3_lthya")]
 position = Vector2(4737, -1843)
 
-[node name="Bandit2" parent="Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-81, 70)
+[node name="Bandit22" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4560, -1447)
 
-[node name="Bandit3" parent="Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-177, 396)
+[node name="Bandit23" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4554, -1484)
 
-[node name="Bandit" parent="Bandit/Bandit3" instance=ExtResource("3_lthya")]
-position = Vector2(-6, -37)
+[node name="Bandit24" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4509, -1489)
 
-[node name="Bandit" parent="Bandit/Bandit3/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-45, -5)
+[node name="Bandit26" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1942, -2935)
 
-[node name="Bandit" parent="Bandit/Bandit3/Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-5, 43)
+[node name="Bandit28" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1765, -2539)
 
-[node name="Bandit" parent="Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-2795, -1092)
+[node name="Bandit29" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1759, -2576)
 
-[node name="Bandit2" parent="Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-81, 70)
+[node name="Bandit30" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1714, -2581)
 
-[node name="Bandit3" parent="Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-177, 396)
+[node name="Bandit31" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1709, -2538)
 
-[node name="Bandit" parent="Bandit/Bandit/Bandit3" instance=ExtResource("3_lthya")]
-position = Vector2(-6, -37)
+[node name="Bandit27" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1861, -2865)
 
-[node name="Bandit" parent="Bandit/Bandit/Bandit3/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-45, -5)
+[node name="Bandit25" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4504, -1446)
 
-[node name="Bandit" parent="Bandit/Bandit/Bandit3/Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-5, 43)
+[node name="Bandit21" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4656, -1773)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_jf3jy")]
 position = Vector2(4648, -1932)
 
+[node name="Bandit20" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4526, -1418)
+
+[node name="bandit_bow12" parent="." instance=ExtResource("5_t2g08")]
+position = Vector2(4549, -1423)
+
+[node name="Bandit32" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4967, -694)
+
+[node name="bandit_bow13" parent="." instance=ExtResource("5_t2g08")]
+position = Vector2(4978, -644)
+
+[node name="Bandit34" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4646, -110)
+
+[node name="Bandit35" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4632, -72)
+
+[node name="bandit_bow15" parent="." instance=ExtResource("5_t2g08")]
+position = Vector2(5001, -633)
+
+[node name="Big_bandit13" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(4518, -2169)
+
+[node name="bandit_bow16" parent="." instance=ExtResource("5_t2g08")]
+position = Vector2(3844, -3554)
+
+[node name="bandit_bow17" parent="." instance=ExtResource("5_t2g08")]
+position = Vector2(3765, -3549)
+
+[node name="Bandit36" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(3834, -3592)
+
+[node name="bandit_bow18" parent="." instance=ExtResource("5_t2g08")]
+position = Vector2(4564, -2178)
+
+[node name="Big_bandit14" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(1438, -224)
+
+[node name="Big_bandit15" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(1021, -228)
+
+[node name="Big_bandit16" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(817, -679)
+
+[node name="Big_bandit17" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(971, -430)
+
+[node name="Bandit37" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2673, -494)
+
+[node name="Big_bandit18" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(1343, -552)
+
+[node name="Big_bandit19" parent="." instance=ExtResource("7_5xt6m")]
+position = Vector2(1126, -715)
+
+[node name="Bandit39" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2148, -1681)
+
+[node name="Bandit43" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1996, -1354)
+
+[node name="Bandit42" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2001, -1397)
+
+[node name="Bandit41" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2046, -1392)
+
+[node name="Bandit40" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2052, -1355)
+
+[node name="Bandit38" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2229, -1751)
+
+[node name="Bandit44" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2148, -1681)
+
+[node name="Bandit49" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1996, -1354)
+
+[node name="Bandit48" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2001, -1397)
+
+[node name="Bandit47" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2046, -1392)
+
+[node name="Bandit46" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2052, -1355)
+
+[node name="Bandit45" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2229, -1751)
+
+[node name="Bandit51" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2148, -1681)
+
+[node name="Bandit55" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1996, -1354)
+
+[node name="Bandit54" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2001, -1397)
+
+[node name="Bandit53" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2046, -1392)
+
+[node name="Bandit52" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2052, -1355)
+
+[node name="Bandit50" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2229, -1751)
+
+[node name="Bandit57" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(2032, -2014)
+
+[node name="Bandit61" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1843, -927)
+
+[node name="Bandit60" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1848, -970)
+
+[node name="Bandit59" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1813, -813)
+
+[node name="Bandit58" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1819, -776)
+
+[node name="Bandit56" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1996, -1172)
+
+[node name="Bandit62" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(3791, -3574)
+
+[node name="bandit_bow14" parent="." instance=ExtResource("5_t2g08")]
+position = Vector2(5024, -659)
+
+[node name="Bandit33" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(4715, -98)
+
+[node name="Bandit68" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1458, -2665)
+
+[node name="Bandit67" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1463, -2708)
+
+[node name="Bandit66" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1508, -2703)
+
+[node name="Bandit65" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1514, -2666)
+
+[node name="Bandit63" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1691, -3062)
+
+[node name="Bandit64" parent="." instance=ExtResource("3_lthya")]
+position = Vector2(1610, -2992)
+
 [node name="bandit_bow" parent="." instance=ExtResource("5_t2g08")]
 position = Vector2(4486, -1970)
-
-[node name="Bandit" parent="bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(40, 552)
-
-[node name="bandit_bow" parent="bandit_bow" instance=ExtResource("5_t2g08")]
-position = Vector2(63, 547)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(418, 729)
-
-[node name="bandit_bow" parent="bandit_bow/bandit_bow" instance=ExtResource("5_t2g08")]
-position = Vector2(429, 779)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-263, 546)
-
-[node name="bandit_bow" parent="bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("5_t2g08")]
-position = Vector2(46, -15)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-378, 549)
-
-[node name="bandit_bow" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("5_t2g08")]
-position = Vector2(-23, 26)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-369, 561)
-
-[node name="Big_bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("7_5xt6m")]
-position = Vector2(-506, -1510)
-
-[node name="bandit_bow2" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("5_t2g08")]
-position = Vector2(-1180, -2895)
-
-[node name="bandit_bow3" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("5_t2g08")]
-position = Vector2(-1259, -2890)
-
-[node name="Bandit2" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-1190, -2933)
-
-[node name="Bandit3" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-1233, -2915)
-
-[node name="bandit_bow4" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("5_t2g08")]
-position = Vector2(-460, -1519)
-
-[node name="Big_bandit2" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("7_5xt6m")]
-position = Vector2(-3586, 435)
-
-[node name="Big_bandit3" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("7_5xt6m")]
-position = Vector2(-4003, 431)
-
-[node name="Big_bandit4" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("7_5xt6m")]
-position = Vector2(-4207, -20)
-
-[node name="Big_bandit5" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("7_5xt6m")]
-position = Vector2(-4053, 229)
-
-[node name="Bandit4" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-2351, 165)
-
-[node name="Big_bandit6" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("7_5xt6m")]
-position = Vector2(-3681, 107)
-
-[node name="Big_bandit7" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("7_5xt6m")]
-position = Vector2(-3898, -56)
-
-[node name="Bandit5" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-2795, -1092)
-
-[node name="Bandit2" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit5" instance=ExtResource("3_lthya")]
-position = Vector2(-81, 70)
-
-[node name="Bandit3" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit5" instance=ExtResource("3_lthya")]
-position = Vector2(-177, 396)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit5/Bandit3" instance=ExtResource("3_lthya")]
-position = Vector2(-6, -37)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit5/Bandit3/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-45, -5)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit5/Bandit3/Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-5, 43)
-
-[node name="Bandit6" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-2795, -1092)
-
-[node name="Bandit2" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit6" instance=ExtResource("3_lthya")]
-position = Vector2(-81, 70)
-
-[node name="Bandit3" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit6" instance=ExtResource("3_lthya")]
-position = Vector2(-177, 396)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit6/Bandit3" instance=ExtResource("3_lthya")]
-position = Vector2(-6, -37)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit6/Bandit3/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-45, -5)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit6/Bandit3/Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-5, 43)
-
-[node name="Bandit7" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-2795, -1092)
-
-[node name="Bandit2" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit7" instance=ExtResource("3_lthya")]
-position = Vector2(-81, 70)
-
-[node name="Bandit3" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit7" instance=ExtResource("3_lthya")]
-position = Vector2(-177, 396)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit7/Bandit3" instance=ExtResource("3_lthya")]
-position = Vector2(-6, -37)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit7/Bandit3/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-45, -5)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit7/Bandit3/Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-5, 43)
-
-[node name="Bandit8" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-3028, -513)
-
-[node name="Bandit2" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit8" instance=ExtResource("3_lthya")]
-position = Vector2(36, -842)
-
-[node name="Bandit3" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit8" instance=ExtResource("3_lthya")]
-position = Vector2(-177, 396)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit8/Bandit3" instance=ExtResource("3_lthya")]
-position = Vector2(-6, -37)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit8/Bandit3/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(35, -157)
-
-[node name="Bandit" parent="bandit_bow/bandit_bow/bandit_bow/bandit_bow/Bandit8/Bandit3/Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-5, 43)
-
-[node name="Bandit2" parent="bandit_bow" instance=ExtResource("3_lthya")]
-position = Vector2(-2795, -1092)
-
-[node name="Bandit2" parent="bandit_bow/Bandit2" instance=ExtResource("3_lthya")]
-position = Vector2(-81, 70)
-
-[node name="Bandit3" parent="bandit_bow/Bandit2" instance=ExtResource("3_lthya")]
-position = Vector2(-177, 396)
-
-[node name="Bandit" parent="bandit_bow/Bandit2/Bandit3" instance=ExtResource("3_lthya")]
-position = Vector2(-6, -37)
-
-[node name="Bandit" parent="bandit_bow/Bandit2/Bandit3/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-45, -5)
-
-[node name="Bandit" parent="bandit_bow/Bandit2/Bandit3/Bandit/Bandit" instance=ExtResource("3_lthya")]
-position = Vector2(-5, 43)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
