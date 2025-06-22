@@ -1,6 +1,8 @@
-res://Game/World/World.tscn
 res://Game/dialogic/Style/bublse.tres
+res://Game/Scene/gold.tscn
+res://Game/World/World.tscn
 res://Game/Characters/Player/Young_boy.tscn
+res://Game/Script/young_boy.gd
 res://Game/Item/item.tscn
 res://Game/Main_Map/main_loc.tscn
 res://Game/Scene/Tree.tscn
@@ -15,3 +17,11 @@ res://Game/Characters/enemy/bandit.tscn
 res://Game/Characters/enemy/bandit_bow.tscn
 res://Game/Characters/enemy/big_bandit.tscn
 res://Game/Characters/enemy/bandit_tutorial.tscn
+res://Game/Script/bandit_bow.gd
+res://addons/dialogic/Modules/Choice/subsystem_choices.gd
+res://Game/dialogic/timeline/First.dtl
+res://Game/dialogic/character/John.dch
+res://Game/dialogic/character/master.dch
+res://Game/dialogic/timeline/secondDialog.dtl
+res://Game/dialogic/timeline/no.dtl
+res://Game/dialogic/timeline/New_File.tres

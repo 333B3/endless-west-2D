@@ -1,6 +1,8 @@
+res://Game/dialogic/timeline
 res://Res/Map/Tileset/Props
-res://Game/build
 res://Res/Map/DesertV2++/DesertV2++/V2-ASE-PNG/V2-ASE-PNG
+res://Game/Scene
+res://Game/build
 res://Game/Script
 res://Res/Map/Cute_Fantasy_Free
 res://Game/Item
@@ -10,7 +12,6 @@ res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/sla
 res://Res/Characters/enemy/desertSprites_ [version 1.0]
 res://Game/Characters/enemy
 res://Res/UI/setting
-res://Game/Scene
 E:/Project
 res://Res
 E:/Project/endless west
@@ -19,4 +20,3 @@ res://Game/World
 res://Res/Map/pixelveg/250 pixel Veggie/32x32
 res://Game/dialogic/Style
 res://Game/dialogic/character
-res://Game/dialogic/timeline

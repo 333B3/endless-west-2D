@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhfuj3ifmhetg"]
+
+[ext_resource type="PackedScene" uid="uid://dtd0op3wthp5l" path="res://Game/Characters/enemy/bandit.tscn" id="1_evm12"]
+[ext_resource type="PackedScene" uid="uid://sjw8g732gioh" path="res://Game/Characters/enemy/big_bandit.tscn" id="2_7cld4"]
+[ext_resource type="PackedScene" uid="uid://g0fp4gh041e3" path="res://Game/Characters/enemy/bandit_bow.tscn" id="3_2d3x8"]
+[ext_resource type="Texture2D" uid="uid://conxgrj6q70le" path="res://Res/Map/Tileset/Props/Props-All.png" id="4_prwji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mrjq"]
+atlas = ExtResource("4_prwji")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jq8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mrjq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl6i5"]
+size = Vector2(18, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wfot"]
+radius = 22.0907
+
+[node name="Gold" type="Node2D"]
+
+[node name="Bandit" parent="." instance=ExtResource("1_evm12")]
+position = Vector2(-71, 52)
+
+[node name="Big_bandit" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(70, 57)
+
+[node name="bandit_bow" parent="." instance=ExtResource("3_2d3x8")]
+position = Vector2(66, -86)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+scale = Vector2(1.34375, 1.1875)
+sprite_frames = SubResource("SpriteFrames_5jq8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_pl6i5")
+
+[node name="Gold" type="Area2D" parent="CharacterBody2D" groups=["Gold"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Gold"]
+shape = SubResource("CircleShape2D_7wfot")
+
+[node name="Big_bandit2" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(-58, -49)
+
+[node name="Big_bandit3" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(130, 4)
+
+[node name="Big_bandit4" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(-6, 58)
+
+[node name="Big_bandit5" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(-104, 2)
+
+[node name="Big_bandit6" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(-21, -86)
+
+[node name="Big_bandit7" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(76, -33)
+
+[node name="Big_bandit8" parent="." instance=ExtResource("2_7cld4")]
+position = Vector2(24, -74)
+
+[node name="bandit_bow2" parent="." instance=ExtResource("3_2d3x8")]
+position = Vector2(-97, -72)
+
+[node name="bandit_bow3" parent="." instance=ExtResource("3_2d3x8")]
+position = Vector2(-81, 48)
+
+[node name="bandit_bow4" parent="." instance=ExtResource("3_2d3x8")]
+position = Vector2(77, 79)
+
+[node name="bandit_bow5" parent="." instance=ExtResource("3_2d3x8")]
+position = Vector2(103, 4)

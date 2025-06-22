@@ -25,6 +25,8 @@ var is_chatting = true
 var is_roaming = false
 var inventory_open: bool = false
 
+var no = false
+
 @onready var inventory_ui := get_node("CanvasLayer2")  
 @onready var weapon_slot: Slot = get_node("CanvasLayer2/WeaponSlot/slot")  
 @onready var inventory_node := get_node("CanvasLayer2/Node")  
@@ -46,6 +48,11 @@ var run_sound = false
 
 var background_music = true
 
+var coin = 0
+var take_gold = false
+var dialog_count = 0
+
+
 func _ready():
 	# Налаштування таймерів
 	regen_delay_timer.wait_time = 5.0
@@ -54,7 +61,6 @@ func _ready():
 	regen_interval_timer.one_shot = false
 	regen_delay_timer.stop()
 	regen_interval_timer.stop()
-	print("Таймери ініціалізовані")
 
 	hit_timer.wait_time = 0.9  
 	hit_timer.one_shot = false  
@@ -69,6 +75,15 @@ func _ready():
 			print("Предмет у weapon_slot знайдено в інвентарі")
 
 func _process(_delta):
+	if Input.is_action_just_pressed("action") and take_gold == true:
+		coin = 5000
+		$Continue.visible = true
+		get_tree().paused = true
+		await get_tree().create_timer(10).timeout
+		get_tree().paused = false
+		$Continue.visible = false
+	
+	$Gold/value.text = str(coin)
 	if Input.is_action_just_pressed("shoot") and near_tree == true and bullet_equip == false:
 		damage_tree = true
 		await get_tree().create_timer(0.1).timeout
@@ -77,19 +92,22 @@ func _process(_delta):
 		hit_tree = true
 		await get_tree().create_timer(0.7).timeout
 		hit_tree = false
-		
-		
-	
-
 	else:
 		pass
 		# ДИАЛОГ
 	if trader_in_area:
-		if Input.is_action_just_pressed("action"):
-			run_dialogue("First")
+		if dialog_count >= 1:
+			if Input.is_action_just_pressed("action"):
+				run_dialogue2("secondDialog")
+		if dialog_count == 0:
+			if Input.is_action_just_pressed("action"):
+				run_dialogue("First")
 	$CanvasLayer/Label.text = str(health)
 	mouse_lock = get_global_mouse_position() - self.position
 		#КОНЕЦ ДИАЛОГА
+	if trader_in_area == false:
+		Dialogic.clear()
+
 	
 	var movement = movement_vector()
 	var direction = movement.normalized()
@@ -223,6 +241,7 @@ func _process(_delta):
 		if weapon_slot and weapon_slot.item != null and is_item_in_inventory(weapon_slot.item):
 			bullet_cooldown = false
 			shoot_sound = true
+			dialog_count += 1
 			var bullet_instance = bullet.instantiate()
 			bullet_instance.rotation = $Marker2D.rotation
 			bullet_instance.global_position = $Marker2D.global_position
@@ -327,6 +346,12 @@ func run_dialogue(dialogue_string):
 	var layout = Dialogic.start(dialogue_string)
 	layout.register_character(load("res://Game/dialogic/character/John.dch"), $".")
 
+func run_dialogue2(dialogue_string):
+	is_chatting = true
+	is_roaming = false
+	var layout = Dialogic.start(dialogue_string)
+	layout.register_character(load("res://Game/dialogic/character/John.dch"), $".")
+
 func movement_vector():
 	var movement_x = Input.get_action_strength("walk_right") - Input.get_action_strength("walk_left")
 	var movement_y = Input.get_action_strength("walk_down") - Input.get_action_strength("walk_up")
@@ -386,9 +411,15 @@ func _on_area_2d_area_entered(area):
 		hit_player_by_big_mob = true
 		hit_timer.wait_time = 0.9  
 		hit_timer.start() 
+		
+	if area.is_in_group("Gold"):
+		take_gold = true
 	
 	if area.is_in_group("tree"):
 		near_tree = true
+		
+	if area.is_in_group("no"):
+		no = true
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("hit"):
@@ -402,6 +433,12 @@ func _on_area_2d_area_exited(area):
 
 	if area.is_in_group("tree"):
 		near_tree = false
+
+	if area.is_in_group("Gold"):
+		take_gold = true
+		
+	if area.is_in_group("no"):
+		no = false
 
 func _on_hit_timer_timeout():
 	if hit_player_by_mob == true:

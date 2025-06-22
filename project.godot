@@ -27,13 +27,16 @@ directories/dch_directory={
 "master": "res://Game/dialogic/character/master.dch"
 }
 directories/dtl_directory={
-"First": "res://Game/dialogic/timeline/First.dtl"
+"First": "res://Game/dialogic/timeline/First.dtl",
+"no": "res://Game/dialogic/timeline/no.dtl",
+"secondDialog": "res://Game/dialogic/timeline/secondDialog.dtl"
 }
 layout/style_directory={
 "": "res://Game/dialogic/Style/bublse.tres",
+"New_File": "res://Game/dialogic/timeline/New_File.tres",
 "bublse": "res://Game/dialogic/Style/bublse.tres"
 }
-layout/style_list=["res://Game/dialogic/Style/bublse.tres"]
+layout/style_list=["res://Game/dialogic/Style/bublse.tres", "res://Game/dialogic/timeline/New_File.tres"]
 layout/default_style="res://Game/dialogic/Style/bublse.tres"
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -84,6 +87,8 @@ tree=""
 PlayerGroup=""
 TreeGroup=""
 EnemyGroup=""
+Gold=""
+no=""
 
 [input]
 

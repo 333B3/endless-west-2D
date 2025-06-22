@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bsyea3lxe4yr4"]
+[gd_scene load_steps=19 format=4 uid="uid://bsyea3lxe4yr4"]
 
 [ext_resource type="Script" uid="uid://bixlwauuexsel" path="res://Game/World/world.gd" id="1_bykvt"]
 [ext_resource type="PackedScene" uid="uid://btpx8bcd8yk1p" path="res://Game/Main_Map/tile_map_layer.tscn" id="1_seqlg"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://sjw8g732gioh" path="res://Game/Characters/enemy/big_bandit.tscn" id="7_5xt6m"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="9_bgsr8"]
 [ext_resource type="PackedScene" uid="uid://do5t4klui0h5s" path="res://Game/Scene/Tree.tscn" id="10_new00"]
+[ext_resource type="PackedScene" uid="uid://dhfuj3ifmhetg" path="res://Game/Scene/gold.tscn" id="14_jda3k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jda3k"]
 texture = ExtResource("2_eiygp")
@@ -944,5 +945,8 @@ position = Vector2(2612, -3224)
 
 [node name="Big_bandit10" parent="." instance=ExtResource("7_5xt6m")]
 position = Vector2(2640, -3511)
+
+[node name="Gold" parent="." instance=ExtResource("14_jda3k")]
+position = Vector2(2289, -2073)
 
 [connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]

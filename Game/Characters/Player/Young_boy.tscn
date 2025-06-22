@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=4 uid="uid://cf6schj5hnndc"]
+[gd_scene load_steps=140 format=4 uid="uid://cf6schj5hnndc"]
 
 [ext_resource type="Script" uid="uid://ckgx5cfp5hfm0" path="res://Game/Script/young_boy.gd" id="1_ag20o"]
 [ext_resource type="Texture2D" uid="uid://cuqa6a7crc8lk" path="res://Res/Characters/Young_Boy/Wild West Pixel Cowboy - Pixel Art Asset Pack/idle/cowboy_idle_spritesheet.png" id="1_cn6tq"]
@@ -888,6 +888,9 @@ fade_time = 1.0
 stream_count = 1
 stream_0 = ExtResource("26_6keac")
 
+[sub_resource type="LabelSettings" id="LabelSettings_grbof"]
+font_size = 30
+
 [node name="Young_boy" type="CharacterBody2D" groups=["PlayerGroup", "player"]]
 z_index = 1
 collision_layer = 2
@@ -912,6 +915,22 @@ frame_progress = 0.505354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_74hxk")
+
+[node name="Gold" type="CanvasLayer" parent="."]
+
+[node name="coin" type="Label" parent="Gold"]
+offset_left = 1011.0
+offset_top = 7.0
+offset_right = 1079.0
+offset_bottom = 30.0
+text = "Монети:"
+
+[node name="value" type="Label" parent="Gold"]
+offset_left = 1085.0
+offset_top = 7.0
+offset_right = 1125.0
+offset_bottom = 30.0
+text = "0"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -999,6 +1018,30 @@ volume_db = -10.0
 [node name="hit_bow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_grbof")
 volume_db = -10.0
+
+[node name="Continue" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Continue"]
+offset_left = -92.0
+offset_top = -61.0
+offset_right = 1266.0
+offset_bottom = 753.0
+color = Color(0, 0, 0, 0.835294)
+
+[node name="Label" type="Label" parent="Continue"]
+offset_left = 238.0
+offset_top = 201.0
+offset_right = 954.0
+offset_bottom = 423.0
+text = "Вітаю! ти знайшов досить багато золота
+Тепер ти можеш продовжити свої пригоди
+ або повернутися до тихого та спокіного життя
+
+Продовження буде..."
+label_settings = SubResource("LabelSettings_grbof")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

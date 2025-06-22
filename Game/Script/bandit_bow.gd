@@ -137,7 +137,7 @@ func attack_player():
 	can_attack = false
 	await get_tree().create_timer(attack_cooldown).timeout  
 	var arrow_scene = preload("res://Game/World/Bow.tscn")
-	$AudioStreamPlayer.play()
+	$hit2.play()
 	var arrow = arrow_scene.instantiate()  
 	arrow.set_direction(player_direction())
 	#var spawn_offset = player_direction() * 40  

@@ -46,47 +46,30 @@ patch_margin_bottom = 389
 
 [node name="resume" type="Button" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
-offset_left = 171.0
+offset_left = 168.0
 offset_top = 102.0
-offset_right = 258.0
+offset_right = 280.0
 offset_bottom = 133.0
 size_flags_stretch_ratio = 0.0
 theme_override_font_sizes/font_size = 0
-text = "Resume"
+text = "Продовжити"
 
 [node name="setting" type="Button" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 137.0
-offset_right = 259.0
-offset_bottom = 168.0
+offset_left = 160.0
+offset_top = 139.0
+offset_right = 289.0
+offset_bottom = 170.0
 size_flags_horizontal = 4
-text = "Setting"
-
-[node name="save" type="Button" parent="PanelContainer/NinePatchRect"]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 171.0
-offset_right = 261.0
-offset_bottom = 202.0
-size_flags_horizontal = 4
-text = "Save"
-
-[node name="load" type="Button" parent="PanelContainer/NinePatchRect"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 205.0
-offset_right = 262.0
-offset_bottom = 236.0
-text = "Load"
+text = "Налаштування"
 
 [node name="main_menu" type="Button" parent="PanelContainer/NinePatchRect"]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 239.0
-offset_right = 263.0
-offset_bottom = 270.0
-text = "Main menu"
+offset_left = 162.0
+offset_top = 176.0
+offset_right = 288.0
+offset_bottom = 207.0
+text = "Головне меню"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -188,7 +171,5 @@ value = -10.0
 
 [connection signal="pressed" from="PanelContainer/NinePatchRect/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/NinePatchRect/setting" to="." method="_on_setting_pressed"]
-[connection signal="pressed" from="PanelContainer/NinePatchRect/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="PanelContainer/NinePatchRect/load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="PanelContainer/NinePatchRect/main_menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="TextureRect/Back_in_game_setting" to="." method="_on_back_in_game_setting_pressed"]
