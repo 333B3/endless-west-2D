@@ -19,3 +19,4 @@ res://Game/Scene/Setting_menu.tscn
 res://addons/dialogic/Modules/Text/settings_text.tscn
 res://addons/gut/gui/Settings.tscn
 res://Game/Scene/gold.tscn
+res://Game/Script/menu.gd
