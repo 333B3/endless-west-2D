@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bsyea3lxe4yr4"]
+[gd_scene load_steps=22 format=4 uid="uid://bsyea3lxe4yr4"]
 
 [ext_resource type="Script" uid="uid://bixlwauuexsel" path="res://Game/World/world.gd" id="1_bykvt"]
 [ext_resource type="PackedScene" uid="uid://btpx8bcd8yk1p" path="res://Game/Main_Map/tile_map_layer.tscn" id="1_seqlg"]
@@ -573,6 +573,43 @@ sources/1 = SubResource("TileSetAtlasSource_bbtrd")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bykvt"]
 
+[sub_resource type="Animation" id="Animation_bbtrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jda3k"]
+resource_name = "fade"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jtgfa"]
+_data = {
+&"RESET": SubResource("Animation_bbtrd"),
+&"fade": SubResource("Animation_jda3k")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_bykvt")
 
@@ -948,5 +985,21 @@ position = Vector2(2640, -3511)
 
 [node name="Gold" parent="." instance=ExtResource("14_jda3k")]
 position = Vector2(2289, -2073)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color(0, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2"]
+libraries = {
+&"": SubResource("AnimationLibrary_jtgfa")
+}
 
 [connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]

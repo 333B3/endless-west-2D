@@ -1,8 +1,9 @@
+AnimationPlayer
+ColorRect
+CanvasLayer
 CollisionShape2D
 Area2D
 Label
-ColorRect
-CanvasLayer
 AnimatedSprite2D
 CharacterBody2D
 Button
@@ -11,4 +12,3 @@ TileMapLayer
 Node2D
 RigidBody2D
 HScrollBar
-ResourcePreloader

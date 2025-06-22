@@ -102,8 +102,17 @@ func has_required_wood(amount: int) -> bool:
 				print("Слот ", key, ": item_name = ", entry["item"].item_name, " | count = ", entry["count"])
 				if entry["item"].item_name == "Wood":
 					total_wood += entry["count"]
-		print("📦 Всього деревини: ", total_wood)
+		print(" Всього деревини: ", total_wood)
 		return total_wood >= amount
 	else:
-		print("❌ inv_node: null")
+		print(" inv_node: null")
 	return false
+
+
+func _on_area_2d_2_area_entered(area):
+	if area.is_in_group("player"):
+		$CanvasLayer2.visible = true
+		$CanvasLayer2/AnimationPlayer.play("fade")
+		await get_tree().create_timer(0.4).timeout
+		var nextLoc = load("res://Game/Main_Map/main_loc.tscn")
+		get_tree().change_scene_to_packed(nextLoc)
