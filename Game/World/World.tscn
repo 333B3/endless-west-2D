@@ -1015,7 +1015,7 @@ libraries = {
 }
 
 [node name="Item2" parent="." instance=ExtResource("15_jtgfa")]
-position = Vector2(5229, -1899)
+position = Vector2(5221, -1924)
 item_data = ExtResource("17_lgwwq")
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("4_jf3jy")]

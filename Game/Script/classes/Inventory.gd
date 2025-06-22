@@ -67,3 +67,4 @@ func remove_item_by_name(name: String, count_to_remove: int) -> void:
 				return
 			else:
 				print("Недостатньо кількості для видалення: ", count, " < ", count_to_remove)
+				
