@@ -112,10 +112,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -39.0
+offset_left = -55.0
 offset_top = -23.0
-offset_right = 40.0
-offset_bottom = -23.0
+offset_right = 56.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4te8n")
@@ -343,8 +343,8 @@ visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = -11.0
-offset_right = 1248.0
-offset_bottom = 680.0
+offset_right = 2049.0
+offset_bottom = 1188.0
 color = Color(0, 0, 0, 0.933333)
 
 [node name="Label" type="Label" parent="ColorRect"]
@@ -352,8 +352,8 @@ z_index = 1
 layout_mode = 0
 offset_left = 21.0
 offset_top = 11.0
-offset_right = 1217.0
-offset_bottom = 678.0
+offset_right = 2050.0
+offset_bottom = 1181.0
 text = "Розробники:
 Кіндінов Іван
 Одиноченко Антон"
@@ -363,10 +363,10 @@ vertical_alignment = 1
 
 [node name="Button" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1071.0
-offset_top = 601.0
-offset_right = 1160.0
-offset_bottom = 656.0
+offset_left = 1836.0
+offset_top = 1046.0
+offset_right = 1925.0
+offset_bottom = 1101.0
 text = "Назад"
 
 [node name="FadeScreen" type="CanvasLayer" parent="."]

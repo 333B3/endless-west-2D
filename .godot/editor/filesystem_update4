@@ -18,6 +18,10 @@ res://Game/Scene/UI_MENU_IN_GAME.tscn
 res://Game/Scene/Setting_menu.tscn
 res://addons/dialogic/Modules/Text/settings_text.tscn
 res://addons/gut/gui/Settings.tscn
+<<<<<<< HEAD
 res://Game/Script/classes/Inventory.gd
 res://Game/Script/classes/inventory_button.gd
 res://Game/Script/classes/slot.gd
+=======
+res://Game/Scene/gold.tscn
+>>>>>>> 149fec03a4c8090c50d78a85530b70647ea46610

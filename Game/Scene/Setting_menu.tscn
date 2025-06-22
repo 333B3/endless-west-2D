@@ -64,26 +64,26 @@ script = ExtResource("1_lgnbx")
 layout_mode = 0
 offset_left = -16.0
 offset_top = -11.0
-offset_right = 1924.0
-offset_bottom = 1088.0
+offset_right = 1990.0
+offset_bottom = 1151.0
 texture = ExtResource("1_0q8sl")
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1068.0
-offset_top = 18.0
-offset_right = 1276.0
-offset_bottom = 226.0
+offset_left = 1757.0
+offset_top = 50.0
+offset_right = 1965.0
+offset_bottom = 258.0
 scale = Vector2(0.3, 0.3)
 icon = SubResource("AtlasTexture_bimgr")
 flat = true
 
 [node name="Music" type="HScrollBar" parent="."]
 layout_mode = 0
-offset_left = 161.0
-offset_top = 91.0
-offset_right = 545.0
-offset_bottom = 119.0
+offset_left = 235.0
+offset_top = 95.0
+offset_right = 962.0
+offset_bottom = 134.0
 min_value = -60.0
 max_value = 20.0
 page = 4.0
@@ -91,27 +91,29 @@ value = -10.0
 
 [node name="FX" type="HScrollBar" parent="."]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 134.0
-offset_right = 544.0
-offset_bottom = 165.0
+offset_left = 232.0
+offset_top = 172.0
+offset_right = 960.0
+offset_bottom = 211.0
 page = 4.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 94.0
-offset_right = 89.0
-offset_bottom = 117.0
+offset_left = 27.0
+offset_top = 88.0
+offset_right = 122.0
+offset_bottom = 122.0
+scale = Vector2(1.5, 1.5)
 text = "Музика:"
 label_settings = SubResource("LabelSettings_lgnbx")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 136.0
-offset_right = 127.0
-offset_bottom = 159.0
+offset_left = 25.0
+offset_top = 173.0
+offset_right = 137.0
+offset_bottom = 202.0
+scale = Vector2(1.5, 1.5)
 text = "Спецефекти:"
 label_settings = SubResource("LabelSettings_nwnwx")
 
