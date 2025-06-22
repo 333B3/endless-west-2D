@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bsyea3lxe4yr4"]
+[gd_scene load_steps=24 format=4 uid="uid://bsyea3lxe4yr4"]
 
 [ext_resource type="Script" uid="uid://bixlwauuexsel" path="res://Game/World/world.gd" id="1_bykvt"]
 [ext_resource type="PackedScene" uid="uid://btpx8bcd8yk1p" path="res://Game/Main_Map/tile_map_layer.tscn" id="1_seqlg"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://sjw8g732gioh" path="res://Game/Characters/enemy/big_bandit.tscn" id="7_5xt6m"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="9_bgsr8"]
 [ext_resource type="PackedScene" uid="uid://do5t4klui0h5s" path="res://Game/Scene/Tree.tscn" id="10_new00"]
-[ext_resource type="PackedScene" uid="uid://dhfuj3ifmhetg" path="res://Game/Scene/gold.tscn" id="14_jda3k"]
+[ext_resource type="PackedScene" path="res://Game/Scene/gold.tscn" id="14_jda3k"]
+[ext_resource type="PackedScene" uid="uid://bgi4tcb1aab8j" path="res://Game/Item/item.tscn" id="15_jtgfa"]
+[ext_resource type="Resource" uid="uid://bx846ol6naj4s" path="res://Game/Item/Waepon_1.tres" id="17_lgwwq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jda3k"]
 texture = ExtResource("2_eiygp")
@@ -857,6 +859,16 @@ offset_bottom = 43.0
 
 [node name="dead_menu" parent="CanvasLayer" instance=ExtResource("9_bgsr8")]
 visible = false
+z_index = 0
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -106.0
+offset_right = -560.0
+offset_bottom = -353.0
 
 [node name="Area2D" parent="." instance=ExtResource("10_new00")]
 position = Vector2(5020, -1868)
@@ -1001,5 +1013,9 @@ grow_vertical = 2
 libraries = {
 &"": SubResource("AnimationLibrary_jtgfa")
 }
+
+[node name="Item2" parent="." instance=ExtResource("15_jtgfa")]
+position = Vector2(5229, -1899)
+item_data = ExtResource("17_lgwwq")
 
 [connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]

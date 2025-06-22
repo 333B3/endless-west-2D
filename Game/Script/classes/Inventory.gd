@@ -8,7 +8,7 @@ signal item_added(item)
 
 func add_item(item: Item):
 	for i in Item.keys():
-		if Item[i]["item"] == item:  
+		if Item[i]["item"].item_name == item.item_name:  # Порівнюємо за назвою
 			Item[i]["count"] += 1
 			emit_signal("item_added", item)
 			print("Після додавання (існуючий): ", Item)
@@ -23,7 +23,7 @@ func add_item(item: Item):
 
 func remove_item(item: Item):
 	for key in Item.keys():
-		if Item[key]["item"] == item:
+		if Item[key]["item"].item_name == item.item_name:
 			Item[key]["count"] -= 1
 			if Item[key]["count"] <= 0:
 				Item.erase(key)
@@ -32,7 +32,7 @@ func remove_item(item: Item):
 
 func has_item(item: Item) -> bool:
 	for key in Item.keys():
-		if Item[key]["item"] == item:
+		if Item[key]["item"].item_name == item.item_name:
 			return true
 	return false
 
@@ -62,7 +62,7 @@ func remove_item_by_name(name: String, count_to_remove: int) -> void:
 					Item.erase(key)
 				else:
 					Item[key] = entry
-				emit_signal("item_added", item_ref)  # Оновлення UI
+				emit_signal("item_added", item_ref)
 				print("Видалено ", count_to_remove, " одиниць ", name)
 				return
 			else:

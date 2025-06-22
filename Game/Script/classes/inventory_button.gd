@@ -64,9 +64,10 @@ func update_inventory_slots():
 			if entry.has("item") and i < slot.size():
 				slot[i].item = entry["item"]
 				slot[i].count = entry["count"]
-				slot[i].modulate = Color.GREEN if entry["item"].item_name == "Wood" else Color.WHITE
-				print("Слот UI ", i, ": item_name = ", entry["item"].item_name, " | count = ", entry["count"], " | Колір: ", slot[i].modulate)
+				slot[i].modulate = Color.WHITE  
+				print("Слот UI ", i, ": item_name = ", entry["item"].item_name, " | count = ", entry["count"])
 				i += 1
+
 
 func get_weapon_in_slot():
 	return weapon_slot.item if weapon_slot.item != null and weapon_slot.item.is_in_group("weapon") else null

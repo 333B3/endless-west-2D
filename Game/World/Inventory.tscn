@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlbwunr1qcfvx"]
+[gd_scene load_steps=6 format=3 uid="uid://dlbwunr1qcfvx"]
 
 [ext_resource type="PackedScene" uid="uid://da2eodq54sfuu" path="res://Game/World/slot.tscn" id="1_3n7vm"]
 [ext_resource type="Script" uid="uid://blu4jhq5cow0t" path="res://Game/Script/classes/inventory_button.gd" id="1_ehqh4"]
 [ext_resource type="Texture2D" uid="uid://ctbpqx4dn8n3s" path="res://Res/UI/Sprout Lands - UI Pack - Basic pack/Sprite sheets/backpack.png" id="2_du2xy"]
 [ext_resource type="Script" uid="uid://bx1buk0s23nle" path="res://Game/Script/classes/Inventory.gd" id="4_cm58y"]
+[ext_resource type="Texture2D" uid="uid://ct41kk082vtyp" path="res://Res/Map/vacaroxa--generic-old-west-graphics--v.1.0/vacaroxa--generic-old-west-graphics--v.1.0/Generic Old West Graphicis/Buildings/House.png" id="5_ve8fe"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 offset = Vector2(775, 600)
@@ -210,10 +211,13 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="PlaceModeButton" type="Button" parent="."]
-offset_left = -217.0
-offset_top = 701.0
-offset_right = -146.0
-offset_bottom = 773.0
+offset_left = -283.0
+offset_top = 772.0
+offset_right = -163.0
+offset_bottom = 901.0
+rotation = -1.57213
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("5_ve8fe")
 
 [connection signal="pressed" from="ToggleButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PlaceModeButton" to="." method="_on_place_mode_button_pressed"]

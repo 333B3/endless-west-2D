@@ -14,15 +14,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wfe73"]
-size = Vector2(108, 96)
+size = Vector2(54, 50)
 
 [node name="House" type="RigidBody2D"]
 mass = 0.001
 gravity_scale = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.508929, 0.508264)
 sprite_frames = SubResource("SpriteFrames_exkp0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(-1, -7)
 shape = SubResource("RectangleShape2D_wfe73")
