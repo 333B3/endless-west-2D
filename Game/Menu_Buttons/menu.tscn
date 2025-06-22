@@ -282,46 +282,46 @@ alignment = 1
 
 [node name="New" type="Button" parent="."]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 205.0
-offset_right = 771.0
-offset_bottom = 313.0
+offset_left = 878.0
+offset_top = 285.0
+offset_right = 1186.0
+offset_bottom = 393.0
 size_flags_horizontal = 4
 icon = ExtResource("1_1ha7t")
 script = SubResource("GDScript_6yvlx")
 
 [node name="Load" type="Button" parent="."]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 315.0
-offset_right = 771.0
-offset_bottom = 423.0
+offset_left = 877.0
+offset_top = 406.0
+offset_right = 1185.0
+offset_bottom = 514.0
 icon = ExtResource("3_0cogu")
 
 [node name="Setting" type="Button" parent="."]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 425.0
-offset_right = 771.0
-offset_bottom = 533.0
+offset_left = 878.0
+offset_top = 523.0
+offset_right = 1186.0
+offset_bottom = 631.0
 icon = ExtResource("3_7ulc0")
 script = SubResource("GDScript_4hw03")
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 536.0
-offset_right = 771.0
-offset_bottom = 644.0
+offset_left = 878.0
+offset_top = 643.0
+offset_right = 1186.0
+offset_bottom = 751.0
 icon = ExtResource("5_xpxiv")
 script = SubResource("GDScript_882td")
 
 [node name="About" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1059.0
-offset_top = 589.0
-offset_right = 1169.0
-offset_bottom = 642.0
+offset_left = 1829.0
+offset_top = 1035.0
+offset_right = 1939.0
+offset_bottom = 1088.0
 text = "About us
 "
 

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://sjw8g732gioh" path="res://Game/Characters/enemy/big_bandit.tscn" id="7_5xt6m"]
 [ext_resource type="PackedScene" uid="uid://h71wpj3rsvua" path="res://Game/Scene/DEAD_MENU.tscn" id="9_bgsr8"]
 [ext_resource type="PackedScene" uid="uid://do5t4klui0h5s" path="res://Game/Scene/Tree.tscn" id="10_new00"]
-[ext_resource type="PackedScene" path="res://Game/Scene/gold.tscn" id="14_jda3k"]
+[ext_resource type="PackedScene" uid="uid://dhfuj3ifmhetg" path="res://Game/Scene/gold.tscn" id="14_jda3k"]
 [ext_resource type="PackedScene" uid="uid://bgi4tcb1aab8j" path="res://Game/Item/item.tscn" id="15_jtgfa"]
 [ext_resource type="Resource" uid="uid://bx846ol6naj4s" path="res://Game/Item/Waepon_1.tres" id="17_lgwwq"]
 
@@ -626,7 +626,7 @@ tile_map_data = PackedByteArray("AAAIALr/BAAWAAIAAAAPALj/BAAVAAMAAAAbALX/BAAUAAI
 position = Vector2(5236, -1892)
 
 [node name="Camera2D2" type="Camera2D" parent="Main_Character"]
-zoom = Vector2(4.3, 4.3)
+zoom = Vector2(7.8, 7.8)
 limit_left = -16
 limit_top = -37125
 limit_right = 5294
@@ -687,7 +687,7 @@ position = Vector2(-45, -5)
 position = Vector2(-5, 43)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_jf3jy")]
-position = Vector2(4622, -1847)
+position = Vector2(4648, -1932)
 
 [node name="bandit_bow" parent="." instance=ExtResource("5_t2g08")]
 position = Vector2(4486, -1970)
@@ -1017,5 +1017,17 @@ libraries = {
 [node name="Item2" parent="." instance=ExtResource("15_jtgfa")]
 position = Vector2(5229, -1899)
 item_data = ExtResource("17_lgwwq")
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("4_jf3jy")]
+position = Vector2(4719, -2294)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("4_jf3jy")]
+position = Vector2(4913, -2326)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("4_jf3jy")]
+position = Vector2(4710, -2344)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("4_jf3jy")]
+position = Vector2(5014, -2140)
 
 [connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]

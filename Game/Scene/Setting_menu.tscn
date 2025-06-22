@@ -64,8 +64,8 @@ script = ExtResource("1_lgnbx")
 layout_mode = 0
 offset_left = -16.0
 offset_top = -11.0
-offset_right = 1168.0
-offset_bottom = 666.0
+offset_right = 1924.0
+offset_bottom = 1088.0
 texture = ExtResource("1_0q8sl")
 
 [node name="Back" type="Button" parent="."]

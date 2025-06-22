@@ -31,15 +31,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -234.0
-offset_top = -194.5
-offset_right = 234.0
-offset_bottom = 194.5
+offset_left = -961.0
+offset_top = -539.0
+offset_right = 963.0
+offset_bottom = 532.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 region_rect = Rect2(197.463, 8.22319, 504.126, 432.395)
 patch_margin_right = 468
 patch_margin_bottom = 389

@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var toggle_button := $ToggleButton
 @onready var weapon_slot := $WeaponSlot/slot  
 @onready var place_button = $PlaceModeButton
-@onready var inv_node: Inventory = $Node  # Використовуємо @onready для безпечної ініціалізації
+@onready var inv_node: Inventory = $Node  
 
 var slot: Array = []
 var inventory_open := false
